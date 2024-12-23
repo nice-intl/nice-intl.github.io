@@ -119,7 +119,7 @@
         //     example.moreContent(methName);
         // });
         var TagsData = []
-        
+        TagsData.push({ id: 1, name: "Agent", screen: "0" })
 
 
         $("#tagsInput").sTags({
