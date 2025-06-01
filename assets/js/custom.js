@@ -118,52 +118,93 @@
         //     var methName = $(this).data('meth');
         //     example.moreContent(methName);
         // });
-        var TagsData = []
-        TagsData.push({ id: 1, name: "Agent", screen: "0" })
 
+        // document.querySelectorAll('.tag').forEach(tag => {
+        //   tag.addEventListener('click', () => {
+        //     const input = document.getElementById('tagsBB');
+        //     const tagText = tag.textContent.trim();
+        //     const currentTags = input.value.split(',').map(t => t.trim()).filter(Boolean);
+        //     if (!currentTags.includes(tagText)) {
+        //       currentTags.push(tagText);
+        //       input.value = currentTags.join(', ');
+        //     }
+        //   });
+        // });
 
-        $("#tagsInput").sTags({
-            data: TagsData,
-        })
-        $(".search").click(function () {
-            var temp = $('.sTags-input');
-            var tags = [];//输入的标签
-            temp.find('.sTags-new span').each(function() {
-            tags.push($(this).text());
-            });
-            
-            var divs = $("div.portfolio-box div.row");
-            divs.each(function () {
-                var $div = $(this);
-                var tagstemp = [];//每一个div的标签
-                $div.find('span').each(function() {
-                    tagstemp.push($(this).text());
-                });
-                
-                var found = false;//查找标记
-                if (tags.length === 0){//如果tags为空，显示全部div内容
-                    // found = true;
-                    location.reload();
-                    setTimeout(() => {
-                    location.hash = '#videosSection';
-                }, 0);
-                }else {
-                    for (var i = 0; i < tags.length; i++) {
-                        if (tagstemp.includes(tags[i])) {//遍历tags，查找是否和标签有匹配的
-                            found = true;
-                            break;
-                        }
-                    }
-                }
+      // Tag click -> add to input
+      $('.tag').on('click', function () {
+        const tagText = $(this).text().trim();
+        let currentTags = $('#tagsInput').val().split(',').map(t => t.trim()).filter(Boolean);
+        if (!currentTags.includes(tagText)) {
+          currentTags.push(tagText);
+          $('#tagsInput').val(currentTags.join(', '));
+        }
+      });
 
-                if (found) {
-                    $div.show();
-                } else {
-                    $div.hide();
-                }
-            });
-        })
+      // Search button click or enter press
+      $('#searchBtn').on('click', filterGallery);
+      $('#tagsInput').on('keypress', function (e) {
+        if (e.which === 13) filterGallery();
+      });
+
+      function filterGallery() {
+        const inputTags = $('#tagsInput').val().toLowerCase().split(',').map(t => t.trim()).filter(Boolean);
+
+        $('.portfolio-box > .row').each(function () {
+          const itemTags = ($(this).data('tags') || '').toLowerCase().split(',').map(t => t.trim());
+          const hasMatch = inputTags.every(tag => itemTags.includes(tag));
+          $(this).toggle(hasMatch || inputTags.length === 0); // show all if input is empty
+        });
+      }
     });
+
+
+
+    //     var TagsData = []
+    //     TagsData.push({ id: 1, name: "Agent", screen: "0" })
+
+    //     $("#tagsInput").sTags({
+    //         data: TagsData,
+    //     })
+    //     $(".search").click(function () {
+    //         var temp = $('.sTags-input');
+    //         var tags = [];//输入的标签
+    //         temp.find('.sTags-new span').each(function() {
+    //         tags.push($(this).text());
+    //         });
+            
+    //         var divs = $("div.portfolio-box div.row");
+    //         divs.each(function () {
+    //             var $div = $(this);
+    //             var tagstemp = [];//每一个div的标签
+    //             $div.find('span').each(function() {
+    //                 tagstemp.push($(this).text());
+    //             });
+                
+    //             var found = false;//查找标记
+    //             if (tags.length === 0){//如果tags为空，显示全部div内容
+    //                 // found = true;
+    //                 location.reload();
+    //                 setTimeout(() => {
+    //                 location.hash = '#videosSection';
+    //             }, 0);
+    //             }else {
+    //                 for (var i = 0; i < tags.length; i++) {
+    //                     if (tagstemp.includes(tags[i])) {//遍历tags，查找是否和标签有匹配的
+    //                         found = true;
+    //                         break;
+    //                     }
+    //                 }
+    //             }
+
+    //             if (found) {
+    //                 $div.show();
+    //             } else {
+    //                 $div.hide();
+    //             }
+    //         });
+    //     })
+    // });
     }
 
      /*--------------------
@@ -313,3 +354,11 @@
   $(window).on("resize", function(){
   });
 })(jQuery);
+
+document.getElementById("toggleGalleryBtn").addEventListener("click", function () {
+  const wrapper = document.getElementById("galleryWrapper");
+  const isCollapsed = wrapper.classList.contains("collapsed");
+
+  wrapper.classList.toggle("collapsed");
+  this.textContent = isCollapsed ? "Hide Gallery" : "Show Gallery";
+});

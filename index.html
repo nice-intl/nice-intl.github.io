@@ -16,6 +16,7 @@
     <!-- theme css -->
     <link href="assets/css/style.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="assets/css/jquery.sTags.css"><!--标签插件样式-->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet"><!--搜索样式-->
 </head>
 <!-- Body Start -->
 
@@ -75,7 +76,7 @@
                             <h1><span id="type-it"></span></h1>
                             <p>NLP Academic Exchange Platform.</p>
                             <div class="btn-bar">
-                                <a class="px-btn px-btn-theme" href="#">Let's Start</a>
+                                <a class="px-btn px-btn-theme" data-scroll-nav="1" href="#services">Let's Start</a>
                             </div>
                         </div>
                     </div>
@@ -105,60 +106,98 @@
         </section>
         <!-- End Services Section -->
         <!-- Skill Section -->
-        <section id="videosSection" data-scroll-index="2" class="section experience-section pb-0 bg-gray"  style="background-image: url(assets/img/effect/bg-effect-2.png); background-repeat: no-repeat; background-size: cover;">      
+        <section id="videosSection" data-scroll-index="2" class="section experience-section bg-gray"  style="background-image: url(assets/img/effect/bg-effect-2.png); background-repeat: no-repeat; background-size: cover;">      
             <div class="container">
                 <div class="row section-heading justify-content-center">
                     <div class="col-lg-6 text-center">
                         <h3><span>Videos</span></h3>
                     </div>
                 </div>
-                <div class="tags ">
+                <!-- <div class="tags ">
                     <input type="text" id="tagsInput" style="background-color: transparent; width: 500px;border:1px solid rgb(85,85,85)">
                     <button class="px-btn px-btn-theme search" >Search</button>
+                </div> -->
+
+                <!-- Search Section -->
+                <!-- <div class="tags ">
+                    <div>
+                        <p>Search by Tag...</p>
+                    </div>
+                    <input type="text" id="tagsInput" style="background-color: transparent; width: 500px;border:1px solid rgb(85,85,85)">
+                    <button class="px-btn px-btn-theme search" >Search</button>
+                </div> -->
+
+                <!-- Tag Search Bar -->
+                <div class="tag-search-section d-flex flex-column justify-content-center">
+                    <div class="tag-search-bar d-flex align-items-center rounded-pill shadow-sm px-3 py-2 bg-white">
+                        <span class="search-icon d-flex align-items-center justify-content-center me-2">
+                            <i class="bi bi-search"></i>
+                        </span>
+                        <input
+                            type="text"
+                            class="form-control border-0 shadow-none bg-transparent tag-input"
+                            id="tagsInput"
+                            placeholder="Search by tag..."
+                        />
+                        <button class="btn btn-theme rounded-pill ms-2 px-4" id="searchBtn">Search</button>
+                    </div>
+
+                    <div class="tag-list mt-3">
+                        <span>Tags:</span>
+                        <span class="tag badge bg-light text-dark me-2 mb-2">Agent</span>
+                    </div>
                 </div>
-                <div class="lightbox-gallery portfolio-box some-list" >
-                    <div class="row gx-3 pb-3 mb-5 pb-lg-3 mb-lg-3 gy-4 portfolio-box justify-content-around align-items-center flex-row-reverse">
-                        <div class="col-md-6 col-lg-5 ">
-                            <p>Speaker: Zirui Liu (Assistant Professor@UMN)</p>
-                            <p>time: 2025.3.2</p>
-                        </div>
-                        <div class="col-md-6 col-lg-5">
-                            <div class="portfolio-text">
-                                <div class="number"><h4>3.&nbsp;</h4></div>
-                                <h4><a href="https://www.youtube.com/watch?v=zhCNwc7kaew" target=" _blank">Breaking Barriers: Advancing Long Context LLMs</a>
-                                </h4>
+
+                <div id="galleryWrapper" class="gallery-wrapper expanded">
+                    <div id="gallerySection" class="lightbox-gallery portfolio-box some-list collapse show">
+                        <div class="row gx-3 pb-3 mb-5 pb-lg-3 mb-lg-3 gy-4 portfolio-box justify-content-around align-items-center flex-row-reverse" data-tags="">
+                            <div class="col-md-6 col-lg-5 ">
+                                <p>Speaker: Zirui Liu (Assistant Professor@UMN)</p>
+                                <p>time: 2025.3.2</p>
+                            </div>
+                            <div class="col-md-6 col-lg-5">
+                                <div class="portfolio-text">
+                                    <div class="number"><h4>3.&nbsp;</h4></div>
+                                    <h4><a href="https://www.youtube.com/watch?v=zhCNwc7kaew" target=" _blank">Breaking Barriers: Advancing Long Context LLMs</a>
+                                    </h4>
+                                </div>
                             </div>
                         </div>
+                        <div class="row gx-3 pb-3 mb-5 pb-lg-3 mb-lg-3 gy-4 portfolio-box justify-content-around align-items-center flex-row-reverse" data-tags="">
+                            <div class="col-md-6 col-lg-5 ">
+                                <p>Speaker: Wenyue Hua (UCSB)</p>
+                                <p>Host: Xin Xhang(PolyU)</p>
+                                <p>time: 2025.1.19</p>
+                            </div>
+                            <div class="col-md-6 col-lg-5">
+                                <div class="portfolio-text">
+                                    <div class="number"><h4>2.&nbsp;</h4></div>
+                                    <h4><a href="https://www.youtube.com/watch?v=WlnBjvO-2WY" target=" _blank">Game-theoretic LLM: Agent Workflow for Negotiation Games</a>
+                                    </h4>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row gx-3 pb-3 mb-5 pb-lg-3 mb-lg-3 gy-4 portfolio-box justify-content-around align-items-center flex-row-reverse" data-tags="Agent">
+                            <div class="col-md-6 col-lg-5 ">
+                                <p>Speaker: Shuyan Zhou(Meta)/Yu Gu(OSU)/Yongchao Chen(MIT & Harvard)</p>
+                                <p>Host: Wenyue Hua (UCSB)</p>
+                                <p>time: 2024.12.21</p>
+                            </div>
+                            <div class="col-md-6 col-lg-5">
+                                <div class="portfolio-text">
+                                    <div class="number"><h4>1.&nbsp;</h4></div>
+                                    <h4><a href="https://www.youtube.com/watch?v=0yBb8kIyLo8" target=" _blank">Future of Agent: Frontier Exploration of Basic Models and Intelligent Agents</a>
+                                        <!-- <span id="tag1" style="text-transform: none; background: rgba(104, 73, 216, 0.2);">Agent</span>   -->
+                                        <span class="tag badge me-2 mb-2" id="tag1" style="text-transform: none; background: rgba(104, 73, 216, 0.2);">Agent</span>  
+                                    </h4>
+                                </div>
+                            </div>
+                        </div>                  
                     </div>
-                    <div class="row gx-3 pb-3 mb-5 pb-lg-3 mb-lg-3 gy-4 portfolio-box justify-content-around align-items-center flex-row-reverse">
-                        <div class="col-md-6 col-lg-5 ">
-                            <p>Speaker: Wenyue Hua (UCSB)</p>
-                            <p>Host: Xin Xhang(PolyU)</p>
-                            <p>time: 2025.1.19</p>
-                        </div>
-                        <div class="col-md-6 col-lg-5">
-                            <div class="portfolio-text">
-                                <div class="number"><h4>2.&nbsp;</h4></div>
-                                <h4><a href="https://www.youtube.com/watch?v=WlnBjvO-2WY" target=" _blank">Game-theoretic LLM: Agent Workflow for Negotiation Games</a>
-                                </h4>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row gx-3 pb-3 mb-5 pb-lg-3 mb-lg-3 gy-4 portfolio-box justify-content-around align-items-center flex-row-reverse">
-                        <div class="col-md-6 col-lg-5 ">
-                            <p>Speaker: Shuyan Zhou(Meta)/Yu Gu(OSU)/Yongchao Chen(MIT & Harvard)</p>
-                            <p>Host: Wenyue Hua (UCSB)</p>
-                            <p>time: 2024.12.21</p>
-                        </div>
-                        <div class="col-md-6 col-lg-5">
-                            <div class="portfolio-text">
-                                <div class="number"><h4>1.&nbsp;</h4></div>
-                                <h4><a href="https://www.youtube.com/watch?v=0yBb8kIyLo8" target=" _blank">Future of Agent: Frontier Exploration of Basic Models and Intelligent Agents</a>
-                                    <span id="tag1" style="text-transform: none; background: rgba(104, 73, 216, 0.2);">Agent</span>  
-                                </h4>
-                            </div>
-                        </div>
-                    </div>                  
+                </div>
+
+                <div class="text-center mb-3">
+                    <button class="btn btn-outline-secondary" id="toggleGalleryBtn">Hide Gallery</button>
                 </div>
             </div>
         </section>
@@ -313,22 +352,27 @@
                             <span>PhD at PolyU</span>
                         </div>
                     </div>
+
+                    <!-- Placeholder cards for alignment -->
+                    <div class="feature-box-03 placeholder d-none d-md-block"></div>
+                    <div class="feature-box-03 placeholder d-none d-md-block"></div>
                 </div>            
             </div>
         </section>
         <!-- End Work Section -->
+
         <!-- Contact Section -->
         <section data-scroll-index="4" id="contactus" class="section contactus-section bg-dark" style="height: 1px; background-image: url(assets/img/effect/bg-effect-3.png); background-repeat: no-repeat; background-size: cover; background-position: center; ">
             <div class="container">
-                <div class="row gy-1" style="margin-top: -25px;">
+                <div class="row" style="margin-top: -25px;">
                     <div class="col-lg-5 mx-auto col-xl-6">
-                        <ul class="contact-infos">
+                        <ul class="contact-infos gap-5">
                             <li>
                                 <div class="icon bg-1">
                                     <!-- <i class="fas fa-sticky-note"></i> -->
                                     <img src="assets/img/effect/weixin.png">
                                 </div>
-                                <div class="col">
+                                <div class="col shrink">
                                     <h5>WeChat Public Platform</h5>                                    
                                 </div>
                             </li>
@@ -337,7 +381,7 @@
                                     <!-- <i class="fas fa-play"></i> -->
                                     <img src="assets/img/effect/bilibili.png">
                                 </div>
-                                <div class="col">
+                                <div class="col shrink">
                                     <h5>bilibili</h5>
                                 </div>
                             </li>
@@ -375,22 +419,22 @@
     <script src="assets/vendor/tags/jquery.sTags.js"></script>
     <!-- end -->
     <script>
-        $('.some-list').simpleLoadMore({
-	      item: 'div.row',
-	      count: 6,
-          onAllLoaded: function ($loadMore) {
-                var hideBtn = $('<a href="#" class="hide__btn">Hide</a>');
-                $loadMore.append(hideBtn);
+    //     $('.some-list').simpleLoadMore({
+	//       item: 'div.row',
+	//       count: 6,
+    //       onAllLoaded: function ($loadMore) {
+    //             var hideBtn = $('<a href="#" class="hide__btn">Hide</a>');
+    //             $loadMore.append(hideBtn);
 
-                hideBtn.on('click', function (e) {
-                    e.preventDefault();
-                    location.reload();
-                    setTimeout(() => {
-        location.hash = '#videosSection';
-    }, 0);
-                });
-            }
-	    });
+    //             hideBtn.on('click', function (e) {
+    //                 e.preventDefault();
+    //                 location.reload();
+    //                 setTimeout(() => {
+    //     location.hash = '#videosSection';
+    // }, 0);
+    //             });
+    //         }
+	//     });
     </script>
 </body>
 <!-- Body End -->
