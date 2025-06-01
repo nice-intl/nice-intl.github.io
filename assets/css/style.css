@@ -620,6 +620,12 @@ main {
   overflow-y: hidden;
   white-space: nowrap; */
 }
+
+.search-btn {
+  background-color:#FF651C;
+  color: white;
+}
+
 /* 
 .search-bar {
   border: 1px solid #555;
@@ -698,12 +704,23 @@ main {
   opacity: 0;
 }
 
-
-
-
-.portfolio-box {
+/* .portfolio-box {
   margin-top: 50px;
   margin-bottom: 50px;
+} */
+
+.portfolio-box p {
+  margin-left: 5px;
+}
+
+@media (max-width: 992px) {
+  .portfolio-box .mx-4 {
+    margin-top: 6px;
+  }
+  .portfolio-box p {
+    margin-left: 5px;
+    margin-bottom: 10px;
+  }
 }
 
 @media (min-width: 992px) {
