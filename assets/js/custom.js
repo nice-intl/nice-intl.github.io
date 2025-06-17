@@ -363,11 +363,74 @@ document.getElementById("toggleGalleryBtn").addEventListener("click", function (
   this.textContent = isCollapsed ? "Hide Gallery" : "Show Gallery";
 });
 
+
 // committees
+        // Add active class to nav pills on click for better visual feedback
+        // document.querySelectorAll('.nav-pills .nav-link').forEach(link => {
+        //     link.addEventListener('click', function() {
+        //         document.querySelectorAll('.nav-pills .nav-link').forEach(nav => {
+        //             nav.classList.remove('active');
+        //         });
+        //         this.classList.add('active');
+        //     });
+        // });
+        
+        // Smooth scroll to committee section when clicking nav pills
+        // document.querySelectorAll('.nav-pills .nav-link').forEach(link => {
+        //     link.addEventListener('click', function(e) {
+        //         e.preventDefault();
+        //         const target = this.getAttribute('data-bs-target');
+        //         document.querySelector(target).scrollIntoView({
+        //             behavior: 'smooth'
+        //         });
+                
+        //         // Bootstrap will handle the tab switching
+        //         const tabTrigger = new bootstrap.Tab(this);
+        //         tabTrigger.show();
+        //     });
+        // });
+        
+        // Add animation to member cards on scroll
+//         const observer = new IntersectionObserver((entries) => {
+//             entries.forEach(entry => {
+//                 if (entry.isIntersecting) {
+//                     entry.target.style.opacity = 1;
+//                     entry.target.style.transform = 'translateY(0)';
+//                 }
+//             });
+//         }, { threshold: 0.1 });
+        
+//         document.querySelectorAll('.member-card').forEach(card => {
+//             card.style.opacity = 0;
+//             card.style.transform = 'translateY(20px)';
+//             card.style.transition = 'all 0.5s ease';
+//             observer.observe(card);
+//         });
+
+// // Mobile dropdown functionality
+// const dropdown = document.getElementById('committee-dropdown');
+// if (dropdown) {
+//     dropdown.addEventListener('change', function() {
+//         const selectedTab = this.value;
+//         const tabTrigger = document.querySelector(`[data-bs-target="${selectedTab}"]`);
+//         if (tabTrigger) {
+//             const tab = new bootstrap.Tab(tabTrigger);
+//             tab.show();
+//         }
+//     });
+    
+//     // Update dropdown when tabs are changed
+//     document.querySelectorAll('[data-bs-toggle="pill"]').forEach(tab => {
+//         tab.addEventListener('shown.bs.tab', function() {
+//             dropdown.value = this.getAttribute('data-bs-target');
+//         });
+//     });
+// }
+
 document.addEventListener('DOMContentLoaded', function() {
     // Committee data (name and description)
     const committees = {
-        'agent': { name: 'Agent Committee', description: 'Agent Committee' },
+        'agent': { name: 'Agent Committee', description: 'Agent Committee Description' },
         'efficient': { name: 'Efficient/Infra Committee', description: 'Efficient/Infra Committee' },
         'evaluation': { name: 'Evaluation Committee', description: 'Evaluation Committee' },
         'interp': { name: 'Interpretation Committee', description: 'Interpretation Committee' },
