@@ -362,3 +362,124 @@ document.getElementById("toggleGalleryBtn").addEventListener("click", function (
   wrapper.classList.toggle("collapsed");
   this.textContent = isCollapsed ? "Hide Gallery" : "Show Gallery";
 });
+
+// committees
+document.addEventListener('DOMContentLoaded', function() {
+    // Committee data (name and description)
+    const committees = {
+        'agent': { name: 'Agent Committee', description: 'Agent Committee' },
+        'efficient': { name: 'Efficient/Infra Committee', description: 'Efficient/Infra Committee' },
+        'evaluation': { name: 'Evaluation Committee', description: 'Evaluation Committee' },
+        'interp': { name: 'Interpretation Committee', description: 'Interpretation Committee' },
+        'multilingual': { name: 'Multilingual Committee', description: 'Multilingual Committee' },
+        'multimodal': { name: 'Multimodal Committee', description: 'Multimodal Committee' },
+        'trustworthy': { name: 'Trustworthiness Committee', description: 'Trustworthiness Committee' }
+    };
+
+    // Get all filter elements
+    const filterButtons = document.querySelectorAll('[data-committee]');
+    const allButton = document.getElementById('all-tab');
+    const dropdown = document.getElementById('committee-dropdown');
+    const membersGrid = document.getElementById('members-grid');
+    const committeeHeader = document.getElementById('committee-header');
+    const committeeName = document.getElementById('committee-name');
+    const committeeDescription = document.getElementById('committee-description');
+    const allMembersHeader = document.getElementById('all-members-header');
+    const volunteersSection = document.getElementById('volunteers-section');
+    let currentCommittee = 'all';
+
+    // Function to filter members
+    function filterMembers(committee) {
+        const allMembers = document.querySelectorAll('.member-card');
+        
+        if (committee === 'all') {
+            // Show all members and hide committee header
+            allMembers.forEach(member => {
+                member.style.display = 'block';
+            });
+            allMembersHeader.style.display = 'block';
+            committeeHeader.style.display = 'none';
+            // volunteersSection.style.display = 'block';
+        } else {
+            // Show only members of selected committee
+            allMembers.forEach(member => {
+                if (member.dataset.committee === committee) {
+                    console.log(member.dataset.committee)
+                    member.style.display = 'block';
+                } else {
+                    member.style.display = 'none';
+                }
+            });
+            
+            // Show committee header with name and description
+            allMembersHeader.style.display = 'none';
+            committeeName.textContent = committees[committee].name;
+            committeeDescription.textContent = committees[committee].description;
+            committeeHeader.style.display = 'block';
+            // volunteersSection.style.display = 'none';
+        }
+    }
+
+    // Function to reset to "All" view
+    function resetToAll() {
+        filterButtons.forEach(btn => btn.classList.remove('active'));
+        allButton.classList.add('active');
+        dropdown.value = 'all';
+        currentCommittee = 'all';
+        filterMembers('all');
+    }
+
+    // Add event listeners to filter buttons
+    filterButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            const committee = this.dataset.committee;
+            
+            // If clicking the currently active committee button
+            if (committee === currentCommittee) {
+                resetToAll();
+                return;
+            }
+            
+            // If clicking a different committee
+            if (committee !== 'all') {
+                // Remove active class from all buttons
+                filterButtons.forEach(btn => btn.classList.remove('active'));
+                
+                // Add active class to clicked button
+                this.classList.add('active');
+                
+                // Filter members
+                currentCommittee = committee;
+                filterMembers(committee);
+                
+                // Update dropdown to match
+                dropdown.value = committee;
+            } else {
+                resetToAll();
+            }
+        });
+    });
+
+    // Add event listener to dropdown
+    dropdown.addEventListener('change', function() {
+        const committee = this.value;
+        
+        // If selecting the currently active committee
+        if (committee === currentCommittee && committee !== 'all') {
+            resetToAll();
+            return;
+        }
+        
+        // Update button states
+        filterButtons.forEach(button => {
+            button.classList.toggle('active', button.dataset.committee === committee);
+        });
+        
+        // Filter members
+        currentCommittee = committee;
+        filterMembers(committee);
+    });
+
+    // Initialize to show all members
+    resetToAll();
+});

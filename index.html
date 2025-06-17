@@ -216,8 +216,321 @@
             </div>
         </section> -->
         <!-- End Section -->
+
+<!-- Start Committee Section -->
+<section class="section"> 
+    <div class="text-center">
+        <div class="container">
+            <div class="row section-heading justify-content-center">
+                <div class="col-lg-6 text-center">
+                    <h3><span>committees</span></h3>
+                </div>
+            </div>
+            <p class="lead mb-4">Meet the dedicated teams driving our organization forward</p>
+        </div>
+    </div>
+
+    <div class="container">
+        <!-- Committee Tabs -->
+        <ul class="nav nav-pills mb-4 justify-content-center committee-tabs pb-2" id="committees-tab" role="tablist">
+            <li class="nav-item d-none" role="presentation">
+                <button class="px-btn px-btn-theme" id="all-tab" data-committee="all" type="button" role="tab">All Members</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="px-btn px-btn-theme" id="agent-tab" data-committee="agent" type="button" role="tab">Agent</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="px-btn px-btn-theme" id="efficient-tab" data-committee="efficient" type="button" role="tab">Efficient/Infra</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="px-btn px-btn-theme" id="evaluation-tab" data-committee="evaluation" type="button" role="tab">Evaluation</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="px-btn px-btn-theme" id="interp-tab" data-committee="interp" type="button" role="tab">Interp</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="px-btn px-btn-theme" id="multilingual-tab" data-committee="multilingual" type="button" role="tab">Multilingual</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="px-btn px-btn-theme" id="multimodal-tab" data-committee="multimodal" type="button" role="tab">Multimodal</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="px-btn px-btn-theme" id="trustworthy-tab" data-committee="trustworthy" type="button" role="tab">Trustworthiness</button>
+            </li>
+        </ul>
+
+        <div class="mobile-dropdown-container">
+            <select class="px-btn px-btn-theme mobile-dropdown" id="committee-dropdown">
+                <option value="all" selected>All</option>
+                <option value="agent">Agent</option>
+                <option value="efficient">Efficient/Infra</option>
+                <option value="evaluation">Evaluation</option>
+                <option value="interp">Interp</option>
+                <option value="multilingual">Multilingual</option>
+                <option value="multimodal">Multimodal</option>
+                <option value="trustworthy">Trustworthiness</option>
+            </select>
+        </div>
+
+        <div class='committee-section mx-5'>
+            <!-- All Members Header -->
+            <div id="all-members-header" class="committee-description">
+                <h3 class="committee-title">All Members</h3>
+                <p>Meet all our members!</p>
+            </div>
+            
+            <!-- Committee Header (hidden by default) -->
+            <div id="committee-header" class="committee-description" style="display: none;">
+                <h3 class="committee-title" id="committee-name"></h3>
+                <p id="committee-description"></p>
+            </div>
+
+            <!-- Floating background shapes -->
+            <div class="floating-shapes">
+                <div class="shape shape-1"></div>
+                <div class="shape shape-2"></div>
+            </div>
+
+            <!-- Members Grid -->
+            <div class="row members-grid justify-content-start mx-auto">
+                <!-- Example member card (add data-committee attribute to each) -->
+                <!-- <div class="col-xl-3 col-lg-4 col-md-6 member-card" data-committee="interp" onclick="window.open('https://scholar.google.com/citations?hl=zh-CN&user=P3bp0egAAAAJ&view_op=list_works&sortby=pubdate')">
+                    <div class="d-flex flex-column justify-content-center">
+                        <div class="member-img">
+                                <img src="assets/img/members/wmr.png">
+                        </div>
+                        <div class="member-info text-center">
+                            <h6 class="member-name">王梦如</h6>
+                                <span>浙江大学博士生</span>
+                        </div>
+                            <div class="icons">
+                                <i class="fas fa-quote-left"></i>
+                            </div>
+                    </div>
+                </div> -->
+                
+                <div class="col-xl-3 col-lg-4 col-md-6 member-card" data-committee="interp" onclick="window.open('https://scholar.google.com/citations?hl=zh-CN&user=P3bp0egAAAAJ&view_op=list_works&sortby=pubdate')">
+                    <div class="d-flex justify-content-center flex-column">
+                        <div class="member-img">
+                                <img src="assets/img/members/jmy.png">
+                        </div>
+                                <div class="member-info text-center">
+                            <div class="icons">
+                                <i class="fas fa-quote-left"></i>
+                            </div>
+                            <h6 class="member-name">Mingyu Jin</h6>
+                                <span>PhD at Rutgers University</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xl-3 col-lg-4 col-md-6 member-card" data-committee="evaluation" onclick="window.open('https://zhangqiyuan-rico.github.io/')">
+                    <div class="d-flex justify-content-center flex-column">
+                        <div class="member-img">
+                        <img src="assets/img/members/ldw.png">
+                        </div>
+                        <div class="member-info text-center">
+                            <div class="icons">
+                                <i class="fas fa-quote-left"></i>
+                            </div>
+                            <h6 class="member-name">Dawei Li</h6>
+                                <span>PhD at SCAI@ASU</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- <div class="col-xl-3 col-lg-4 col-md-6 member-card" data-committee="multimodal" onclick="window.open('https://scholar.google.com/citations?hl=zh-CN&user=P3bp0egAAAAJ&view_op=list_works&sortby=pubdate')">
+                    <div class="d-flex justify-content-center flex-column">
+                        <div class="member-img">   
+                            <img src="assets/img/members/rjy.png">
+                        </div>     
+                        <div class="member-info text-center">
+                            <div class="icons">
+                                <i class="fas fa-quote-left"></i>
+                            </div>
+                            <h6 class="member-name">饶珈源</h6>
+                                <span>浙江大学博士生</span>
+                        </div>
+                    </div>
+                </div> -->
+
+                <div class="col-xl-3 col-lg-4 col-md-6 member-card" data-committee="multimodal" onclick="window.open('https://eurekaleo.github.io/')">
+                    <div class="d-flex justify-content-center flex-column">
+                        <div class="member-img">          
+                        <img src="assets/img/members/lm.png">
+                        </div>
+                        <div class="member-info text-center">
+                            <div class="icons">
+                                <i class="fas fa-quote-left"></i>
+                            </div>
+                            <h6 class="member-name">罗盟</h6>
+                                <span>PHD at NUS</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xl-3 col-lg-4 col-md-6 member-card" data-committee="trustworthy" onclick="window.open('https://amourwaltz.github.io')">
+                    <div class="d-flex justify-content-center flex-column">
+                        <div class="member-img">       
+                        <img src="assets/img/members/xby.png">
+                        </div> 
+                        <div class="member-info text-center">
+                            <div class="icons">
+                                <i class="fas fa-quote-left"></i>
+                            </div>
+                            <h6 class="member-name">Boyang Xue</h6>
+                                <span>PhD at CUHK</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xl-3 col-lg-4 col-md-6 member-card" data-committee="efficient" onclick="window.open('https://hemingkx.github.io/')">
+                    <div class="d-flex justify-content-center flex-column">
+                        <div class="member-img">  
+                        <img src="assets/img/members/xhm.png">
+                        </div>      
+                        <div class="member-info text-center">
+                            <div class="icons">
+                                <i class="fas fa-quote-left"></i>
+                            </div>
+                            <h6 class="member-name">Heming Xia</h6>
+                                <span>PHD at PolyU</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xl-3 col-lg-4 col-md-6 member-card" data-committee="agent">
+                    <div class="d-flex justify-content-center flex-column">
+                        <div class="member-img">         
+                        <img src="assets/img/members/hwy.png">
+                        </div>
+                        <div class="member-info text-center">
+                            <div class="icons">
+                                <i class="fas fa-quote-left"></i>
+                            </div>
+                            <h6 class="member-name">Wenyue Hua</h6>
+                                <span>Postdoc at UCSB</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xl-3 col-lg-4 col-md-6 member-card" data-committee="interp">
+                    <div class="d-flex justify-content-center flex-column">
+                        <div class="member-img">            
+                        <img src="assets/img/members/lhz.png">
+                        </div>
+                        <div class="member-info text-center">
+                            <div class="icons">
+                                <i class="fas fa-quote-left"></i>
+                            </div>
+                            <h6 class="member-name">Hongzhang Liu</h6>
+                                <span>USYD</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xl-3 col-lg-4 col-md-6 member-card" data-committee="multilingual" onclick="window.open('https://ercong21.github.io/')">
+                    <div class="d-flex justify-content-center flex-column">
+                        <div class="member-img">            
+                        <img src="assets/img/members/nec.png">
+                        </div>
+                        <div class="member-info text-center">
+                            <div class="icons">
+                                <i class="fas fa-quote-left"></i>
+                            </div>
+                            <h6 class="member-name">ErCong Nie</h6>
+                                <span>PhD at LMU</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xl-3 col-lg-4 col-md-6 member-card" data-committee="multilingual" onclick="window.open('https://mingyang-wang26.github.io/')">
+                    <div class="d-flex justify-content-center flex-column">
+                        <div class="member-img">            
+                        <img src="assets/img/members/wmy.png">
+                        </div>
+                        <div class="member-info text-center">
+                            <div class="icons">
+                                <i class="fas fa-quote-left"></i>
+                            </div>
+                            <h6 class="member-name">Mingyang Wang</h6>
+                                <span>PhD at LMU</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- <div class="col-xl-3 col-lg-4 col-md-6 member-card" data-committee="multilingual" onclick="window.open('https://owennju.github.io/')">
+                    <div class="d-flex justify-content-center flex-column">
+                        <div class="member-img">            
+                        <img src="assets/img/members/zww.png">
+                        </div>
+                        <div class="member-info text-center">
+                            <div class="icons">
+                                <i class="fas fa-quote-left"></i>
+                            </div>
+                            <h6 class="member-name">朱文昊</h6>
+                                <span>南京大学博士生</span>
+                        </div>
+                    </div>
+                </div> -->
+            </div>
+        </div>
+    </div>
+</section>
+<!-- End Committee Section -->
+
+<!-- Secretaries Section -->
+<!-- <section id="volunteers-section"> -->
+    <!-- Volunteers -->
+    <!-- <div class="text-center">
+        <div class="container">
+            <div class="row section-heading justify-content-center">
+                <div class="col-lg-6 text-center">
+                    <h3><span>secretaries</span></h3>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class='committee-section mx-5'>
+            <div class="row members-grid justify-content-start mx-auto mb-5"> -->
+                <!-- <div class="col-xl-3 col-lg-4 col-md-6 volunteer-card">
+                    <div class="d-flex flex-column justify-content-center">
+                        <div class="member-img">
+                                <img src="assets/img/members/nyc.png">
+                        </div>
+                        <div class="member-info text-center">
+                            <h6 class="member-name">宁钰成</h6>
+                                <span>中国科学院信息工程研究所博士生</span>
+                        </div>
+                            <div class="icons">
+                                <i class="fas fa-quote-left"></i>
+                            </div>
+                    </div>
+                </div> -->
+                
+                <!-- <div class="col-xl-3 col-lg-4 col-md-6 volunteer-card" onclick="window.open('https://efeng2.github.io/')">
+                    <div class="d-flex justify-content-center flex-column">
+                        <div class="member-img">
+                                <img src="assets/img/members/fkh.png">
+                        </div>
+                                <div class="member-info text-center">
+                            <div class="icons">
+                                <i class="fas fa-quote-left"></i>
+                            </div>
+                            <h6 class="member-name">Emily (Keheng) Feng</h6>
+                                <span>UW</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section> -->
+
         <!-- Work Section -->
-        <section data-scroll-index="3" class="section work-section">
+        <!-- <section data-scroll-index="3" class="section work-section">
             <div class="container">
                 <div class="row section-heading justify-content-center">
                     <div class="col-lg-6 text-center">
@@ -351,14 +664,14 @@
                             <h6>Heming Xia</h6>
                             <span>PhD at PolyU</span>
                         </div>
-                    </div>
+                    </div> -->
 
                     <!-- Placeholder cards for alignment -->
-                    <div class="feature-box-03 placeholder d-none d-md-block"></div>
+                    <!-- <div class="feature-box-03 placeholder d-none d-md-block"></div>
                     <div class="feature-box-03 placeholder d-none d-md-block"></div>
                 </div>            
             </div>
-        </section>
+        </section> -->
         <!-- End Work Section -->
 
         <!-- Contact Section -->
