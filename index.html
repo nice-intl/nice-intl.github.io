@@ -413,13 +413,13 @@
         <!-- Committee Tabs -->
         <ul class="nav nav-pills mb-4 justify-content-center committee-tabs pb-2" id="committees-tab" role="tablist">
             <li class="nav-item d-none" role="presentation">
-                <button class="px-btn px-btn-theme" id="all-tab" data-committee="all" type="button" role="tab">Committee Teams</button>
+                <button class="px-btn px-btn-theme" id="all-tab" data-committee="all" type="button" role="tab">All Members</button>
             </li>
             <li class="nav-item" role="presentation">
                 <button class="px-btn px-btn-theme" id="agent-tab" data-committee="agent" type="button" role="tab">Agent</button>
             </li>
             <li class="nav-item" role="presentation">
-                <button class="px-btn px-btn-theme" id="efficient-tab" data-committee="efficient" type="button" role="tab">Efficient/Infra</button>
+                <button class="px-btn px-btn-theme" id="efficient-tab" data-committee="efficient/infra" type="button" role="tab">Efficient/Infra</button>
             </li>
             <li class="nav-item" role="presentation">
                 <button class="px-btn px-btn-theme" id="evaluation-tab" data-committee="evaluation" type="button" role="tab">Evaluation</button>
@@ -428,13 +428,16 @@
                 <button class="px-btn px-btn-theme" id="interp-tab" data-committee="interp" type="button" role="tab">Interp</button>
             </li>
             <li class="nav-item" role="presentation">
-                <button class="px-btn px-btn-theme" id="multilingual-tab" data-committee="multilingual" type="button" role="tab">Multilingual</button>
+                <button class="px-btn px-btn-theme" id="multilingual-tab" data-committee="human-centered nlp" type="button" role="tab">Human-centered NLP</button>
             </li>
             <li class="nav-item" role="presentation">
                 <button class="px-btn px-btn-theme" id="multimodal-tab" data-committee="multimodal" type="button" role="tab">Multimodal</button>
             </li>
             <li class="nav-item" role="presentation">
-                <button class="px-btn px-btn-theme" id="trustworthy-tab" data-committee="trustworthy" type="button" role="tab">Trustworthiness</button>
+                <button class="px-btn px-btn-theme" id="reliability-tab" data-committee="reliability" type="button" role="tab">Reliability</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="px-btn px-btn-theme" id="reasoning-tab" data-committee="reasoning" type="button" role="tab">Reasoning</button>
             </li>
         </ul>
 
@@ -442,12 +445,13 @@
             <select class="px-btn px-btn-theme mobile-dropdown" id="committee-dropdown">
                 <option value="all" selected>All</option>
                 <option value="agent">Agent</option>
-                <option value="efficient">Efficient/Infra</option>
+                <option value="efficient/infra">Efficient/Infra</option>
                 <option value="evaluation">Evaluation</option>
                 <option value="interp">Interp</option>
-                <option value="multilingual">Multilingual</option>
+                <option value="human-centered nlp">Human-centered NLP</option>
                 <option value="multimodal">Multimodal</option>
-                <option value="trustworthy">Trustworthiness</option>
+                <option value="reliability">Reliability</option>
+                <option value="reasoning">Reasoning</option>
             </select>
         </div>
 
@@ -471,387 +475,13 @@
             </div>
 
             <!-- Members Grid -->
-            <div class="row members-grid justify-content-start mx-auto">
+            <div class="row members-grid justify-content-start mx-auto" id="members-container">
                 <!-- Example member card (add data-committee attribute to each) -->
-                <!-- <div class="col-xl-3 col-lg-4 col-md-6 member-card" data-committee="interp" onclick="window.open('https://scholar.google.com/citations?hl=zh-CN&user=P3bp0egAAAAJ&view_op=list_works&sortby=pubdate')">
-                    <div class="d-flex flex-column justify-content-center">
-                        <div class="member-img">
-                                <img src="assets/img/members/wmr.png">
-                        </div>
-                        <div class="member-info text-center">
-                            <h6 class="member-name">王梦如</h6>
-                                <span>浙江大学博士生</span>
-                        </div>
-                            <div class="icons">
-                                <i class="fas fa-quote-left"></i>
-                            </div>
-                    </div>
-                </div> -->
-                
-                <div class="col-xl-3 col-lg-4 col-md-6 member-card" data-committee="interp" onclick="window.open('https://mingyuj666.github.io')">
-                    <div class="d-flex justify-content-center flex-column">
-                        <div class="member-img">
-                                <img src="assets/img/members/jmy.png">
-                        </div>
-                                <div class="member-info text-center">
-                            <div class="icons">
-                                <i class="fas fa-quote-left"></i>
-                            </div>
-                            <h6 class="member-name">Mingyu Jin</h6>
-                                <span>PhD at Rutgers University</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-xl-3 col-lg-4 col-md-6 member-card" data-committee="evaluation" onclick="window.open('https://david-li0406.github.io//publications')">
-                    <div class="d-flex justify-content-center flex-column">
-                        <div class="member-img">
-                        <img src="assets/img/members/ldw.png">
-                        </div>
-                        <div class="member-info text-center">
-                            <div class="icons">
-                                <i class="fas fa-quote-left"></i>
-                            </div>
-                            <h6 class="member-name">Dawei Li</h6>
-                                <span>PhD at SCAI@ASU</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- <div class="col-xl-3 col-lg-4 col-md-6 member-card" data-committee="multimodal" onclick="window.open('https://scholar.google.com/citations?hl=zh-CN&user=P3bp0egAAAAJ&view_op=list_works&sortby=pubdate')">
-                    <div class="d-flex justify-content-center flex-column">
-                        <div class="member-img">   
-                            <img src="assets/img/members/rjy.png">
-                        </div>     
-                        <div class="member-info text-center">
-                            <div class="icons">
-                                <i class="fas fa-quote-left"></i>
-                            </div>
-                            <h6 class="member-name">饶珈源</h6>
-                                <span>浙江大学博士生</span>
-                        </div>
-                    </div>
-                </div> -->
-
-                <div class="col-xl-3 col-lg-4 col-md-6 member-card" data-committee="multimodal" onclick="window.open('https://eurekaleo.github.io/')">
-                    <div class="d-flex justify-content-center flex-column">
-                        <div class="member-img">          
-                        <img src="assets/img/members/lm.png">
-                        </div>
-                        <div class="member-info text-center">
-                            <div class="icons">
-                                <i class="fas fa-quote-left"></i>
-                            </div>
-                            <h6 class="member-name">Meng Luo</h6>
-                                <span>PHD at NUS</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-xl-3 col-lg-4 col-md-6 member-card" data-committee="trustworthy" onclick="window.open('https://amourwaltz.github.io')">
-                    <div class="d-flex justify-content-center flex-column">
-                        <div class="member-img">       
-                        <img src="assets/img/members/xby.png">
-                        </div> 
-                        <div class="member-info text-center">
-                            <div class="icons">
-                                <i class="fas fa-quote-left"></i>
-                            </div>
-                            <h6 class="member-name">Boyang Xue</h6>
-                                <span>PhD at CUHK</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-xl-3 col-lg-4 col-md-6 member-card" data-committee="efficient" onclick="window.open('https://hemingkx.github.io/')">
-                    <div class="d-flex justify-content-center flex-column">
-                        <div class="member-img">  
-                        <img src="assets/img/members/xhm.png">
-                        </div>      
-                        <div class="member-info text-center">
-                            <div class="icons">
-                                <i class="fas fa-quote-left"></i>
-                            </div>
-                            <h6 class="member-name">Heming Xia</h6>
-                                <span>PHD at PolyU</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-xl-3 col-lg-4 col-md-6 member-card" data-committee="agent" onclick="window.open('https://wenyueh.github.io')">
-                    <div class="d-flex justify-content-center flex-column">
-                        <div class="member-img">         
-                        <img src="assets/img/members/hwy.png">
-                        </div>
-                        <div class="member-info text-center">
-                            <div class="icons">
-                                <i class="fas fa-quote-left"></i>
-                            </div>
-                            <h6 class="member-name">Wenyue Hua</h6>
-                                <span>Postdoc at UCSB</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-xl-3 col-lg-4 col-md-6 member-card" data-committee="interp">
-                    <div class="d-flex justify-content-center flex-column">
-                        <div class="member-img">            
-                        <img src="assets/img/members/lhz.png">
-                        </div>
-                        <div class="member-info text-center">
-                            <div class="icons">
-                                <i class="fas fa-quote-left"></i>
-                            </div>
-                            <h6 class="member-name">Hongzhang Liu</h6>
-                                <span>USYD</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-xl-3 col-lg-4 col-md-6 member-card" data-committee="multilingual" onclick="window.open('https://ercong21.github.io/')">
-                    <div class="d-flex justify-content-center flex-column">
-                        <div class="member-img">            
-                            <img src="assets/img/members/nec.png">
-                        </div>
-                        <div class="member-info text-center">
-                            <div class="icons">
-                                <i class="fas fa-quote-left"></i>
-                            </div>
-                            <h6 class="member-name">ErCong Nie</h6>
-                            <span>PhD at LMU</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-xl-3 col-lg-4 col-md-6 member-card" data-committee="multilingual" onclick="window.open('https://mingyang-wang26.github.io/')">
-                    <div class="d-flex justify-content-center flex-column">
-                        <div class="member-img">            
-                            <img src="assets/img/members/wmy.png">
-                        </div>
-                        <div class="member-info text-center">
-                            <div class="icons">
-                                <i class="fas fa-quote-left"></i>
-                            </div>
-                            <h6 class="member-name">Mingyang Wang</h6>
-                            <span>PhD at LMU</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- <div class="col-xl-3 col-lg-4 col-md-6 member-card" data-committee="multilingual" onclick="window.open('https://owennju.github.io/')">
-                    <div class="d-flex justify-content-center flex-column">
-                        <div class="member-img">            
-                        <img src="assets/img/members/zww.png">
-                        </div>
-                        <div class="member-info text-center">
-                            <div class="icons">
-                                <i class="fas fa-quote-left"></i>
-                            </div>
-                            <h6 class="member-name">朱文昊</h6>
-                                <span>南京大学博士生</span>
-                        </div>
-                    </div>
-                </div> -->
             </div>
         </div>
     </div>
 </section>
 <!-- End Committee Section -->
-
-<!-- Secretaries Section -->
-<!-- <section id="volunteers-section"> -->
-    <!-- Volunteers -->
-    <!-- <div class="text-center">
-        <div class="container">
-            <div class="row section-heading justify-content-center">
-                <div class="col-lg-6 text-center">
-                    <h3><span>secretaries</span></h3>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="container">
-        <div class='committee-section mx-5'>
-            <div class="row members-grid justify-content-start mx-auto mb-5"> -->
-                <!-- <div class="col-xl-3 col-lg-4 col-md-6 volunteer-card">
-                    <div class="d-flex flex-column justify-content-center">
-                        <div class="member-img">
-                                <img src="assets/img/members/nyc.png">
-                        </div>
-                        <div class="member-info text-center">
-                            <h6 class="member-name">宁钰成</h6>
-                                <span>中国科学院信息工程研究所博士生</span>
-                        </div>
-                            <div class="icons">
-                                <i class="fas fa-quote-left"></i>
-                            </div>
-                    </div>
-                </div> -->
-                
-                <!-- <div class="col-xl-3 col-lg-4 col-md-6 volunteer-card" onclick="window.open('https://efeng2.github.io/')">
-                    <div class="d-flex justify-content-center flex-column">
-                        <div class="member-img">
-                                <img src="assets/img/members/fkh.png">
-                        </div>
-                                <div class="member-info text-center">
-                            <div class="icons">
-                                <i class="fas fa-quote-left"></i>
-                            </div>
-                            <h6 class="member-name">Emily (Keheng) Feng</h6>
-                                <span>UW</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section> -->
-
-        <!-- Work Section -->
-        <!-- <section data-scroll-index="3" class="section work-section">
-            <div class="container">
-                <div class="row section-heading justify-content-center">
-                    <div class="col-lg-6 text-center">
-                        <h3><span>committees</span></h3>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="feature-box-03" onclick="window.open('https://wenyueh.github.io')">
-                        <div class="feature-img">
-                            <img src="assets/img/members/hwy.png">
-                        </div>
-                        <div class="feature-content">
-                            <div class="icons">
-                                <i class="fas fa-quote-left"></i>
-                            </div>
-                            <h6>Wenyue Hua</h6>
-                            <span>Postdoc at UCSB</span>
-                        </div>
-                    </div>
-
-                    <div class="feature-box-03" onclick="window.open('https://ruleGreen.github.io')">
-                        <div class="feature-img">
-                            <img src="assets/img/members/whr.png">
-                        </div>
-                        <div class="feature-content">
-                            <div class="icons">
-                                <i class="fas fa-quote-left"></i>
-                            </div>
-                            <h6>Hongru Wang</h6>
-                            <span>PhD at CUHK</span>
-                        </div>
-                    </div>
-
-                    <div class="feature-box-03" onclick="window.open('https://amourwaltz.github.io')">
-                        <div class="feature-img">
-                            <img src="assets/img/members/xby.png">
-                        </div>
-                        <div class="feature-content">
-                            <div class="icons">
-                                <i class="fas fa-quote-left"></i>
-                            </div>
-                            <h6>Boyang Xue</h6>
-                            <span>PhD at CUHK</span>
-                        </div>
-                    </div>
-
-                    <div class="feature-box-03" onclick="window.open('https://ercong21.github.io/')">
-                        <div class="feature-img">
-                            <img src="assets/img/members/nec.png">
-                        </div>
-                        <div class="feature-content">
-                            <div class="icons">
-                                <i class="fas fa-quote-left"></i>
-                            </div>
-                            <h6>ErCong Nie</h6>
-                            <span>PhD at LMU</span>
-                        </div>
-                    </div>
-
-                    <div class="feature-box-03" onclick="window.open('https://lilei-nlp.github.io/')">
-                        <div class="feature-img">
-                            <img src="assets/img/members/ll.png">
-                        </div>
-                        <div class="feature-content">
-                            <div class="icons">
-                                <i class="fas fa-quote-left"></i>
-                            </div>
-                            <h6>Lei Li</h6>
-                            <span>PhD at HKU</span>
-                        </div>
-                    </div>
-                    
-                    <div class="feature-box-03" onclick="window.open('https://mingyuj666.github.io')">
-                        <div class="feature-img">
-                            <img src="assets/img/members/jmy.png">
-                        </div>
-                        <div class="feature-content">
-                            <div class="icons">
-                                <i class="fas fa-quote-left"></i>
-                            </div>
-                            <h6>Mingyu Jin</h6>
-                            <span>PhD at Rutgers University</span>
-                        </div>                        
-                    </div>
-                    <div class="feature-box-03" onclick="window.open('https://david-li0406.github.io//publications')">
-                        <div class="feature-img">
-                            <img src="assets/img/members/DaweiLi.png">
-                        </div>
-                        <div class="feature-content">
-                            <div class="icons">
-                                <i class="fas fa-quote-left"></i>
-                            </div>
-                            <h6>Dawei Li</h6>
-                            <span>PhD at SCAI@ASU</span>
-                        </div>
-                    </div>
-                    <div class="feature-box-03" onclick="window.open('https://scholar.google.com/citations?user=86dbUg4AAAAJ&hl=en')">
-                        <div class="feature-img">
-                            <img src="assets/img/members/qjh.png">
-                        </div>
-                        <div class="feature-content">
-                            <div class="icons">
-                                <i class="fas fa-quote-left"></i>
-                            </div>
-                            <h6>Jiahao Qiu</h6>
-                            <span>PhD at Princeton University</span>
-                        </div>
-                    </div>
-
-                    <div class="feature-box-03" onclick="window.open('https://zhaochen0110.github.io')">
-                        <div class="feature-img">
-                            <img src="assets/img/members/szc.png">
-                        </div>
-                        <div class="feature-content">
-                            <div class="icons">
-                                <i class="fas fa-quote-left"></i>
-                            </div>
-                            <h6>Zhaochen Su</h6>
-                            <span>PhD at HKUST</span>
-                        </div>
-                    </div>
-
-                    <div class="feature-box-03" onclick="window.open('https://hemingkx.github.io/')">
-                        <div class="feature-img">
-                            <img src="assets/img/members/xhm.png">
-                        </div>
-                        <div class="feature-content">
-                            <div class="icons">
-                                <i class="fas fa-quote-left"></i>
-                            </div>
-                            <h6>Heming Xia</h6>
-                            <span>PhD at PolyU</span>
-                        </div>
-                    </div> -->
-
-                    <!-- Placeholder cards for alignment -->
-                    <!-- <div class="feature-box-03 placeholder d-none d-md-block"></div>
-                    <div class="feature-box-03 placeholder d-none d-md-block"></div>
-                </div>            
-            </div>
-        </section> -->
-        <!-- End Work Section -->
 
         <!-- Contact Section -->
         <section data-scroll-index="4" id="contactus" class="section contactus-section bg-dark" style="height: 1px; background-image: url(assets/img/effect/bg-effect-3.png); background-repeat: no-repeat; background-size: cover; background-position: center; ">
@@ -910,6 +540,92 @@
     <script src="assets/vendor/load-more/jquery.morecontent.js"></script>
     <script src="assets/vendor/tags/jquery.sTags.js"></script>
     <!-- end -->
+
+    <script>
+        // 模拟你的数据
+        const allCommitteeMembers = [
+            { name: "Wenyue Hua", role: "Post-Doc at UCSB", image: "assets/img/members/hwy.png", website: "https://wenyueh.github.io/en/", committee: "Agent" },
+            { name: "Jiahao Qiu", role: "PhD at Princeton University", image: "assets/img/members/qjh.png", website: "https://x.com/jiahaoqiu99", committee: "Agent" },
+            // { name: "范犁洲", role: "香港中文大学助理副校长", image: "assets/img/members/fll.png", website: "https://lizhouf.github.io/", committee: "Agent" },
+            // { name: "苏肇辰", role: "香港科技大学博士生", image: "assets/img/members/szc.png", website: "https://zhaochen0110.github.io/", committee: "Agent" },
+            { name: "Lizhou Fan", role: "Vice-Chancellor Assistant Professor at CUHK", image: "assets/img/members/fll.png", website: "https://lizhouf.github.io/", committee: "Agent" },
+            { name: "Zhaochen Su", role: "PhD at HKUST", image: "assets/img/members/szc.png", website: "https://zhaochen0110.github.io/", committee: "Agent" },
+            { name: "Canyu Chen", role: "PhD at Northwestern", image: "assets/img/members/ccy.png", website: "https://canyuchen.com/", committee: "Agent" },
+            { name: "Shaokun Zhang", role: "Ph.D. at The Pennsylvania State University", image: "assets/img/members/zsk.png", website: "https://skzhang1.github.io/", committee: "Agent" },
+            //{ name: "赵皓东", role: "上海交通大学博士生", image: "assets/img/members/zhd.png", website: "https://dongdongzhaoup.github.io/", committee: "Agent" },
+            //{ name: "王鸿儒", role: "香港中文大学博士生", image: "assets/img/members/whr.png", website: "https://hrwise-nlp.github.io/", committee: "Agent" },
+            { name: "Hongru Wang", role: "PhD at CUHK", image: "assets/img/members/whr.png", website: "https://hrwise-nlp.github.io/", committee: "Agent" },
+            { name: "Julie Chen", role: "", image: "assets/img/members/jc.png", website: "", committee: "Agent" },
+            { name: "Cheng Qian", role: "PhD at UIUC", image: "assets/img/members/qc.png", website: "https://qiancheng0.github.io/", committee: "Agent" },
+            { name: "Hongzhang Liu", role: "USYD", image: "assets/img/members/lhz.png", website: "https://www.linkedin.com/in/alpha4ai/", committee: "Agent" },
+
+            // Reliability
+            // { name: "薛博阳", role: "香港中文大学博士生", image: "assets/img/members/xby.png", website: "https://amourwaltz.github.io/", committee: "Reliability" },
+            { name: "Boyang Xue", role: "PhD at CUHK", image: "assets/img/members/xby.png", website: "https://amourwaltz.github.io/", committee: "Reliability" },
+            // { name: "杜晏睿", role: "哈工大博士生", image: "assets/img/members/dyr.png", website: "https://dyr1.github.io/", committee: "Reliability" },
+            // { name: "赵皓东", role: "上海交通大学博士生", image: "assets/img/members/zhd.png", website: "https://dongdongzhaoup.github.io/", committee: "Reliability" },
+            // { name: "吉嘉铭", role: "北大博士生", image: "assets/img/members/jjm.png", website: "https://jijiaming.com/", committee: "Reliability" },
+
+            // Interp			
+            // { name: "王梦如", role: "浙江大学博士生", image: "assets/img/members/wmy.png", website: "https://scholar.google.com/citations?user=P3bp0egAAAAJ&hl=zh-CN", committee: "Interp" },
+            { name: "Mingyu Jin", role: "PhD at Rutgers University", image: "assets/img/members/jmy.png", website: "https://mingyuj666.github.io", committee: "Interp" },
+
+            //Efficient/Infra			
+            // { name: "夏鹤明", role: "香港理工大学博士生", image: "assets/img/members/xhm.png", website: "https://hemingkx.github.io/", committee: "Efficient/Infra" },
+            { name: "Heming Xia", role: "PHD at PolyU", image: "assets/img/members/xhm.png", website: "https://hemingkx.github.io/", committee: "Efficient/Infra" },
+            // { name: "章岳", role: "苏州大学研究生", image: "assets/img/members/zy.png", website: "https://hillzhang1999.github.io/", committee: "Efficient/Infra" },
+
+            // Reasoning
+            { name: "Zhongzhi Li", role: "Ph.D Student at CASIA", image: "assets/img/members/lzz.png", website: "https://zzli2022.github.io/", committee: "Reasoning" },
+            { name: "Xiao Liang", role: "PhD student at UCLA", image: "assets/img/members/lx.png", website: "https://mastervito.github.io/", committee: "Reasoning" },
+
+            // Human-centered NLP			
+            { name: "ErCong Nie", role: "PhD at LMU", image: "assets/img/members/nec.png", website: "https://ercong21.github.io", committee: "Human-centered NLP" },
+            { name: "Mingyang Wang", role: "PhD at LMU", image: "assets/img/members/wmy.png", website: "https://mingyang-wang26.github.io/", committee: "Human-centered NLP" },
+            // { name: "朱文昊", role: "字节跳动研究员", image: "assets/img/members/zww.png", website: "https://owennju.github.io/", committee: "Human-centered NLP" },
+
+            // Multimodal						
+            // { name: "饶珈源", role: "上交&上海AI Lab博士生", image: "assets/img/members/rjy.png", website: "https://jyrao.github.io", committee: "Multimodal" },
+            // { name: "李磊", role: "香港大学博士生", image: "assets/img/members/ll.png", website: "https://lilei-nlp.github.io", committee: "Multimodal" },
+            { name: "Lei Li", role: "PhD at HKU", image: "assets/img/members/ll.png", website: "https://lilei-nlp.github.io", committee: "Multimodal" },
+            // { name: "魏来", role: "上海交通大学博士生", image: "assets/img/members/wl.png", website: "https://waltonfuture.github.io", committee: "Multimodal" },
+            // { name: "罗盟", role: "新加坡国立大学博士生", image: "assets/img/members/lm.png", website: "https://eurekaleo.github.io/", committee: "Multimodal" },
+            { name: "Meng Luo", role: "PHD at NUS", image: "assets/img/members/lm.png", website: "https://eurekaleo.github.io/", committee: "Multimodal" },
+
+            // Evaluation			
+            { name: "Dawei Li", role: "PhD student at SCAI@ASU", image: "assets/img/members/ldw.png", website: "https://david-li0406.github.io/", committee: "Evaluation" },
+            // { name: "王存翔", role: "清华博后/智谱研究员", image: "assets/img/members/wcx.png", website: "https://wangcunxiang.github.io/", committee: "Evaluation" },
+            // { name: "张启源", role: "香港城市大学博士生", image: "assets/img/members/zqy.png", website: "https://zhangqiyuan-rico.github.io/", committee: "Evaluation" },
+            { name: "Qiyuan Zhang", role: "Ph.D. Student at City University of Hong Kong", image: "assets/img/members/zqy.png", website: "https://zhangqiyuan-rico.github.io/", committee: "Evaluation" },
+            { name: "Shenglai Zeng", role: "PhD Student at Michigan State University", image: "assets/img/members/zsl.png", website: "http://slz-ai.github.io/", committee: "Evaluation" },
+        ];
+
+        // 使用 map 生成 HTML 字符串
+        const memberHTML = allCommitteeMembers.map(member => {
+            const cleanWebsite = member.website.trim();
+            const imgSrc = member.image.replace('', '');
+            const committeeLower = member.committee.toLowerCase();
+
+            return `
+                <div class="col-xl-3 col-lg-4 col-md-6 member-card" data-committee="${committeeLower}" onclick="window.open('${cleanWebsite}')">
+                    <div class="d-flex justify-content-center flex-column">
+                        <div class="member-img">         
+                            <img src="${imgSrc}" alt="${member.name}">
+                        </div>
+                        <div class="member-info text-center">
+                            <div class="icons">
+                                <i class="fas fa-quote-left"></i>
+                            </div>
+                            <h6 class="member-name">${member.name}</h6>
+                            <span>${member.role}</span>
+                        </div>
+                    </div>
+                </div>`;
+        }).join('');
+
+        // 插入到页面
+        document.getElementById('members-container').innerHTML = memberHTML;
+    </script>
     <script>
     //     $('.some-list').simpleLoadMore({
 	//       item: 'div.row',
