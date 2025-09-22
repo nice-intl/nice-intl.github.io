@@ -90,9 +90,47 @@
             </div>
         </section>
         <!-- End Home Section -->
+<section id="introduction" data-scroll-index="1" class="section features-section section-padding services-section">
+            <div class="container">
+                <div class="row text-center mb-5">
+                    <div>
+                        <h2 class="section-title">Introduction</h2>
+                        <p class="section-subtitle"></p>
+                        <p class="section-subtitle">NLP Academic Exchange Platform (NICE) is a channel where we regularly invite researchers and startup founders to talk about their research or working experience, mainly in the field of artificial intelligence, especially natural language processing and large language models. We are a non-profit organization consisting mainly of young researchers in academicia.</p>
+                    </div>
+                </div>
+
+                <div class="row">
+                <!-- Feature Item 1 -->
+                    <div class="col-md-4 mb-4" data-aos-delay="0">
+                        <div class="feature-card">
+                            <!-- <div class="feature-icon-wrapper">🔬</div> -->
+                            <p class="feature-description" data-end="150" data-suffix="+">0+</p>
+                            <h3 class="feature-title">Invited Speakers</h3>
+                        </div>
+                    </div>
+
+                <!-- Feature Item 2 -->
+                    <div class="col-md-4 mb-4" data-aos-delay="100">
+                        <div class="feature-card">
+                            <!-- <div class="feature-icon-wrapper">🌐</div> -->
+                            <p class="feature-description" data-end="130000" data-suffix="+">0+</p>
+                            <h3 class="feature-title">Subscribers</h3>
+                        </div>
+                    </div>
+
+                <!-- Feature Item 3 -->
+                    <div class="col-md-4 mb-4" data-aos-delay="200">
+                        <div class="feature-card">
+                    
+                            <p class="feature-description" data-end="7000000" data-suffix="+">0+</p>
+                            <h3 class="feature-title">Views</h3>
+                        </div>
+                    </div>
+                </div>
 
         <!-- Services Section -->
-        <section data-scroll-index="1" class="section services-section" >
+        <!-- <section data-scroll-index="1" class="section services-section" >
             <div class="container">
                 <div class="row section-heading justify-content-center">
                     <div class="col-lg-6 text-center">
@@ -103,7 +141,7 @@
                     <p>NLP Academic Exchange Platform (NICE) is a channel where we regularly invite researchers and startup founders to talk about their research or working experience, mainly in the field of artificial intelligence, especially natural language processing and large language models. We are a non-profit organization consisting mainly of young researchers in academic.</p>                   
                 </div>
             </div>
-        </section>
+        </section> -->
         <!-- End Services Section -->
         <!-- Skill Section -->
         <section id="videosSection" data-scroll-index="2" class="section experience-section bg-gray"  style="background-image: url(assets/img/effect/bg-effect-2.png); background-repeat: no-repeat; background-size: cover;">      
@@ -643,6 +681,45 @@
     //             });
     //         }
 	//     });
+    </script>
+<script>
+    // 简易 CountUp 函数
+    function animateValue(element, start, end, duration) {
+        let startTime = null;
+        const range = end - start;
+        const step = (timestamp) => {
+        if (!startTime) startTime = timestamp;
+        const progress = Math.min((timestamp - startTime) / duration, 1);
+        const value = Math.floor(progress * range + start);
+        element.innerText = value.toLocaleString() + element.dataset.suffix;
+        if (progress < 1) window.requestAnimationFrame(step);
+        };
+        window.requestAnimationFrame(step);
+    }
+
+    // Intersection Observer
+    document.addEventListener("DOMContentLoaded", () => {
+        const cards = document.querySelectorAll(".feature-card");
+
+        const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+            const card = entry.target;
+            card.classList.add("visible");
+
+            const desc = card.querySelector(".feature-description");
+            const end = parseInt(desc.dataset.end);
+            animateValue(desc, 0, end, 2500);
+
+            observer.unobserve(card); // 只触发一次
+            }
+        });
+        }, { threshold: 0.2 });
+
+        cards.forEach(card => {
+        observer.observe(card);
+        });
+    });
     </script>
 </body>
 <!-- Body End -->
