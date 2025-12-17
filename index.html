@@ -43,6 +43,18 @@
                     <span></span>
                     <span></span>
                 </button>
+                    </ul>
+
+                    <!-- Second row: small icon links (placeholders) -->
+                    <div class="contact-links-wrapper text-center mt-3">
+                        <ul class="contact-links list-unstyled d-flex justify-content-center gap-3 mb-0">
+                            <li><a id="youtube-link" href="https://www.youtube.com/@niceaitalk" target="_blank" rel="noopener" aria-label="YouTube" title="YouTube" data-tooltip="YouTube"><i class="fab fa-youtube"></i></a></li>
+                            <li><a id="luma-link" href="https://luma.com/user/usr-YJvNOI7CseZ7zMm" target="_blank" rel="noopener" aria-label="Luma" title="Luma" data-tooltip="Luma"><i class="fas fa-layer-group"></i></a></li>
+                            <li><a id="x-link" href="https://x.com/academic_nice" target="_blank" rel="noopener" aria-label="X" title="X" data-tooltip="X"><i class="fab fa-x-twitter"></i></a></li>
+                            <li><a id="application-link" href="https://docs.google.com/forms/d/e/1FAIpQLScN7I69_qyI6dulHnhKV8m8bZJHkYhfXn5_tjYeyeHR0QvNbw/viewform?usp=publish-editor" target="_blank" rel="noopener" aria-label="Application" title="Application" data-tooltip="Application"><i class="fas fa-file-alt"></i></a></li>
+                            <li><a id="survey-link" href="https://docs.google.com/forms/d/1ol2gPMpmntqjomoCrMENyRzmvlgc2wno3fz9uATdWYg/edit" target="_blank" rel="noopener" aria-label="Survey" title="Survey" data-tooltip="Survey"><i class="fas fa-poll"></i></a></li>
+                        </ul>
+                    </div>
                 <!-- / -->
                 <!-- Top Menu -->
                 <div class="collapse navbar-collapse justify-content-end" id="navbar-collapse-toggle">
@@ -74,7 +86,7 @@
                         <div class="home-intro one-page-nav text-center text-lg-start">
                             <h6>👋, Welcome to</h6>
                             <h1><span id="type-it"></span></h1>
-                            <p>NLP Academic Exchange Platform.</p>
+                            <p>NICE AI Talk</p>
                             <div class="btn-bar">
                                 <a class="px-btn px-btn-theme" data-scroll-nav="1" href="#services">Let's Start</a>
                             </div>
@@ -96,7 +108,7 @@
                     <div>
                         <h2 class="section-title">Introduction</h2>
                         <p class="section-subtitle"></p>
-                        <p class="section-subtitle">NLP Academic Exchange Platform (NICE) is a channel where we regularly invite researchers and startup founders to talk about their research or working experience, mainly in the field of artificial intelligence, especially natural language processing and large language models. We are a non-profit organization consisting mainly of young researchers in academicia.</p>
+                        <p class="section-subtitle">Nexus for IntelligeCE (NICE) is a channel where we regularly invite researchers and startup founders to talk about their research or working experience, mainly in the field of artificial intelligence, especially natural language processing and large language models. We are a non-profit organization consisting mainly of young researchers in academicia.</p>
                     </div>
                 </div>
 
@@ -183,56 +195,31 @@
                     <div class="tag-list mt-3">
                         <span>Tags:</span>
                         <span class="tag badge bg-light text-dark me-2 mb-2">Agent</span>
+                        <span class="tag badge bg-light text-dark me-2 mb-2">Reasoning</span>
                     </div>
                 </div>
 
-                <div id="galleryWrapper" class="gallery-wrapper expanded">
-                    <div id="gallerySection" class="lightbox-gallery portfolio-box some-list collapse show">
-                        <div class="row gx-3 my-2 my-lg-3 gy-4 portfolio-box justify-content-around align-items-center" data-tags="">
-                            <div class="col-md-6 col-lg-5">
-                                <div class="portfolio-text">
-                                    <div class="number"><h4>3.&nbsp;</h4></div>
-                                    <h4><a href="https://www.youtube.com/watch?v=zhCNwc7kaew" target=" _blank">Breaking Barriers: Advancing Long Context LLMs</a>
-                                    </h4>
-                                </div>
+                    <div id="galleryWrapper" class="gallery-wrapper expanded">
+                        
+
+                        <!-- `gallerySection` will be populated from `assets/data/videos.json` -->
+                        <div id="gallerySection" class="lightbox-gallery portfolio-box some-list collapse show"></div>
+                        <!-- Controls: page size, show full page, pagination -->
+                        <div id="videoControls" class="d-flex justify-content-between align-items-center mb-3">
+                            <div class="d-flex align-items-center">
+                                <label class="me-2 mb-0">Page size:</label>
+                                <select id="pageSizeSelect" class="form-select form-select-sm" style="width: auto;">
+                                    <option value="3" selected>3</option>
+                                    <option value="5">5</option>
+                                    <option value="10">10</option>
+                                    <option value="15">15</option>
+                                    <option value="20">20</option>
+                                </select>
+                                <button id="toggleFullBtn" class="btn btn-outline-primary btn-sm ms-3">Show full page</button>
                             </div>
-                            <div class="col-md-6 col-lg-5 mx-4 mx-md-0">
-                                <p>Speaker: Zirui Liu (Assistant Professor@UMN)</p>
-                                <p>time: 2025.3.2</p>
-                            </div>
+                            <div id="paginationControls" class="d-flex align-items-center"></div>
                         </div>
-                        <div class="row gx-3 my-2 my-lg-3 gy-4 portfolio-box justify-content-around align-items-center" data-tags="">
-                            <div class="col-md-6 col-lg-5">
-                                <div class="portfolio-text">
-                                    <div class="number"><h4>2.&nbsp;</h4></div>
-                                    <h4><a href="https://www.youtube.com/watch?v=WlnBjvO-2WY" target=" _blank">Game-theoretic LLM: Agent Workflow for Negotiation Games</a>
-                                    </h4>
-                                </div>
-                            </div>
-                            <div class="col-md-6 col-lg-5 mx-4 mx-md-0">
-                                <p>Speaker: Wenyue Hua (UCSB)</p>
-                                <p>Host: Xin Xhang(PolyU)</p>
-                                <p>time: 2025.1.19</p>
-                            </div>
-                        </div>
-                        <div class="row gx-3 my-2 my-lg-3 gy-4 portfolio-box justify-content-around align-items-center" data-tags="Agent">
-                            <div class="col-md-6 col-lg-5">
-                                <div class="portfolio-text">
-                                    <div class="number"><h4>1.&nbsp;</h4></div>
-                                    <h4><a href="https://www.youtube.com/watch?v=0yBb8kIyLo8" target=" _blank">Future of Agent: Frontier Exploration of Basic Models and Intelligent Agents</a>
-                                        <!-- <span id="tag1" style="text-transform: none; background: rgba(104, 73, 216, 0.2);">Agent</span>   -->
-                                        <span class="tag badge me-2 mb-2" id="tag1" style="text-transform: none; background: rgba(104, 73, 216, 0.2);">Agent</span>  
-                                    </h4>
-                                </div>
-                            </div>
-                            <div class="col-md-6 col-lg-5 mx-4 mx-md-0">
-                                <p>Speaker: Shuyan Zhou(Meta)/Yu Gu(OSU)/Yongchao Chen(MIT & Harvard)</p>
-                                <p>Host: Wenyue Hua (UCSB)</p>
-                                <p>time: 2024.12.21</p>
-                            </div>
-                        </div>                  
                     </div>
-                </div>
 
                 <div class="text-center">
                     <button class="btn btn-outline-secondary mt-4" id="toggleGalleryBtn">Hide Gallery</button>
@@ -678,6 +665,148 @@
 
         // 插入到页面
         document.getElementById('members-container').innerHTML = memberHTML;
+    </script>
+    <script>
+    // Load videos from JSON and render
+    async function loadVideos() {
+        try {
+            const res = await fetch('assets/data/videos.json');
+            if (!res.ok) throw new Error(res.statusText);
+            const videos = await res.json();
+            // sort by id descending so largest id appears first
+            videos.sort((a, b) => (b.id || 0) - (a.id || 0));
+
+            const gallery = document.getElementById('gallerySection');
+            const pageSizeSelect = document.getElementById('pageSizeSelect');
+            const toggleFullBtn = document.getElementById('toggleFullBtn');
+            const paginationControls = document.getElementById('paginationControls');
+
+            let pageSize = 3; // default show 3 videos at a time
+            let currentPage = 1;
+            let showAll = false;
+            let filteredVideos = videos.slice();
+
+            function render(list) {
+                gallery.innerHTML = list.map((v, i) => `
+                    <div class="row gx-3 my-2 my-lg-3 gy-4 portfolio-box justify-content-around align-items-center" data-tags="${(v.tags||[]).join(' ')}">
+                        <div class="col-md-6 col-lg-5">
+                            <div class="portfolio-text">
+                                <div class="number"><h4>${v.id}.&nbsp;</h4></div>
+                                <h4><a href="${v.url}" target="_blank" rel="noopener">${v.title}</a>
+                                    ${(v.tags && v.tags.length) ? `<span class="tag badge me-2 mb-2">${v.tags[0]}</span>` : ''}
+                                </h4>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-5 mx-4 mx-md-0">
+                            <p>Speaker: ${v.speaker || ''}</p>
+                            ${v.host ? `<p>Host: ${v.host}</p>` : ''}
+                            <p>time: ${v.date || ''}</p>
+                        </div>
+                    </div>`).join('');
+            }
+
+            function renderPage() {
+                if (showAll) {
+                    render(filteredVideos);
+                } else {
+                    const total = filteredVideos.length;
+                    const totalPages = Math.max(1, Math.ceil(total / pageSize));
+                    if (currentPage > totalPages) currentPage = totalPages;
+                    const start = (currentPage - 1) * pageSize;
+                    const pageItems = filteredVideos.slice(start, start + pageSize);
+                    render(pageItems);
+                    updatePagination(totalPages);
+                }
+            }
+
+            function updatePagination(totalPages) {
+                paginationControls.innerHTML = '';
+                if (totalPages <= 1) return;
+
+                const prev = document.createElement('button');
+                prev.className = 'btn btn-sm btn-outline-secondary me-2';
+                prev.textContent = 'Prev';
+                prev.disabled = currentPage === 1;
+                prev.addEventListener('click', () => { currentPage = Math.max(1, currentPage - 1); renderPage(); });
+                paginationControls.appendChild(prev);
+
+                // page numbers (show up to 5 pages around current)
+                const startPage = Math.max(1, currentPage - 2);
+                const endPage = Math.min(totalPages, currentPage + 2);
+                for (let p = startPage; p <= endPage; p++) {
+                    const btn = document.createElement('button');
+                    btn.className = 'btn btn-sm me-1 ' + (p === currentPage ? 'btn-primary' : 'btn-outline-secondary');
+                    btn.textContent = p;
+                    btn.addEventListener('click', () => { currentPage = p; renderPage(); });
+                    paginationControls.appendChild(btn);
+                }
+
+                const next = document.createElement('button');
+                next.className = 'btn btn-sm btn-outline-secondary ms-2';
+                next.textContent = 'Next';
+                next.disabled = currentPage === totalPages;
+                next.addEventListener('click', () => { currentPage = Math.min(totalPages, currentPage + 1); renderPage(); });
+                paginationControls.appendChild(next);
+            }
+
+            // initial filtered list and render
+            filteredVideos = videos.slice();
+            renderPage();
+
+            // Page size control
+            if (pageSizeSelect) {
+                pageSizeSelect.addEventListener('change', (e) => {
+                    pageSize = parseInt(e.target.value, 10) || 3;
+                    showAll = false;
+                    currentPage = 1;
+                    toggleFullBtn.textContent = 'Show full page';
+                    renderPage();
+                });
+            }
+
+            // Toggle show all
+            if (toggleFullBtn) {
+                toggleFullBtn.addEventListener('click', () => {
+                    showAll = !showAll;
+                    toggleFullBtn.textContent = showAll ? 'Show paginated view' : 'Show full page';
+                    renderPage();
+                });
+            }
+
+            // Simple tag search: match tag substring or title
+            const searchBtn = document.getElementById('searchBtn');
+            const tagsInput = document.getElementById('tagsInput');
+            if (searchBtn && tagsInput) {
+                searchBtn.addEventListener('click', () => {
+                    const q = tagsInput.value.trim().toLowerCase();
+                    if (!q) {
+                        filteredVideos = videos.slice();
+                        currentPage = 1;
+                        return renderPage();
+                    }
+                    filteredVideos = videos.filter(v => {
+                        const tags = (v.tags || []).join(' ').toLowerCase();
+                        return tags.includes(q) || v.title.toLowerCase().includes(q) || (v.speaker||'').toLowerCase().includes(q);
+                    });
+                    currentPage = 1;
+                    renderPage();
+                });
+
+                // Make tag badges clickable to trigger a search
+                document.querySelectorAll('.tag').forEach(tagEl => {
+                    tagEl.style.cursor = 'pointer';
+                    tagEl.addEventListener('click', () => {
+                        const txt = tagEl.textContent.trim();
+                        tagsInput.value = txt;
+                        searchBtn.click();
+                    });
+                });
+            }
+        } catch (err) {
+            console.error('Failed to load videos:', err);
+        }
+    }
+    document.addEventListener('DOMContentLoaded', loadVideos);
     </script>
     <script>
     //     $('.some-list').simpleLoadMore({

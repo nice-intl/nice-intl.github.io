@@ -252,6 +252,71 @@ bootstrapģ��⣺http://www.bootstrapmb.com
       transform: translateY(-1px) scale(1.01);
     }
 
+/* Small icon row under Contact */
+.contact-links {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  list-style: none;
+  justify-content: center;
+  gap: 0.75rem;
+}
+.contact-links li { list-style: none; }
+.contact-links a {
+  width: 40px;
+  height: 40px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  background: rgba(255,255,255,0.04);
+  /* match header 'Home' default color */
+  color: #373737;
+  text-decoration: none;
+}
+.contact-links a:hover {
+  color: #FF651C; /* match header hover color */
+  background: rgba(255,255,255,0.08);
+}
+.contact-links a i { font-size: 18px; }
+
+@media (max-width: 767px) {
+  .contact-links a { width: 36px; height: 36px; }
+  .contact-links a i { font-size: 16px; }
+}
+
+/* Custom tooltip for small contact icons (uses data-tooltip attribute) */
+.contact-links a {
+  position: relative; /* needed for the tooltip */
+}
+.contact-links a::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  top: calc(100% + 6px);
+  left: 50%;
+  transform: translateX(-50%) translateY(6px);
+  background: transparent;
+  color: #FF651C; /* match header hover color */
+  padding: 0;
+  border-radius: 0;
+  white-space: nowrap;
+  font-size: 12px;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.12s ease, transform 0.12s ease, visibility 0.12s;
+  z-index: 40;
+}
+.contact-links a::before {
+  content: none; /* remove caret */
+}
+.contact-links a:hover::after,
+.contact-links a:focus::after {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(0);
+}
+
   .member-card:hover, .volunteer-card:hover {
     transform: translateY(-1px) scale(1.01);
   }
@@ -1006,6 +1071,35 @@ main {
       .contact-infos .col {
         padding-left: 1px;
         width: 30vw;}
+      .contact-infos h5 {
+        margin-left: 2vw;
+      }
+      .shrink {
+        max-width: 16vw;}
+    }
+
+      @media (max-width: 473px) {
+      .contact-infos{
+        max-width: 80%;
+        /* padding-left:15vw; */
+      }
+      .contact-infos .icon {
+        width: 16vw;
+        height: 16vw;
+      }
+      .contact-infos h5 {
+        font-size: 10px;
+        /* max-width: 16vw; */
+      }
+      .contact-infos p {
+        font-size: 12px;
+        /* max-width: 16vw; */
+        /* max-width: 20vw; */
+        margin-left: 2vw; }
+      .contact-infos .col {
+        padding-left: 6px;
+        width: auto;
+        max-width: 35vw;}
       .contact-infos h5 {
         margin-left: 2vw;
       }

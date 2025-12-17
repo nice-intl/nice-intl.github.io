@@ -1,0 +1,65 @@
+[
+  {
+    "id": 1,
+    "title": "Future of Agent: Frontier Exploration of Basic Models and Intelligent Agents",
+    "url": "https://www.youtube.com/watch?v=0yBb8kIyLo8",
+    "speaker": "Shuyan Zhou (Meta) / Yu Gu (OSU) / Yongchao Chen (MIT & Harvard)",
+    "host": "Wenyue Hua",
+    "date": "2024-12-21",
+    "tags": ["Agent"]
+  },
+  {
+    "id": 2,
+    "title": "Game-theoretic LLM: Agent Workflow for Negotiation Games",
+    "url": "https://www.youtube.com/watch?v=WlnBjvO-2WY",
+    "speaker": "Wenyue Hua (UCSB)",
+    "host": "Xin Xhang (PolyU)",
+    "date": "2025-01-19",
+    "tags": []
+  },
+  {
+    "id": 3,
+    "title": "Breaking Barriers: Advancing Long Context LLMs",
+    "url": "https://www.youtube.com/watch?v=zhCNwc7kaew",
+    "speaker": "Zirui Liu (Assistant Professor@UMN)",
+    "host": "",
+    "date": "2025-03-02",
+    "tags": []
+  },
+   {
+    "id": 110,
+    "title": "How to Mitigate Potential Bias in LLM-as-a-Judge? UDA: An Unsupervised Debiasing Alignment Framework without Human Labels",
+    "url": "https://www.bilibili.com/video/BV1uUmCBxE1N/",
+    "speaker": "Yang Zhang (Peking University)",
+    "host": "Qiyuan Zhang",
+    "date": "2025-12-06",
+    "tags": []
+  },
+  {
+    "id": 111,
+    "title": "Towards Honest Language Models for Deductive Reasoning",
+    "url": "https://www.bilibili.com/video/BV1pPmyBLEuE/",
+    "speaker": "Jiarui Liu (Carnegie Mellon University)",
+    "host": "Wenyue Hua",
+    "date": "2025-12-09",
+    "tags": ["Reasoning"]
+  },
+  {
+    "id": 112,
+    "title": "Open Agent Networks and Explorations of Agent Payments",
+    "url": "https://www.bilibili.com/video/BV1nTmyBVEzx/",
+    "speaker": "Gaowei Chang (Hangzhou Vector Consensus)",
+    "host": "Wenyue Hua",
+    "date": "2025-12-13",
+    "tags": ["Agent"]
+  },
+  {
+    "id": 113,
+    "title": "Is Chain-of-Thought Just a Mirage? Uncovering the Truth of LLM Reasoning from Data Distributions",
+    "url": "https://www.bilibili.com/video/BV1wNmyByE5g/",
+    "speaker": "Chengshuai Zhao (Arizona State University)",
+    "host": "Haolun Wu",
+    "date": "2025-12-14",
+    "tags": ["Reasoning"]
+  }
+]
