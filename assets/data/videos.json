@@ -1,65 +1,956 @@
 [
   {
-    "id": 1,
-    "title": "Future of Agent: Frontier Exploration of Basic Models and Intelligent Agents",
-    "url": "https://www.youtube.com/watch?v=0yBb8kIyLo8",
-    "speaker": "Shuyan Zhou (Meta) / Yu Gu (OSU) / Yongchao Chen (MIT & Harvard)",
+    "id": 113,
+    "title": "Is Chain-of-Thought Reasoning a Mirage? Unveiling the Truth of LLM Reasoning from a Data Distribution Perspective.",
+    "url": "https://www.youtube.com/watch?v=V2w6cA7jgyQ",
+    "speaker": "Chengshuai Zhao",
+    "host": "Haolun Wu",
+    "date": "2025-12-14",
+    "tags": []
+  },
+  {
+    "id": 112,
+    "title": "Exploring Open Agent Networks and Agent Payments",
+    "url": "https://www.bilibili.com/video/BV1nTmyBVEzx/?vd_source=8b57bea088e2ce54b5ce7af3b14f00ed",
+    "speaker": "Gaowei Chang",
     "host": "Wenyue Hua",
-    "date": "2024-12-21",
-    "tags": ["Agent"]
-  },
-  {
-    "id": 2,
-    "title": "Game-theoretic LLM: Agent Workflow for Negotiation Games",
-    "url": "https://www.youtube.com/watch?v=WlnBjvO-2WY",
-    "speaker": "Wenyue Hua (UCSB)",
-    "host": "Xin Xhang (PolyU)",
-    "date": "2025-01-19",
-    "tags": []
-  },
-  {
-    "id": 3,
-    "title": "Breaking Barriers: Advancing Long Context LLMs",
-    "url": "https://www.youtube.com/watch?v=zhCNwc7kaew",
-    "speaker": "Zirui Liu (Assistant Professor@UMN)",
-    "host": "",
-    "date": "2025-03-02",
-    "tags": []
-  },
-   {
-    "id": 110,
-    "title": "How to Mitigate Potential Bias in LLM-as-a-Judge? UDA: An Unsupervised Debiasing Alignment Framework without Human Labels",
-    "url": "https://www.bilibili.com/video/BV1uUmCBxE1N/",
-    "speaker": "Yang Zhang (Peking University)",
-    "host": "Qiyuan Zhang",
-    "date": "2025-12-06",
+    "date": "2025-12-13",
     "tags": []
   },
   {
     "id": 111,
     "title": "Towards Honest Language Models for Deductive Reasoning",
-    "url": "https://www.bilibili.com/video/BV1pPmyBLEuE/",
-    "speaker": "Jiarui Liu (Carnegie Mellon University)",
+    "url": "https://www.youtube.com/watch?v=U3mCNd3GlK0",
+    "speaker": "Jiarui Liu",
     "host": "Wenyue Hua",
     "date": "2025-12-09",
-    "tags": ["Reasoning"]
+    "tags": []
   },
   {
-    "id": 112,
-    "title": "Open Agent Networks and Explorations of Agent Payments",
-    "url": "https://www.bilibili.com/video/BV1nTmyBVEzx/",
-    "speaker": "Gaowei Chang (Hangzhou Vector Consensus)",
-    "host": "Wenyue Hua",
-    "date": "2025-12-13",
-    "tags": ["Agent"]
+    "id": 110,
+    "title": "Mitigating LLM-as-a-Judge Bias: UDA – An Unsupervised Debiasing and Alignment Framework Without Human Annotation",
+    "url": "https://www.bilibili.com/video/BV1uUmCBxE1N/?vd_source=8b57bea088e2ce54b5ce7af3b14f00ed",
+    "speaker": "Yang Zhang",
+    "host": "Qiyuan Zhang",
+    "date": "2025-12-06",
+    "tags": []
   },
   {
-    "id": 113,
-    "title": "Is Chain-of-Thought Just a Mirage? Uncovering the Truth of LLM Reasoning from Data Distributions",
-    "url": "https://www.bilibili.com/video/BV1wNmyByE5g/",
-    "speaker": "Chengshuai Zhao (Arizona State University)",
+    "id": 108,
+    "title": "Analyzing the Uncertainty of LLM-as-a-Judge: An Interval Assessment Based on Conformal Prediction",
+    "url": "https://www.youtube.com/watch?v=gOHEjeV-Dog",
+    "speaker": "Huanxin Sheng",
     "host": "Haolun Wu",
-    "date": "2025-12-14",
-    "tags": ["Reasoning"]
+    "date": "2025-11-30",
+    "tags": []
+  },
+  {
+    "id": 107,
+    "title": "Thinking with Video: Video Generation as a New Paradigm for Multimodal Reasoning",
+    "url": "https://www.bilibili.com/video/BV1vp27BWEEj/?vd_source=8b57bea088e2ce54b5ce7af3b14f00ed",
+    "speaker": "Jingqi Tong",
+    "host": "Zhaochen Su",
+    "date": "2025-11-28",
+    "tags": []
+  },
+  {
+    "id": 106,
+    "title": "When Logic Meets Images: Can Multimodal Large Models Perform Rigorous Logical Reasoning?",
+    "url": "https://www.bilibili.com/video/BV1V427BQEJg/?vd_source=8b57bea088e2ce54b5ce7af3b14f00ed",
+    "speaker": "Jundong Xu",
+    "host": "Meng Luo",
+    "date": "2025-11-26",
+    "tags": []
+  },
+  {
+    "id": 105,
+    "title": "Building Robust and Trustworthy Foundation Models",
+    "url": "https://www.youtube.com/watch?v=U0rDRX7ZkYM",
+    "speaker": "Yuji Zhang",
+    "host": "Haolun Wu",
+    "date": "2025-11-23",
+    "tags": []
+  },
+  {
+    "id": 104,
+    "title": "Why is Attention Biased? Demystifying “Positional Bias” in Transformers",
+    "url": "https://www.bilibili.com/video/BV17Z27B8EZn/?vd_source=8b57bea088e2ce54b5ce7af3b14f00ed",
+    "speaker": "Xinyi Wu",
+    "host": "",
+    "date": "2025-11-22",
+    "tags": []
+  },
+  {
+    "id": 103,
+    "title": "ColorAgent: Building Robust, Personalized, and Interactive OS Agents",
+    "url": "https://www.bilibili.com/video/BV15P2EBxERn/?vd_source=8b57bea088e2ce54b5ce7af3b14f00ed",
+    "speaker": "Ning Li",
+    "host": "Haodong Zhao",
+    "date": "2025-11-20",
+    "tags": []
+  },
+  {
+    "id": 102,
+    "title": "Million-Level Agent Training Trajectories! A Novel Agent Data Protocol Opens a New Path for LLM Agent Fine-Tuning",
+    "url": "https://www.youtube.com/watch?v=Me8PURJHcXs",
+    "speaker": "Yueqi Song",
+    "host": "Wenyue Hua",
+    "date": "2025-11-16",
+    "tags": []
+  },
+  {
+    "id": 100,
+    "title": "AI in Practice: Simulation, Diagnosis, and Medical Reasoning",
+    "url": "https://www.bilibili.com/video/BV1d3yYBFEo5/?vd_source=8b57bea088e2ce54b5ce7af3b14f00ed",
+    "speaker": "Lizhou Fan",
+    "host": "Xinxin Lin",
+    "date": "2025-10-26",
+    "tags": []
+  },
+  {
+    "id": 99,
+    "title": "Early-Experience Strategy: Enabling Faster and More Stable Learning for Language Agents",
+    "url": "https://www.bilibili.com/video/BV1RGyYBbE2F/?vd_source=8b57bea088e2ce54b5ce7af3b14f00ed",
+    "speaker": "Kai Zhang",
+    "host": "Wenyue Hua",
+    "date": "2025-10-26",
+    "tags": []
+  },
+  {
+    "id": 98,
+    "title": "A Deep Dive into Agent Protocols: MCP, A2A, ANP, and AP2",
+    "url": "https://www.bilibili.com/video/BV1rFyYBqERf/?vd_source=8b57bea088e2ce54b5ce7af3b14f00ed",
+    "speaker": "Gaowei Chang",
+    "host": "Wenyue Hua",
+    "date": "2025-10-25",
+    "tags": []
+  },
+  {
+    "id": 96,
+    "title": "New Finding: Your AI Agent May Be Evolving in the Wrong Direction!",
+    "url": "https://www.bilibili.com/video/BV1oUWdz8EgS/?vd_source=8b57bea088e2ce54b5ce7af3b14f00ed",
+    "speaker": "Qihan Ren",
+    "host": "Cheng Qian",
+    "date": "2025-10-17",
+    "tags": []
+  },
+  {
+    "id": 95,
+    "title": "\"Knowing Others Is Wisdom\": Towards User-Centric Agent Interaction and Training",
+    "url": "https://www.bilibili.com/video/BV1f1WdzaEJs/?vd_source=8b57bea088e2ce54b5ce7af3b14f00ed",
+    "speaker": "Cheng Qian",
+    "host": "Zhaochen Su",
+    "date": "2025-10-15",
+    "tags": []
+  },
+  {
+    "id": 94,
+    "title": "LightMem: A Lightweight and Pluggable Memory System for Large Models",
+    "url": "https://www.bilibili.com/video/BV19RWdzxEsR/?vd_source=8b57bea088e2ce54b5ce7af3b14f00ed",
+    "speaker": "Jizhan Fang",
+    "host": "Shuofei Qiao",
+    "date": "2025-10-12",
+    "tags": []
+  },
+  {
+    "id": 93,
+    "title": "Memory-R1: Teaching Large Language Models to Manage and Utilize Memory via Reinforcement Learning",
+    "url": "https://www.bilibili.com/video/BV15s4UzyEPR/?vd_source=8b57bea088e2ce54b5ce7af3b14f00ed",
+    "speaker": "Sikuan Yan",
+    "host": "Ercong Nie",
+    "date": "2025-10-11",
+    "tags": []
+  },
+  {
+    "id": 92,
+    "title": "A-Mem: An Autonomous Memory System for Large Language Model Agents",
+    "url": "https://www.bilibili.com/video/BV11HxXzuExk/?vd_source=8b57bea088e2ce54b5ce7af3b14f00ed",
+    "speaker": "Wujiang Xu",
+    "host": "Wenyue Hua",
+    "date": "2025-10-04",
+    "tags": []
+  },
+  {
+    "id": 91,
+    "title": "No Human Annotation Required! DuPO: A Dual Learning Framework for Reliable Self-Evolution of Large Models",
+    "url": "https://www.bilibili.com/video/BV1papwzUEWj/?vd_source=8b57bea088e2ce54b5ce7af3b14f00ed",
+    "speaker": "Shuaijie She",
+    "host": "Mingyang Wang",
+    "date": "2025-09-13",
+    "tags": []
+  },
+  {
+    "id": 90,
+    "title": "LLM Alignment from an Energy Perspective: Unified Understanding from Training to Inference",
+    "url": "https://www.bilibili.com/video/BV1g7HrzBEyn/?spm_id_from=333.1387.upload.video_card.click&vd_source=8b57bea088e2ce54b5ce7af3b14f00ed",
+    "speaker": "Yige Yuan",
+    "host": "Boyang Xue",
+    "date": "2025-09-11",
+    "tags": []
+  },
+  {
+    "id": 89,
+    "title": "Agentic Web: Weaving the Next Web with AI Agents",
+    "url": "https://www.bilibili.com/video/BV145adzAE8c/?spm_id_from=333.1387.upload.video_card.click&vd_source=8b57bea088e2ce54b5ce7af3b14f00ed",
+    "speaker": "Yingxuan Yang",
+    "host": "Wenyue Hua",
+    "date": "2025-09-08",
+    "tags": []
+  },
+  {
+    "id": 88,
+    "title": "Birth of a Top Conference Paper: Practical Experience from Zero to One",
+    "url": "https://www.bilibili.com/video/BV1cWYjzmENy/?spm_id_from=333.1387.upload.video_card.click&vd_source=8b57bea088e2ce54b5ce7af3b14f00ed",
+    "speaker": "Jialong Wu",
+    "host": "",
+    "date": "2025-09-07",
+    "tags": []
+  },
+  {
+    "id": 86,
+    "title": "Limitations and Prospects of Large Language Models in Translation",
+    "url": "https://www.bilibili.com/video/BV1XoYVz4ETL/?spm_id_from=333.1387.upload.video_card.click&vd_source=8b57bea088e2ce54b5ce7af3b14f00ed",
+    "speaker": "Di Wu",
+    "host": "Ercong Nie",
+    "date": "2025-09-05",
+    "tags": []
+  },
+  {
+    "id": 85,
+    "title": "ARPO: Enabling Your Agent to Explore One More Step at Critical Moments!",
+    "url": "https://www.bilibili.com/video/BV1mxa8zfEiu/?spm_id_from=333.1387.upload.video_card.click&vd_source=8b57bea088e2ce54b5ce7af3b14f00ed",
+    "speaker": "Guanting Dong",
+    "host": "Hongru Wang",
+    "date": "2025-09-03",
+    "tags": []
+  },
+  {
+    "id": 84,
+    "title": "Can Transformer Models Reason by Connecting Discrete Knowledge from Training Data?",
+    "url": "https://www.bilibili.com/video/BV1UoaAzXEwn/?spm_id_from=333.1387.upload.video_card.click&vd_source=8b57bea088e2ce54b5ce7af3b14f00ed",
+    "speaker": "Yutong Yin",
+    "host": "",
+    "date": "2025-08-31",
+    "tags": []
+  },
+  {
+    "id": 83,
+    "title": "Decoding LLM Neural Circuits: New Progress in Mechanistic Interpretability",
+    "url": "https://www.bilibili.com/video/BV1ahaPz8EMf/?spm_id_from=333.1387.upload.video_card.click&vd_source=8b57bea088e2ce54b5ce7af3b14f00ed",
+    "speaker": "Zeping Yu",
+    "host": "Ercong Nie",
+    "date": "2025-08-30",
+    "tags": []
+  },
+  {
+    "id": 82,
+    "title": "Breaking Long Video Understanding Limits! Video-XL & Video-XL-2: Hour-Level Ultra-Long Video Models",
+    "url": "https://www.bilibili.com/video/BV1mqaVz7E6k/?spm_id_from=333.1387.upload.video_card.click&vd_source=8b57bea088e2ce54b5ce7af3b14f00ed",
+    "speaker": "Yan Shu",
+    "host": "Jiayuan Rao",
+    "date": "2025-08-28",
+    "tags": []
+  },
+  {
+    "id": 81,
+    "title": "From Image Captioning to Drawing to Think: AI's Cognitive Leap",
+    "url": "https://www.bilibili.com/video/BV1sqeyzvEgU/?spm_id_from=333.1387.upload.video_card.click&vd_source=8b57bea088e2ce54b5ce7af3b14f00ed",
+    "speaker": "Zhaochen Su",
+    "host": "Wenyue Hua",
+    "date": "2025-08-24",
+    "tags": []
+  },
+  {
+    "id": 80,
+    "title": "ICCV 2025 Paper Sharing",
+    "url": "https://www.bilibili.com/video/BV1eLeyzSEUq/?spm_id_from=333.1387.upload.video_card.click&vd_source=8b57bea088e2ce54b5ce7af3b14f00ed",
+    "speaker": "Yusen Zhang",
+    "host": "Jiayuan Rao",
+    "date": "2025-08-24",
+    "tags": []
+  },
+  {
+    "id": 79,
+    "title": "Rethinking the Reasoning Capabilities of Large Language Models",
+    "url": "https://www.bilibili.com/video/BV1eivKz1ECK/?spm_id_from=333.1387.upload.video_card.click&vd_source=8b57bea088e2ce54b5ce7af3b14f00ed",
+    "speaker": "Xiang Yue",
+    "host": "",
+    "date": "2025-08-23",
+    "tags": []
+  },
+  {
+    "id": 78,
+    "title": "ASI",
+    "url": "https://www.bilibili.com/video/BV1BrYpzbE8M/?spm_id_from=333.1387.upload.video_card.click&vd_source=8b57bea088e2ce54b5ce7af3b14f00ed",
+    "speaker": "Huanang Gao",
+    "host": "Hongru Wang",
+    "date": "2025-08-16",
+    "tags": []
+  },
+  {
+    "id": 77,
+    "title": "How Do Large Models Learn? The Art of Balancing Memorization and Generalization",
+    "url": "https://www.bilibili.com/video/BV1nRtRzGEt8/?spm_id_from=333.1387.upload.video_card.click&vd_source=8b57bea088e2ce54b5ce7af3b14f00ed",
+    "speaker": "Xinyi Wang",
+    "host": "",
+    "date": "2025-08-09",
+    "tags": []
+  },
+  {
+    "id": 76,
+    "title": "The Windows of LLM Agents is Here! How AIOS Builds the Ecosystem Foundation",
+    "url": "https://www.bilibili.com/video/BV1Z88EzzEFw/?spm_id_from=333.1387.upload.video_card.click&vd_source=8b57bea088e2ce54b5ce7af3b14f00ed",
+    "speaker": "Kai Mei",
+    "host": "Wenyue Hua",
+    "date": "2025-07-26",
+    "tags": []
+  },
+  {
+    "id": 75,
+    "title": "Efficient LLMs: From Training Acceleration to Autonomous Agent Tasks",
+    "url": "https://www.bilibili.com/video/BV1vubCzTEBe/?spm_id_from=333.1387.upload.video_card.click&vd_source=8b57bea088e2ce54b5ce7af3b14f00ed",
+    "speaker": "Jialong Wu",
+    "host": "Wenyue Hua",
+    "date": "2025-07-20",
+    "tags": []
+  },
+  {
+    "id": 74,
+    "title": "From Safety Alignment to Deceptive Alignment in Large Models",
+    "url": "https://www.bilibili.com/video/BV1ERuAz1EGy/?spm_id_from=333.1387.upload.video_card.click&vd_source=8b57bea088e2ce54b5ce7af3b14f00ed",
+    "speaker": "Jiaming Ji",
+    "host": "Boyang Xue",
+    "date": "2025-07-11",
+    "tags": []
+  },
+  {
+    "id": 73,
+    "title": "Visual Intelligence-Driven Multimodal Alignment and Reasoning",
+    "url": "https://www.bilibili.com/video/BV1Rp3Bz3EPy/?spm_id_from=333.1387.upload.video_card.click&vd_source=8b57bea088e2ce54b5ce7af3b14f00ed",
+    "speaker": "Siyin Wang",
+    "host": "Lai Wei",
+    "date": "2025-07-04",
+    "tags": []
+  },
+  {
+    "id": 71,
+    "title": "SwS: Can RL Training Optimize Model Weaknesses Without External Knowledge?",
+    "url": "https://www.bilibili.com/video/BV1L2gZzYEwD/?spm_id_from=333.1387.upload.video_card.click&vd_source=8b57bea088e2ce54b5ce7af3b14f00ed",
+    "speaker": "Xiao Liang",
+    "host": "Zhongzhi Li",
+    "date": "2025-06-27",
+    "tags": []
+  },
+  {
+    "id": 70,
+    "title": "Interpretability Paper Sharing @ICML&ACL2025",
+    "url": "https://www.bilibili.com/video/BV1aqK3zEEFG/?spm_id_from=333.1387.upload.video_card.click&vd_source=8b57bea088e2ce54b5ce7af3b14f00ed",
+    "speaker": "Qiyao (Chi-Yao) Wei",
+    "host": "Mingyu Jin",
+    "date": "2025-06-22",
+    "tags": []
+  },
+  {
+    "id": 69,
+    "title": "Safety/Trustworthy Paper Sharing @ICML&ACL2025",
+    "url": "https://www.bilibili.com/video/BV18dNszSER6/?spm_id_from=333.1387.upload.video_card.click&vd_source=8b57bea088e2ce54b5ce7af3b14f00ed",
+    "speaker": "Weidi Luo",
+    "host": "Boyang Xue",
+    "date": "2025-06-18",
+    "tags": []
+  },
+  {
+    "id": 68,
+    "title": "Agent Paper Sharing @ICML&ACL2025",
+    "url": "https://www.bilibili.com/video/BV1iHNvzXEin/?spm_id_from=333.1387.upload.video_card.click&vd_source=8b57bea088e2ce54b5ce7af3b14f00ed",
+    "speaker": "Shuofei Qiao",
+    "host": "Cheng Qian",
+    "date": "2025-06-14",
+    "tags": []
+  },
+  {
+    "id": 67,
+    "title": "Efficiency Paper Sharing @ICML&ACL2025",
+    "url": "https://www.bilibili.com/video/BV1BENvzRETv/?spm_id_from=333.1387.upload.video_card.click&vd_source=8b57bea088e2ce54b5ce7af3b14f00ed",
+    "speaker": "Jiale Fu",
+    "host": "Heming Xia",
+    "date": "2025-06-13",
+    "tags": []
+  },
+  {
+    "id": 66,
+    "title": "Evaluation Paper Sharing @ICML&ACL2025",
+    "url": "https://www.bilibili.com/video/BV1WUNvzNEnB/?spm_id_from=333.1387.upload.video_card.click&vd_source=8b57bea088e2ce54b5ce7af3b14f00ed",
+    "speaker": "Xiaobo Liang",
+    "host": "Dawei Li",
+    "date": "2025-06-11",
+    "tags": []
+  },
+  {
+    "id": 65,
+    "title": "Don't Trap AI in Test Questions: Breaking Free from Exam-Oriented Constraints",
+    "url": "https://www.bilibili.com/video/BV1JoNvzfEwA/?spm_id_from=333.1387.upload.video_card.click&vd_source=8b57bea088e2ce54b5ce7af3b14f00ed",
+    "speaker": "Yuhang Zhou",
+    "host": "Dawei Li",
+    "date": "2025-06-10",
+    "tags": []
+  },
+  {
+    "id": 64,
+    "title": "Reasoning Paper Sharing @ICML&ACL2025",
+    "url": "https://www.bilibili.com/video/BV1bAMAz4EPu/?spm_id_from=333.1387.upload.video_card.click&vd_source=8b57bea088e2ce54b5ce7af3b14f00ed",
+    "speaker": "Yafu Li",
+    "host": "Hongru Wang",
+    "date": "2025-06-09",
+    "tags": []
+  },
+  {
+    "id": 63,
+    "title": "Agent Framework Panel - OWL, Alita, AG2",
+    "url": "https://www.bilibili.com/video/BV1sKMcz2ECb/?spm_id_from=333.1387.upload.video_card.click&vd_source=8b57bea088e2ce54b5ce7af3b14f00ed",
+    "speaker": "Mengkang Hu",
+    "host": "Wenyue Hua",
+    "date": "2025-06-08",
+    "tags": []
+  },
+  {
+    "id": 62,
+    "title": "Multimodal Paper Sharing @ICML&ACL2025",
+    "url": "https://www.bilibili.com/video/BV1H5Mcz3ETP/?spm_id_from=333.1387.upload.video_card.click&vd_source=8b57bea088e2ce54b5ce7af3b14f00ed",
+    "speaker": "Hao Fei",
+    "host": "Jiayuan Rao",
+    "date": "2025-06-07",
+    "tags": []
+  },
+  {
+    "id": 60,
+    "title": "Time-R1 Emerges! Enabling AI to Truly Understand Time",
+    "url": "https://www.bilibili.com/video/BV1j1TNzkEjC/?spm_id_from=333.1387.upload.video_card.click&vd_source=8b57bea088e2ce54b5ce7af3b14f00ed",
+    "speaker": "Zijia Liu",
+    "host": "Heming Xia",
+    "date": "2025-06-05",
+    "tags": []
+  },
+  {
+    "id": 59,
+    "title": "Agents Enter Next Chapter! Alita: Self-Evolving AI Without Manual Presets",
+    "url": "https://www.bilibili.com/video/BV1Ux78zZEUB/?spm_id_from=333.1387.upload.video_card.click&vd_source=8b57bea088e2ce54b5ce7af3b14f00ed",
+    "speaker": "Jiahao Qiu",
+    "host": "Wenyue Hua",
+    "date": "2025-06-01",
+    "tags": []
+  },
+  {
+    "id": 58,
+    "title": "Test-Time Scaling Survey: Systematically Understanding What, How, Where, and How Well!",
+    "url": "https://www.bilibili.com/video/BV18QVbz7Eq4/?spm_id_from=333.1387.upload.video_card.click&vd_source=8b57bea088e2ce54b5ce7af3b14f00ed",
+    "speaker": "Qiyuan Zhang",
+    "host": "Wenyue Hua",
+    "date": "2025-05-03",
+    "tags": []
+  },
+  {
+    "id": 57,
+    "title": "LUFFY: RL Training Method for Immediate Learning and Application",
+    "url": "https://www.bilibili.com/video/BV1xZVbzVEzj/?spm_id_from=333.1387.upload.video_card.click&vd_source=8b57bea088e2ce54b5ce7af3b14f00ed",
+    "speaker": "Jianhao Yan",
+    "host": "",
+    "date": "2025-04-29",
+    "tags": []
+  },
+  {
+    "id": 56,
+    "title": "RL is All Tool Learning Need",
+    "url": "https://www.bilibili.com/video/BV1yRLqzNEss/?spm_id_from=333.1387.upload.video_card.click&vd_source=8b57bea088e2ce54b5ce7af3b14f00ed",
+    "speaker": "Cheng Qian",
+    "host": "",
+    "date": "2025-04-27",
+    "tags": []
+  },
+  {
+    "id": 55,
+    "title": "Survey: Progress and Challenges in Foundation Agents",
+    "url": "https://www.bilibili.com/video/BV1QdLwz2EaT/?spm_id_from=333.1387.upload.video_card.click&vd_source=8b57bea088e2ce54b5ce7af3b14f00ed",
+    "speaker": "Jiayi Zhang",
+    "host": "Zhaochen Su",
+    "date": "2025-04-19",
+    "tags": []
+  },
+  {
+    "id": 54,
+    "title": "AION-1: First Large-Scale Multimodal Foundation Model for Astronomy",
+    "url": "https://www.bilibili.com/video/BV1hDoLYVEV9/?spm_id_from=333.1387.upload.video_card.click&vd_source=8b57bea088e2ce54b5ce7af3b14f00ed",
+    "speaker": "Oliver Liu",
+    "host": "Wenyue Hua",
+    "date": "2025-04-13",
+    "tags": []
+  },
+  {
+    "id": 53,
+    "title": "Evidence-Based Framework for Automated Marketing Copywriting",
+    "url": "https://www.bilibili.com/video/BV11DZBYvE7q/?spm_id_from=333.1387.upload.video_card.click&vd_source=8b57bea088e2ce54b5ce7af3b14f00ed",
+    "speaker": "Chenghao Yang",
+    "host": "Wenyue Hua",
+    "date": "2025-03-30",
+    "tags": []
+  },
+  {
+    "id": 52,
+    "title": "Agent Theme Sharing @ICLR2025",
+    "url": "https://www.bilibili.com/video/BV1YLZzYEErw/?spm_id_from=333.1387.upload.video_card.click&vd_source=8b57bea088e2ce54b5ce7af3b14f00ed",
+    "speaker": "Jiajian Li",
+    "host": "Wenyue Hua",
+    "date": "2025-03-29",
+    "tags": []
+  },
+  {
+    "id": 51,
+    "title": "Reasoning Evolution of Multimodal LLMs: Comprehensive Survey on Multimodal CoT",
+    "url": "https://www.bilibili.com/video/BV11JoLYeEH3/?spm_id_from=333.1387.upload.video_card.click&vd_source=8b57bea088e2ce54b5ce7af3b14f00ed",
+    "speaker": "Yaoting Wang",
+    "host": "Zhaochen Su",
+    "date": "2025-03-27",
+    "tags": []
+  },
+  {
+    "id": 50,
+    "title": "Efficient New Energy for Large Models: Data Synthesis and Automated Evaluation",
+    "url": "https://www.bilibili.com/video/BV1RCoBYjEw9/?spm_id_from=333.1387.upload.video_card.click&vd_source=8b57bea088e2ce54b5ce7af3b14f00ed",
+    "speaker": "Yue Huang",
+    "host": "Dawei Li",
+    "date": "2025-03-23",
+    "tags": []
+  },
+  {
+    "id": 49,
+    "title": "Large Model Alignment Paper Session @ICLR2025",
+    "url": "https://www.bilibili.com/video/BV1LwXsYPEsV/?spm_id_from=333.1387.upload.video_card.click&vd_source=8b57bea088e2ce54b5ce7af3b14f00ed",
+    "speaker": "Zhihui Xie",
+    "host": "Boyang Xue",
+    "date": "2025-03-22",
+    "tags": []
+  },
+  {
+    "id": 48,
+    "title": "Editing/Reasoning/Interpretability Sharing @ICLR2025",
+    "url": "https://www.bilibili.com/video/BV1oRXHYFEy4/?spm_id_from=333.1387.upload.video_card.click&vd_source=8b57bea088e2ce54b5ce7af3b14f00ed",
+    "speaker": "Jiamu Zheng",
+    "host": "Mengru Wang",
+    "date": "2025-03-16",
+    "tags": []
+  },
+  {
+    "id": 47,
+    "title": "Multimodal Paper Sharing @ICLR2025",
+    "url": "https://www.bilibili.com/video/BV16tXpYqEea/?spm_id_from=333.1387.upload.video_card.click&vd_source=8b57bea088e2ce54b5ce7af3b14f00ed",
+    "speaker": "Shitong Shao",
+    "host": "Jiayuan Rao",
+    "date": "2025-03-15",
+    "tags": []
+  },
+  {
+    "id": 45,
+    "title": "How to Create Rational LLM-Based Agents? Using Game-Theoretic Workflows!",
+    "url": "https://www.bilibili.com/video/BV14y9FYHEBf/?spm_id_from=333.1387.upload.video_card.click&vd_source=8b57bea088e2ce54b5ce7af3b14f00ed",
+    "speaker": "Wenyue Hua",
+    "host": "Xin Zhang",
+    "date": "2025-01-19",
+    "tags": []
+  },
+  {
+    "id": 44,
+    "title": "Towards Multilingual and Multitask Medical LLMs: Exploring Medical Foundation Models",
+    "url": "https://www.bilibili.com/video/BV1toXoY1Ev9/?spm_id_from=333.1387.upload.video_card.click&vd_source=8b57bea088e2ce54b5ce7af3b14f00ed",
+    "speaker": "Pengcheng Qiu",
+    "host": "Ercong Nie",
+    "date": "2025-01-18",
+    "tags": []
+  },
+  {
+    "id": 43,
+    "title": "Career Choices for PhDs: Domestic vs International, Academia vs Industry vs Entrepreneurship",
+    "url": "https://www.bilibili.com/video/BV1mYcDejEY7/?spm_id_from=333.1387.upload.video_card.click&vd_source=8b57bea088e2ce54b5ce7af3b14f00ed",
+    "speaker": "Linfeng Zhang",
+    "host": "Cunxiang Wang",
+    "date": "2025-01-11",
+    "tags": []
+  },
+  {
+    "id": 42,
+    "title": "What if LMs Don't Listen? Exploring Format Faithfulness",
+    "url": "https://www.bilibili.com/video/BV1h8rkYmEWc/?spm_id_from=333.1387.upload.video_card.click&vd_source=8b57bea088e2ce54b5ce7af3b14f00ed",
+    "speaker": "Jiashu Yao",
+    "host": "Boyang Xue",
+    "date": "2025-01-03",
+    "tags": []
+  },
+  {
+    "id": 41,
+    "title": "New Perspectives on LLM Evaluation: Theoretical Metrics and Downstream Applications",
+    "url": "https://www.bilibili.com/video/BV1A66nYBEAz/?spm_id_from=333.1387.upload.video_card.click&vd_source=8b57bea088e2ce54b5ce7af3b14f00ed",
+    "speaker": "Lai Wei",
+    "host": "Boyang Xue",
+    "date": "2024-12-28",
+    "tags": []
+  },
+  {
+    "id": 40,
+    "title": "Automated Model and Data Cards: Towards Responsible AI",
+    "url": "https://www.bilibili.com/video/BV1yd6hYTEZe/?spm_id_from=333.1387.upload.video_card.click&vd_source=8b57bea088e2ce54b5ce7af3b14f00ed",
+    "speaker": "Jiarui Liu",
+    "host": "Jiayuan Rao",
+    "date": "2024-12-25",
+    "tags": []
+  },
+  {
+    "id": 39,
+    "title": "Future of Agent: Frontier Exploration of Foundation Models and Intelligent Agents",
+    "url": "https://www.bilibili.com/video/BV1yvCNYiEFS/?spm_id_from=333.1387.upload.video_card.click&vd_source=8b57bea088e2ce54b5ce7af3b14f00ed",
+    "speaker": "Shuyan Zhou",
+    "host": "Wenyue Hua",
+    "date": "2024-12-21",
+    "tags": []
+  },
+  {
+    "id": 38,
+    "title": "Creativity vs Intelligence: Long Video Understanding Roundtable",
+    "url": "https://www.bilibili.com/video/BV1xHkBYhEhp/?spm_id_from=333.1387.upload.video_card.click&vd_source=8b57bea088e2ce54b5ce7af3b14f00ed",
+    "speaker": "Tengda Han",
+    "host": "Jiayuan Rao",
+    "date": "2024-12-16",
+    "tags": []
+  },
+  {
+    "id": 37,
+    "title": "Let Heroes Judge Heroes: A Survey on LLM-as-a-Judge",
+    "url": "https://www.bilibili.com/video/BV1nvqDYkEWA/?spm_id_from=333.1387.upload.video_card.click&vd_source=8b57bea088e2ce54b5ce7af3b14f00ed",
+    "speaker": "Dawei Li",
+    "host": "Boyang Xue",
+    "date": "2024-12-11",
+    "tags": []
+  },
+  {
+    "id": 36,
+    "title": "Research Journey in the LLM Era: A Letter to My Past Self",
+    "url": "https://www.bilibili.com/video/BV1ARqJYbE3v/?spm_id_from=333.1387.upload.video_card.click&vd_source=8b57bea088e2ce54b5ce7af3b14f00ed",
+    "speaker": "Lei Li",
+    "host": "Wenyue Hua",
+    "date": "2024-12-08",
+    "tags": []
+  },
+  {
+    "id": 35,
+    "title": "Large Model Data Synthesis and Augmentation Techniques",
+    "url": "https://www.bilibili.com/video/BV1SdBoYLEXN/?spm_id_from=333.1387.upload.video_card.click&vd_source=8b57bea088e2ce54b5ce7af3b14f00ed",
+    "speaker": "Ke Wang",
+    "host": "Ercong Nie",
+    "date": "2024-11-27",
+    "tags": []
+  },
+  {
+    "id": 34,
+    "title": "Trust Code: Exploring Long-term Impact of LLM-Generated Text",
+    "url": "https://www.bilibili.com/video/BV1SoBoYyEuP/?spm_id_from=333.1387.upload.video_card.click&vd_source=8b57bea088e2ce54b5ce7af3b14f00ed",
+    "speaker": "Xiaoyang Chen",
+    "host": "Mingyu Jin",
+    "date": "2024-11-23",
+    "tags": []
+  },
+  {
+    "id": 33,
+    "title": "Research on Collapse in Large Language Model Editing",
+    "url": "https://www.bilibili.com/video/BV1BUUBYeEYK/?spm_id_from=333.1387.upload.video_card.click&vd_source=8b57bea088e2ce54b5ce7af3b14f00ed",
+    "speaker": "Wanli Yang",
+    "host": "Wenyue Hua",
+    "date": "2024-11-17",
+    "tags": []
+  },
+  {
+    "id": 32,
+    "title": "Towards Trustworthy AI: Exploring Safe and Responsible LLMs",
+    "url": "https://www.bilibili.com/video/BV1FsDQYjECy/?spm_id_from=333.1387.upload.video_card.click&vd_source=8b57bea088e2ce54b5ce7af3b14f00ed",
+    "speaker": "Yanrui Du",
+    "host": "Ercong Nie",
+    "date": "2024-11-07",
+    "tags": []
+  },
+  {
+    "id": 31,
+    "title": "Microsoft + Rutgers: Interactive Speculative Decoding Doubles Agent Planning Speed",
+    "url": "https://www.bilibili.com/video/BV1LnSUYtErS/?spm_id_from=333.1387.upload.video_card.click&vd_source=8b57bea088e2ce54b5ce7af3b14f00ed",
+    "speaker": "Wenyue Hua",
+    "host": "Xin Zhang",
+    "date": "2024-11-03",
+    "tags": []
+  },
+  {
+    "id": 30,
+    "title": "What Do LMs Learn in In-Context Learning? Exploring Structured Task Hypothesis",
+    "url": "https://www.bilibili.com/video/BV14i2zYyEMS/?spm_id_from=333.1387.upload.video_card.click&vd_source=8b57bea088e2ce54b5ce7af3b14f00ed",
+    "speaker": "Jiaoda Li",
+    "host": "Wenyue Hua",
+    "date": "2024-10-13",
+    "tags": []
+  },
+  {
+    "id": 29,
+    "title": "When LLMs Commentate Football: Multimodal Models in Sports",
+    "url": "https://www.bilibili.com/video/BV1ZSxqesEG7/?spm_id_from=333.1387.upload.video_card.click&vd_source=8b57bea088e2ce54b5ce7af3b14f00ed",
+    "speaker": "Jiayuan Rao",
+    "host": "Ercong Nie",
+    "date": "2024-09-28",
+    "tags": []
+  },
+  {
+    "id": 28,
+    "title": "RAG Under the Microscope: Fine-grained Diagnostic Evaluation by RAGChecker",
+    "url": "https://www.bilibili.com/video/BV1M8t6eXEMi/?spm_id_from=333.1387.upload.video_card.click&vd_source=8b57bea088e2ce54b5ce7af3b14f00ed",
+    "speaker": "Dongyu Ru",
+    "host": "Cunxiang Wang",
+    "date": "2024-09-21",
+    "tags": []
+  },
+  {
+    "id": 27,
+    "title": "Unifying Multimodal Understanding and Generation: Treating New Modalities as Foreign Languages",
+    "url": "https://www.bilibili.com/video/BV173tMe1EFU/?spm_id_from=333.1387.upload.video_card.click&vd_source=8b57bea088e2ce54b5ce7af3b14f00ed",
+    "speaker": "Jun Zhan",
+    "host": "Ercong Nie",
+    "date": "2024-09-14",
+    "tags": []
+  },
+  {
+    "id": 26,
+    "title": "On the bias and robustness of LLM Multiple Choice Question Evaluation",
+    "url": "https://www.bilibili.com/video/BV1A5pbeqEkE/?spm_id_from=333.1387.upload.video_card.click&vd_source=8b57bea088e2ce54b5ce7af3b14f00ed",
+    "speaker": "Xinpeng Wang",
+    "host": "Ercong Nie",
+    "date": "2024-09-07",
+    "tags": []
+  },
+  {
+    "id": 25,
+    "title": "OpenRLHF: Introduction to Large-Scale Distributed RLHF Training System",
+    "url": "https://www.bilibili.com/video/BV1ZQHAenEHr/?spm_id_from=333.1387.upload.video_card.click&vd_source=8b57bea088e2ce54b5ce7af3b14f00ed",
+    "speaker": "Qi Chu",
+    "host": "Yue Zhang",
+    "date": "2024-09-01",
+    "tags": []
+  },
+  {
+    "id": 24,
+    "title": "Beware of Environmental Interference: Fidelity Research on LLM GUI Agents",
+    "url": "https://www.bilibili.com/video/BV1kgndeTEwa/?spm_id_from=333.1387.upload.video_card.click&vd_source=8b57bea088e2ce54b5ce7af3b14f00ed",
+    "speaker": "Xinbei Ma",
+    "host": "Wenyue Hua",
+    "date": "2024-08-31",
+    "tags": []
+  },
+  {
+    "id": 23,
+    "title": "Is Your Model Good at Math? MathCheck: New Evaluation Paradigm for Mathematical Reasoning",
+    "url": "https://www.bilibili.com/video/BV1yhWoeHEXz/?spm_id_from=333.1387.upload.video_card.click&vd_source=8b57bea088e2ce54b5ce7af3b14f00ed",
+    "speaker": "Zihao Zhou",
+    "host": "Mingyu Jin",
+    "date": "2024-08-24",
+    "tags": []
+  },
+  {
+    "id": 22,
+    "title": "Matrix-Free LLMs: A Perspective from Linear Transformers",
+    "url": "https://www.bilibili.com/video/BV1Bb421J7uE/?spm_id_from=333.1387.upload.video_card.click&vd_source=8b57bea088e2ce54b5ce7af3b14f00ed",
+    "speaker": "Ruijie Zhu",
+    "host": "Yue Zhang",
+    "date": "2024-08-17",
+    "tags": []
+  },
+  {
+    "id": 21,
+    "title": "How LMs Ensure Harmlessness: Analyzing Jailbreaking via Hidden States During Reasoning",
+    "url": "https://www.bilibili.com/video/BV1TS421976X/?spm_id_from=333.1387.upload.video_card.click&vd_source=8b57bea088e2ce54b5ce7af3b14f00ed",
+    "speaker": "Zhenhong Zhou",
+    "host": "Wenyue Hua",
+    "date": "2024-08-03",
+    "tags": []
+  },
+  {
+    "id": 20,
+    "title": "RNNs Return: Linear Attention with Gated Memory Slots",
+    "url": "https://www.bilibili.com/video/BV1uT421r72c/?spm_id_from=333.1387.upload.video_card.click&vd_source=8b57bea088e2ce54b5ce7af3b14f00ed",
+    "speaker": "Yu Zhang",
+    "host": "Yue Zhang",
+    "date": "2024-07-28",
+    "tags": []
+  },
+  {
+    "id": 19,
+    "title": "Fragile Uncertainty: How LLM Credibility Can Be Manipulated",
+    "url": "https://www.bilibili.com/video/BV1si421h7zJ/?spm_id_from=333.1387.upload.video_card.click&vd_source=8b57bea088e2ce54b5ce7af3b14f00ed",
+    "speaker": "Mingyu Jin",
+    "host": "Boyang Xue",
+    "date": "2024-07-27",
+    "tags": []
+  },
+  {
+    "id": 18,
+    "title": "Knowledge Conflict: Survey on Complex Knowledge Conflicts in RAG LLMs",
+    "url": "https://www.bilibili.com/video/BV1Bi421h7Rn/?spm_id_from=333.1387.upload.video_card.click&vd_source=8b57bea088e2ce54b5ce7af3b14f00ed",
+    "speaker": "Rongwu Xu",
+    "host": "Hongru Wang",
+    "date": "2024-07-20",
+    "tags": []
+  },
+  {
+    "id": 17,
+    "title": "Can Transformers Perform Implicit Reasoning? Exploring Grokking and Generalization",
+    "url": "https://www.bilibili.com/video/BV1Jb421n7W1/?spm_id_from=333.1387.upload.video_card.click&vd_source=8b57bea088e2ce54b5ce7af3b14f00ed",
+    "speaker": "Boshi Wang",
+    "host": "Wenyue Hua",
+    "date": "2024-07-13",
+    "tags": []
+  },
+  {
+    "id": 16,
+    "title": "How to Accelerate LLM Inference? Comprehensive Survey on Efficient Inference",
+    "url": "https://www.bilibili.com/video/BV1yb421n7ZU/?spm_id_from=333.1387.0.0&vd_source=8b57bea088e2ce54b5ce7af3b14f00ed",
+    "speaker": "Zixuan Zhou",
+    "host": "Boyang Xue",
+    "date": "2024-07-07",
+    "tags": []
+  },
+  {
+    "id": 15,
+    "title": "The Art of Protein Communication: ProLLM Redefines PPI Prediction with CoT",
+    "url": "https://www.bilibili.com/video/BV1Dz421B7u1/?spm_id_from=333.1387.upload.video_card.click&vd_source=8b57bea088e2ce54b5ce7af3b14f00ed",
+    "speaker": "Mingyu Jin",
+    "host": "Wenyue Hua",
+    "date": "2024-06-29",
+    "tags": []
+  },
+  {
+    "id": 14,
+    "title": "Time Magic in LLMs: From Synchronic Reasoning to Framework Optimization",
+    "url": "https://www.bilibili.com/video/BV1SJ4m1u7Cg/?spm_id_from=333.1387.upload.video_card.click&vd_source=8b57bea088e2ce54b5ce7af3b14f00ed",
+    "speaker": "Zhaochen Su",
+    "host": "Boyang Xue",
+    "date": "2024-06-22",
+    "tags": []
+  },
+  {
+    "id": 13,
+    "title": "Multi-Level Enhancement of Non-Autoregressive Models in the LLM Era",
+    "url": "https://www.bilibili.com/video/BV1ty41187U4/?spm_id_from=333.1387.upload.video_card.click&vd_source=8b57bea088e2ce54b5ce7af3b14f00ed",
+    "speaker": "Yisheng Xiao",
+    "host": "",
+    "date": "2024-06-15",
+    "tags": []
+  },
+  {
+    "id": 12,
+    "title": "Symbolic Rule Reinforcement of CoT for Improved Reasoning Performance",
+    "url": "https://www.bilibili.com/video/BV1dS411P7Y7/?spm_id_from=333.1387.upload.video_card.click&vd_source=8b57bea088e2ce54b5ce7af3b14f00ed",
+    "speaker": "Jundong Xu",
+    "host": "",
+    "date": "2024-06-08",
+    "tags": []
+  },
+  {
+    "id": 11,
+    "title": "Training a 1.4B Chinese LLM from Scratch: Experience Sharing [1]",
+    "url": "https://www.bilibili.com/video/BV1n6421F71g/?spm_id_from=333.1387.upload.video_card.click&vd_source=8b57bea088e2ce54b5ce7af3b14f00ed",
+    "speaker": "Jianjin Li (Lil2J)",
+    "host": "Xin Zhang",
+    "date": "2024-03-23",
+    "tags": []
+  },
+  {
+    "id": 10,
+    "title": "LLaMA Factory: End-to-End Efficient Implementation from Pre-training to RLHF",
+    "url": "https://www.bilibili.com/video/BV1Gt421L7dt/?spm_id_from=333.1387.0.0&vd_source=8b57bea088e2ce54b5ce7af3b14f00ed",
+    "speaker": "Yaowei Zheng",
+    "host": "Hongru Wang",
+    "date": "2024-03-09",
+    "tags": []
+  },
+  {
+    "id": 9,
+    "title": "New Paradigm for LLM Inference! Latest Survey on Speculative Decoding",
+    "url": "https://www.bilibili.com/video/BV1Tm411Z78w/?spm_id_from=333.1387.upload.video_card.click&vd_source=8b57bea088e2ce54b5ce7af3b14f00ed",
+    "speaker": "Heming Xia",
+    "host": "Boyang Xue",
+    "date": "2024-03-02",
+    "tags": []
+  },
+  {
+    "id": 8,
+    "title": "LLMLingua: Compressing Prompts to Construct the Language of LLMs",
+    "url": "https://www.bilibili.com/video/BV19K41187Ny/?spm_id_from=333.1387.0.0&vd_source=8b57bea088e2ce54b5ce7af3b14f00ed",
+    "speaker": "Huiqiang Jiang",
+    "host": "Yinghui Li",
+    "date": "2024-01-28",
+    "tags": []
+  },
+  {
+    "id": 7,
+    "title": "The Infinite Path of Transformers: Length Extrapolation via Positional Encoding",
+    "url": "https://www.bilibili.com/video/BV1Uk4y1D7xg/?spm_id_from=333.1387.0.0&vd_source=8b57bea088e2ce54b5ce7af3b14f00ed",
+    "speaker": "Liang Zhao",
+    "host": "Wenyue Hua",
+    "date": "2024-01-20",
+    "tags": []
+  },
+  {
+    "id": 6,
+    "title": "Deita: Research on High-Quality Instruction Data Selection for LLM Alignment",
+    "url": "https://www.bilibili.com/video/BV13e411v78y/?spm_id_from=333.1387.0.0&vd_source=8b57bea088e2ce54b5ce7af3b14f00ed",
+    "speaker": "Wei Liu",
+    "host": "Boyang Xue",
+    "date": "2024-01-13",
+    "tags": []
+  },
+  {
+    "id": 5,
+    "title": "LLaMA-MoE: Exploring MoE Construction via Parameter Reuse",
+    "url": "https://www.bilibili.com/video/BV1s64y1K7Wf/?spm_id_from=333.1387.0.0&vd_source=8b57bea088e2ce54b5ce7af3b14f00ed",
+    "speaker": "Tong Zhu",
+    "host": "Wenyue Hua",
+    "date": "2024-01-06",
+    "tags": []
+  },
+  {
+    "id": 4,
+    "title": "Latest Research on LLMs in Gaming, Mathematics, Factuality, and Evaluation",
+    "url": "https://www.bilibili.com/video/BV1pw411u7iG/?spm_id_from=333.1387.upload.video_card.click&vd_source=8b57bea088e2ce54b5ce7af3b14f00ed",
+    "speaker": "Shilong Deng",
+    "host": "Xin Zhang",
+    "date": "2023-12-23",
+    "tags": []
+  },
+  {
+    "id": 3,
+    "title": "LLM Factuality, Hallucination, Evaluation, and Model Editing",
+    "url": "https://www.bilibili.com/video/BV1Vg4y1D7vv/?spm_id_from=333.1387.0.0&vd_source=8b57bea088e2ce54b5ce7af3b14f00ed",
+    "speaker": "Cunxiang Wang",
+    "host": "Hongru Wang",
+    "date": "2023-12-17",
+    "tags": []
+  },
+  {
+    "id": 2,
+    "title": "Evaluation of Hallucination, Dialogue, Alignment, CoT, Agents in the LLM Era",
+    "url": "https://www.bilibili.com/video/BV16H4y1C7Ab/?spm_id_from=333.1387.upload.video_card.click&vd_source=8b57bea088e2ce54b5ce7af3b14f00ed",
+    "speaker": "Yue Zhang",
+    "host": "Yue Zhang",
+    "date": "2023-12-03",
+    "tags": []
+  },
+  {
+    "id": 1,
+    "title": "Latest Research in Frontier Fields in the LLMs Era",
+    "url": "https://www.bilibili.com/video/BV1TH4y1y7i9/?spm_id_from=333.1387.upload.video_card.click&vd_source=8b57bea088e2ce54b5ce7af3b14f00ed",
+    "speaker": "Ziyin Zhang",
+    "host": "Ranran Zhen",
+    "date": "2023-11-26",
+    "tags": []
   }
 ]
