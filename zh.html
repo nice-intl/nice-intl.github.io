@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>NICE</title>
+<title>NICE — 智识纽带</title>
 <link rel="icon" href="assets/NICE_LOGO.png" type="image/png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Inter:wght@300;400;500&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
@@ -45,44 +45,18 @@ body.light-theme{
 
 body.light-theme .cur{background:var(--orange);mix-blend-mode:normal}
 body.light-theme .cur-ring{border-color:var(--orange);mix-blend-mode:normal}
-
-/* adjust specific elements for light theme */
-body.light-theme .eyebrow{color:var(--orange);opacity:1}
-body.light-theme .eyebrow::before{background:var(--orange);opacity:1}
-body.light-theme .sec-title{color:#1a1a1a}
-body.light-theme .intro-body{color:var(--dim)}
-body.light-theme .chip{color:var(--dim) !important;border-color:rgba(0,0,0,0.15) !important}
-body.light-theme .chip:hover{border-color:var(--orange) !important;color:var(--orange) !important}
-body.light-theme .bs-n{color:#1a1a1a}
-body.light-theme .bs-l{color:var(--faint)}
-body.light-theme .bs-note{color:rgba(0,0,0,0.5)}
-body.light-theme .intro-right{background:rgba(0,0,0,0.03)}
-body.light-theme .big-stat{border-bottom-color:rgba(0,0,0,0.12)}
-body.light-theme .partner-chip{color:var(--dim) !important;border-color:rgba(0,0,0,0.15) !important}
-body.light-theme .partner-chip:hover{border-color:var(--orange) !important;color:var(--orange) !important}
-body.light-theme a{color:var(--orange)}
-body.light-theme a:hover{color:var(--orange)}
-body.light-theme a.cta-button {
-  color: #ffffff;
-}
-body.light-theme a.cta-button:hover {
-  color: var(--orange);
-}
+body.light-theme nav{background:rgba(245,245,245,0.9);border-bottom-color:rgba(0,0,0,0.12)}
+body.light-theme .nav-lw{color:#1a1a1a}
 body.light-theme .nav-links a{color:var(--dim)}
 body.light-theme .nav-links a:hover{color:#1a1a1a}
 body.light-theme .nav-links a.active{color:#1a1a1a}
 body.light-theme .nav-right a{color:var(--faint)}
 body.light-theme .nav-right a:hover{color:#1a1a1a}
+body.light-theme .nav-btn{border-color:rgba(232,98,26,0.8);color:var(--orange)}
+body.light-theme .nav-btn:hover{background:var(--orange);border-color:var(--orange);color:#f5f5f5}
 body.light-theme #themeToggle{background:#e8e8e8;border-color:rgba(232,98,26,0.8);color:var(--orange)}
 body.light-theme #themeToggle:hover{background:var(--orange);border-color:var(--orange);color:#f5f5f5}
-body.light-theme .h-title{
-  font-weight:900;
-  background:linear-gradient(135deg,#e8621a 0%,#7b35d4 100%);
-  -webkit-background-clip:text;
-  -webkit-text-fill-color:transparent;
-  background-clip:text;
-  color:transparent;
-}
+body.light-theme .h-title{color:#000000;font-weight:900}
 body.light-theme .h-title::before{
   background:linear-gradient(135deg,
     rgba(232,98,26,0.5) 0%,
@@ -91,66 +65,44 @@ body.light-theme .h-title::before{
   opacity:0.36;
 }
 body.light-theme .hero-inner{z-index:20;color:#0b0b0b}
-body.light-theme .hero-inner .h-eyebrow{color:var(--orange);opacity:1}
 body.light-theme #orbCanvas{opacity:0.28;pointer-events:none}
 body.light-theme .h-eyebrow{color:#1a1a1a;opacity:1}
 body.light-theme .h-sub{color:#1a1a1a}
 body.light-theme .h-sub strong{color:#000000}
 body.light-theme .h-cities{color:#1a1a1a}
 body.light-theme .h-est{color:rgba(0,0,0,0.62)}
-
-/* Chronicle era section */
-body.light-theme .era{border-color:rgba(0,0,0,0.12)}
-body.light-theme .era-period{color:var(--orange);opacity:1}
-body.light-theme .era-title{color:#1a1a1a}
+/* Additional light-theme fixes: make small tags, era numbers, and talk titles readable on white */
+body.light-theme .chip{color:var(--white) !important;border-color:rgba(0,0,0,0.18) !important;background:transparent}
+body.light-theme .chip:hover{color:var(--orange) !important;border-color:var(--orange) !important}
+body.light-theme .partner-chip{color:var(--white) !important;border-color:rgba(0,0,0,0.18) !important;background:transparent}
+body.light-theme .partner-chip:hover{color:var(--orange) !important;border-color:var(--orange) !important;background:transparent}
+body.light-theme .ev-partner-chip{color:var(--white) !important;border-color:rgba(0,0,0,0.15) !important;background:transparent}
+body.light-theme .era-n{color:rgba(0,0,0,0.25) !important}
+body.light-theme .era-title{color:var(--white)}
 body.light-theme .era-desc{color:var(--dim)}
-
-/* Talks section */
-body.light-theme .talk{border-bottom-color:rgba(0,0,0,0.12)}
-body.light-theme .talk:hover{background:rgba(0,0,0,0.03)}
-body.light-theme .t-num{color:rgba(0,0,0,0.25)}
-body.light-theme .talk:hover .t-num{color:var(--orange)}
-body.light-theme .t-title{color:#1a1a1a}
-body.light-theme .t-speaker{color:var(--orange);opacity:1}
-body.light-theme .t-host{color:var(--faint)}
-body.light-theme .t-date{color:var(--faint)}
-body.light-theme .ttag{border-color:rgba(0,0,0,0.15) !important;color:var(--dim) !important}
-body.light-theme .sf{background:rgba(0,0,0,0.03);border-color:rgba(0,0,0,0.12)}
-body.light-theme .sf input{color:#1a1a1a}
-body.light-theme .sf input::placeholder{color:rgba(0,0,0,0.3)}
-body.light-theme .fc{border-color:rgba(0,0,0,0.15);color:var(--dim)}
-body.light-theme .fc:hover,.fc.on{border-color:var(--orange);color:var(--orange);background:rgba(232,98,26,.08)}
-body.light-theme .talks-sub{color:var(--faint)}
-body.light-theme .talks-top{border-bottom-color:rgba(0,0,0,0.12)}
-body.light-theme .tf-c{color:var(--faint)}
-
-/* Event cards */
+body.light-theme .t-title{color:var(--white)}
+body.light-theme .talk:hover .t-title{color:var(--white)}
+body.light-theme .ttag{color:var(--white) !important;border-color:rgba(0,0,0,0.15) !important;background:transparent}
 body.light-theme .event-card{border-color:rgba(0,0,0,0.12)}
 body.light-theme .event-card:hover{background:rgba(0,0,0,0.03)}
-body.light-theme .ev-location{color:var(--orange);opacity:1}
-body.light-theme .ev-date{color:var(--faint)}
-body.light-theme .ev-title{color:#1a1a1a}
-body.light-theme .ev-stats{color:var(--dim)}
-body.light-theme .ev-partner-chip{border-color:rgba(0,0,0,0.12);color:var(--dim)}
-body.light-theme .event-card:hover .ev-partner-chip{border-color:rgba(232,98,26,.25);color:var(--dim)}
-body.light-theme .ev-arrow{color:var(--faint)}
-body.light-theme .event-card:hover .ev-arrow{color:var(--orange)}
+/* Search / filters: increase contrast in light theme */
+body.light-theme .sf{background:transparent;border-color:rgba(0,0,0,0.12) !important}
+body.light-theme .sf input{color:#0b0b0b !important}
+body.light-theme .sf input::placeholder{color:rgba(0,0,0,0.35) !important}
+body.light-theme .sb{background:#0b0b0b;color:#ffffff;border-color:#0b0b0b}
+body.light-theme .frow .fc{color:var(--white) !important;border-color:rgba(0,0,0,0.15) !important;background:transparent}
+body.light-theme .frow .fc:hover,.frow .fc.on{color:var(--orange) !important;border-color:var(--orange) !important}
+body.light-theme .si{color:rgba(0,0,0,0.45) !important}
 
-/* Startups section */
-body.light-theme .startup-item{border-bottom-color:rgba(0,0,0,0.12)}
-body.light-theme .startup-name{color:#1a1a1a}
-body.light-theme .startup-detail{color:var(--dim)}
-body.light-theme .startup-detail .su-tag{color:var(--orange);opacity:1}
-
-/* Partners and platforms */
-body.light-theme .partner-chips{display:flex;flex-wrap:wrap;gap:.5rem}
-body.light-theme .section-platforms{border-bottom-color:rgba(0,0,0,0.12)}
-body.light-theme .platform-logo{background:rgba(0,0,0,0.03);border-color:rgba(0,0,0,0.12);color:#1a1a1a}
-body.light-theme .platform-logo:hover{background:rgba(0,0,0,0.06);border-color:var(--orange);color:var(--orange)}
+/* Events/Main content */
+body.light-theme .eyebrow{color:var(--orange);opacity:1}
+body.light-theme .sec-title{color:#1a1a1a}
+body.light-theme .sec-desc{color:var(--dim)}
+body.light-theme .event-card{border-color:rgba(0,0,0,0.12)}
+body.light-theme .event-card:hover{background:rgba(0,0,0,0.03)}
 
 /* Footer */
-body.light-theme footer{border-top:1px solid rgba(0,0,0,0.12);background:#e8e8e8}
-body.light-theme .foot-brand-row{display:flex;align-items:center}
+body.light-theme footer{background:#e8e8e8;border-top-color:rgba(0,0,0,0.12)}
 body.light-theme .flw{color:#1a1a1a}
 body.light-theme .foot-desc{color:var(--dim)}
 body.light-theme .foot-cities{color:var(--faint)}
@@ -161,6 +113,13 @@ body.light-theme .foot-copy{color:var(--faint)}
 body.light-theme .foot-soc a{color:var(--faint)}
 body.light-theme .foot-soc a:hover{color:#1a1a1a}
 body.light-theme .foot-bottom{border-top-color:rgba(0,0,0,0.12)}
+
+/* Hero section */
+body.light-theme .h-eyebrow{color:var(--orange);opacity:1}
+body.light-theme .h-title{color:#1a1a1a}
+body.light-theme .h-sub{color:var(--dim)}
+body.light-theme .hero{border-bottom-color:rgba(0,0,0,0.12)}
+body.light-theme .section-platforms{border-bottom-color:rgba(0,0,0,0.12)}
 
 /* ── custom cursor ── */
 .cur{
@@ -378,6 +337,210 @@ nav{
   color:var(--orange);opacity:.4;padding:0 1rem;
 }
 @keyframes march{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* ── PLATFORMS（与 index.html / 其他大区块一致的内边距）── */
+.section-platforms{
+  padding:7rem 5rem;
+  border-bottom:1px solid var(--border);
+}
+
+/* Platforms logos */
+.platform-logo{
+  min-height:110px;
+  display:flex;align-items:center;justify-content:center;
+  padding:1.4rem;
+  border:1px solid var(--border);
+  text-align:center;
+  font-family:'Syne',sans-serif;
+  font-size:.92rem;font-weight:600;
+  color:var(--white);
+  background:rgba(255,255,255,.02);
+  transition:background .35s,border-color .35s,color .35s;
+}
+.platform-logo:hover{
+  background:rgba(255,255,255,.05);
+  border-color:var(--orange);
+  color:var(--orange);
+}
+
+/* marquee / continuous scroll for platforms */
+.platforms-marquee{overflow:hidden;}
+.marquee-track{display:flex;gap:1.2rem;align-items:center;width:200%;animation:marquee 40s linear infinite;}
+.marquee-track .platform-logo{flex:0 0 auto;}
+.marquee-track .platform-logo img{max-height:72px;height:72px;width:auto;max-width:160px;object-fit:contain;display:block;}
+.platforms-marquee:hover .marquee-track{animation-play-state:paused;}
+
+@keyframes marquee{0%{transform:translateX(0);}100%{transform:translateX(-50%);}}
+
+/* ── JOIN US ── */
+.section-join{
+  padding:7rem 5rem;
+  border-bottom:1px solid var(--border);
+  background:rgba(255,255,255,.012);
+}
+
+.join-hero{
+  text-align:center;
+  margin-bottom:4rem;
+}
+
+.join-title{
+  font-family:'Syne',sans-serif;
+  font-size:clamp(2.2rem,4vw,3.2rem);
+  font-weight:700;line-height:1.1;
+  letter-spacing:-.02em;color:var(--white);
+  margin-bottom:1rem;
+}
+
+.join-subtitle{
+  font-size:1.1rem;line-height:1.6;
+  color:var(--dim);max-width:600px;margin:0 auto;
+}
+
+.join-content{
+  max-width:900px;margin:0 auto;
+}
+
+.join-intro{
+  font-size:1rem;line-height:1.8;
+  color:var(--dim);margin-bottom:3rem;
+  text-align:center;
+}
+
+.join-paths{
+  display:grid;grid-template-columns:1fr 1fr;
+  gap:3rem;margin-bottom:4rem;
+}
+
+.join-path{
+  padding:2.5rem;
+  border:1px solid var(--border);
+  background:rgba(255,255,255,.015);
+  transition:background .35s,border-color .35s;
+}
+
+.join-path:hover{
+  background:rgba(255,255,255,.025);
+  border-color:var(--orange);
+}
+
+.join-path-icon{
+  font-size:2rem;margin-bottom:1rem;
+}
+
+.join-path-title{
+  font-family:'Syne',sans-serif;
+  font-size:1.3rem;font-weight:600;
+  color:var(--white);margin-bottom:1rem;
+}
+
+.join-path-desc{
+  font-size:.95rem;line-height:1.7;
+  color:var(--dim);margin-bottom:1.5rem;
+}
+
+.join-path-list{
+  list-style:none;padding:0;margin:0;
+}
+
+.join-path-list li{
+  font-size:.9rem;line-height:1.6;
+  color:var(--dim);margin-bottom:.8rem;
+  padding-left:1.2rem;position:relative;
+}
+
+.join-path-list li::before{
+  content:'✨';
+  position:absolute;left:0;
+  color:var(--orange);
+}
+
+.join-benefits{
+  margin-bottom:4rem;
+}
+
+.benefits-title{
+  font-family:'Syne',sans-serif;
+  font-size:1.8rem;font-weight:600;
+  color:var(--white);text-align:center;
+  margin-bottom:2rem;
+}
+
+.benefits-grid{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:2rem;
+}
+
+.benefit-item{
+  padding:1.5rem;
+  border:1px solid var(--border);
+  background:rgba(255,255,255,.01);
+  transition:background .35s,border-color .35s;
+}
+
+.benefit-item:hover{
+  background:rgba(255,255,255,.02);
+  border-color:var(--purple);
+}
+
+.benefit-icon{
+  font-size:1.5rem;margin-bottom:.8rem;
+}
+
+.benefit-title{
+  font-family:'Syne',sans-serif;
+  font-size:1.1rem;font-weight:600;
+  color:var(--white);margin-bottom:.5rem;
+}
+
+.benefit-desc{
+  font-size:.9rem;line-height:1.6;
+  color:var(--dim);
+}
+
+.join-cta{
+  text-align:center;
+  padding:3rem;
+  border:1px solid var(--border);
+  background:linear-gradient(135deg,rgba(232,98,26,.05),rgba(123,53,212,.05));
+}
+
+.cta-title{
+  font-family:'Syne',sans-serif;
+  font-size:1.6rem;font-weight:600;
+  color:var(--white);margin-bottom:1rem;
+}
+
+.cta-text{
+  font-size:1rem;line-height:1.7;
+  color:var(--dim);margin-bottom:2rem;
+  max-width:600px;margin-left:auto;margin-right:auto;
+}
+
+.cta-button{
+  display:inline-block;
+  padding:.8rem 2rem;
+  border:1px solid var(--orange);
+  background:var(--orange);
+  color:#000;
+  font-family:'DM Mono',monospace;
+  font-size:.9rem;letter-spacing:.1em;text-transform:uppercase;
+  text-decoration:none;
+  transition:background .25s,color .25s,border-color .25s;
+  cursor:pointer;
+}
+
+.cta-button:hover{
+  background:transparent;
+  color:var(--orange);
+}
+
+/* Sponsors / partners grid */
+.section-partners{padding:7rem 5rem;border-bottom:1px solid var(--border)}
+.partners-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:2rem;margin-top:3.5rem}
+.partner-logo{display:flex;align-items:center;justify-content:center;padding:2rem;border:1px solid var(--border);transition:background .35s,border-color .35s}
+.partner-logo:hover{background:rgba(255,255,255,.03);border-color:var(--orange)}
+.partner-logo img{max-width:100%;max-height:80px;height:auto;width:auto;object-fit:contain}
 
 /* ── SCROLL REVEAL ── */
 .reveal{
@@ -818,239 +981,6 @@ nav{
 }
 .event-card:hover .ev-arrow{color:var(--orange);}
 
-/* ── SPONSORS ── */
-.section-partners{
-  padding:7rem 5rem;
-  border-bottom:1px solid var(--border);
-}
-
-.partners-grid{
-  display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-  gap:2rem;
-  margin-top:3.5rem;
-}
-
-.partner-logo{
-  display:flex;align-items:center;justify-content:center;
-  padding:2rem;
-  border:1px solid var(--border);
-  transition:background .35s,border-color .35s;
-}
-.partner-logo:hover{
-  background:rgba(255,255,255,.03);
-  border-color:var(--orange);
-}
-.partner-logo img{
-  max-width:100%;max-height:80px;
-  object-fit:contain;
-}
-
-/* ── PLATFORMS ── */
-.section-platforms{
-  padding:7rem 5rem;
-  border-bottom:1px solid var(--border);
-}
-
-.platforms-grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
-  gap:1.2rem;
-  margin-top:3.5rem;
-}
-
-.platform-logo{
-  min-height:110px;
-  display:flex;align-items:center;justify-content:center;
-  padding:1.4rem;
-  border:1px solid var(--border);
-  text-align:center;
-  font-family:'Syne',sans-serif;
-  font-size:.92rem;font-weight:600;
-  color:var(--white);
-  background:rgba(255,255,255,.02);
-  transition:background .35s,border-color .35s,color .35s;
-}
-.platform-logo:hover{
-  background:rgba(255,255,255,.05);
-  border-color:var(--orange);
-  color:var(--orange);
-}
-
-/* marquee / continuous scroll */
-.platforms-marquee{overflow:hidden;}
-.marquee-track{display:flex;gap:1.2rem;align-items:center;width:200%;animation:marquee 40s linear infinite;}
-.marquee-track .platform-logo{flex:0 0 auto;}
-.marquee-track .platform-logo img{max-height:72px;max-width:160px;object-fit:contain;display:block;}
-.platforms-marquee:hover .marquee-track{animation-play-state:paused;}
-
-@keyframes marquee{
-  0%{transform:translateX(0);}
-  100%{transform:translateX(-50%);}
-}
-
-/* ── JOIN US ── */
-.section-join{
-  padding:7rem 5rem;
-  border-bottom:1px solid var(--border);
-  background:rgba(255,255,255,.012);
-}
-
-.join-hero{
-  text-align:center;
-  margin-bottom:4rem;
-}
-
-.join-title{
-  font-family:'Syne',sans-serif;
-  font-size:clamp(2.2rem,4vw,3.2rem);
-  font-weight:700;line-height:1.1;
-  letter-spacing:-.02em;color:var(--white);
-  margin-bottom:1rem;
-}
-
-.join-subtitle{
-  font-size:1.1rem;line-height:1.6;
-  color:var(--dim);max-width:600px;margin:0 auto;
-}
-
-.join-content{
-  max-width:900px;margin:0 auto;
-}
-
-.join-intro{
-  font-size:1rem;line-height:1.8;
-  color:var(--dim);margin-bottom:3rem;
-  text-align:center;
-}
-
-.join-paths{
-  display:grid;grid-template-columns:1fr 1fr;
-  gap:3rem;margin-bottom:4rem;
-}
-
-.join-path{
-  padding:2.5rem;
-  border:1px solid var(--border);
-  background:rgba(255,255,255,.015);
-  transition:background .35s,border-color .35s;
-}
-
-.join-path:hover{
-  background:rgba(255,255,255,.025);
-  border-color:var(--orange);
-}
-
-.join-path-icon{
-  font-size:2rem;margin-bottom:1rem;
-}
-
-.join-path-title{
-  font-family:'Syne',sans-serif;
-  font-size:1.3rem;font-weight:600;
-  color:var(--white);margin-bottom:1rem;
-}
-
-.join-path-desc{
-  font-size:.95rem;line-height:1.7;
-  color:var(--dim);margin-bottom:1.5rem;
-}
-
-.join-path-list{
-  list-style:none;padding:0;margin:0;
-}
-
-.join-path-list li{
-  font-size:.9rem;line-height:1.6;
-  color:var(--dim);margin-bottom:.8rem;
-  padding-left:1.2rem;position:relative;
-}
-
-.join-path-list li::before{
-  content:'✨';
-  position:absolute;left:0;
-  color:var(--orange);
-}
-
-.join-benefits{
-  margin-bottom:4rem;
-}
-
-.benefits-title{
-  font-family:'Syne',sans-serif;
-  font-size:1.8rem;font-weight:600;
-  color:var(--white);text-align:center;
-  margin-bottom:2rem;
-}
-
-.benefits-grid{
-  display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-  gap:2rem;
-}
-
-.benefit-item{
-  padding:1.5rem;
-  border:1px solid var(--border);
-  background:rgba(255,255,255,.01);
-  transition:background .35s,border-color .35s;
-}
-
-.benefit-item:hover{
-  background:rgba(255,255,255,.02);
-  border-color:var(--purple);
-}
-
-.benefit-icon{
-  font-size:1.5rem;margin-bottom:.8rem;
-}
-
-.benefit-title{
-  font-family:'Syne',sans-serif;
-  font-size:1.1rem;font-weight:600;
-  color:var(--white);margin-bottom:.5rem;
-}
-
-.benefit-desc{
-  font-size:.9rem;line-height:1.6;
-  color:var(--dim);
-}
-
-.join-cta{
-  text-align:center;
-  padding:3rem;
-  border:1px solid var(--border);
-  background:linear-gradient(135deg,rgba(232,98,26,.05),rgba(123,53,212,.05));
-}
-
-.cta-title{
-  font-family:'Syne',sans-serif;
-  font-size:1.6rem;font-weight:600;
-  color:var(--white);margin-bottom:1rem;
-}
-
-.cta-text{
-  font-size:1rem;line-height:1.7;
-  color:var(--dim);margin-bottom:2rem;
-  max-width:600px;margin-left:auto;margin-right:auto;
-}
-
-.cta-button{
-  display:inline-block;
-  padding:.8rem 2rem;
-  border:1px solid var(--orange);
-  background:var(--orange);
-  color:#000;
-  font-family:'DM Mono',monospace;
-  font-size:.9rem;letter-spacing:.1em;text-transform:uppercase;
-  text-decoration:none;
-  transition:background .25s,color .25s,border-color .25s;
-  cursor:pointer;
-}
-
-.cta-button:hover{
-  background:transparent;
-  color:var(--orange);
-}
-
 /* ── TEAM ── */
 .section-team{
   padding:7rem 5rem;
@@ -1206,6 +1136,7 @@ footer::before{
   .events-grid{grid-template-columns:1fr;}
   .event-card{border-right:none;border-bottom:1px solid var(--border);}
   .event-card:last-child{border-bottom:none;}
+  .join-paths{grid-template-columns:1fr;}
   .foot-grid{grid-template-columns:1fr;gap:3rem;}
 }
 
@@ -1214,7 +1145,9 @@ footer::before{
   .nav-links{display:none;}
   .section-talks{padding:5rem 2rem;}
   .section-events{padding:5rem 2rem;}
+  .section-platforms{padding:5rem 2rem;}
   .section-team{padding:5rem 2rem;}
+  .section-join{padding:5rem 2rem;}
   .intro-left,.intro-right,.startups-left,.startups-right{padding:4rem 2rem;}
   .chr-top{padding:4rem 2rem 2.5rem;flex-direction:column;gap:1rem;align-items:flex-start;}
   .chr-note{text-align:left;}
@@ -1243,13 +1176,12 @@ footer::before{
   </a>
 
   <ul class="nav-links">
-    <li><a href="#intro">About</a></li>
-    <li><a href="#talks">Talks</a></li>
-    <li><a href="#events">Events</a></li>
-    <li><a href="#sponsors">Sponsors</a></li>
-    <li><a href="team.html">Team</a></li>
-    <li><a href="#join">Join</a></li>
-    <li><a href="https://docs.google.com/forms/d/e/1FAIpQLScN7I69_qyI6dulHnhKV8m8bZJHkYhfXn5_tjYeyeHR0QvNbw/viewform" target="_blank">Talk Application</a></li>
+    <li><a href="#intro">关于</a></li>
+    <li><a href="#talks">讲座</a></li>
+    <li><a href="#events">活动</a></li>
+    <li><a href="team-zh.html">团队</a></li>
+    <li><a href="#join">加入我们</a></li>
+    <li><a href="https://docs.google.com/forms/d/e/1FAIpQLScN7I69_qyI6dulHnhKV8m8bZJHkYhfXn5_tjYeyeHR0QvNbw/viewform" target="_blank">Talk申请</a></li>
   </ul>
 
   <div class="nav-right">
@@ -1258,7 +1190,7 @@ footer::before{
     <a href="https://www.linkedin.com/company/110921233/admin/dashboard/" target="_blank">LinkedIn</a>
     <a href="https://space.bilibili.com/507524288" target="_blank">Bilibili</a>
     <button id="themeToggle" class="nav-btn" type="button" aria-pressed="false">Dark</button>
-    <a href="zh.html" class="nav-btn">中文</a>
+    <a href="index.html" class="nav-btn">EN</a>
     <a href="https://luma.com/user/usr-YJvNOI7CseZ7zMm" target="_blank" class="nav-btn">Events</a>
   </div>
 </nav>
@@ -1268,12 +1200,12 @@ footer::before{
   <canvas id="orbCanvas"></canvas>
 
   <div class="hero-inner">
-    <p class="h-eyebrow">Nexus for IntelligeCE &middot; Est. 2023</p>
+    <p class="h-eyebrow">智识纽带 &middot; 成立于 2023</p>
 
     <h1 class="h-title">NICE</h1>
 
     <p class="h-sub">
-      <strong>Pioneering thought.</strong> Accelerating impact.
+      <strong>引领前沿思想。</strong> 加速创新影响。
     </p>
 
     <div class="h-cities">
@@ -1285,48 +1217,48 @@ footer::before{
       <span>Munich</span>
     </div>
 
-    <p class="h-est">Est. 2023</p>
+    <p class="h-est">成立于 2023</p>
   </div>
 
   <div class="scroll-cue">
     <div class="scroll-cue-line"></div>
-    <span class="scroll-cue-txt">Scroll</span>
+    <span class="scroll-cue-txt">向下滑动</span>
   </div>
 </section>
 
 <!-- ═══════ MARQUEE ═══════ -->
 <div class="marquee">
   <div class="marquee-track">
-    <span>Large Language Models</span><span class="mdot">&#10022;</span>
-    <span>Natural Language Processing</span><span class="mdot">&#10022;</span>
-    <span>Agentic Systems</span><span class="mdot">&#10022;</span>
-    <span>Reinforcement Learning</span><span class="mdot">&#10022;</span>
-    <span>Alignment Research</span><span class="mdot">&#10022;</span>
-    <span>Reasoning Models</span><span class="mdot">&#10022;</span>
-    <span>Multimodal AI</span><span class="mdot">&#10022;</span>
-    <span>Foundation Models</span><span class="mdot">&#10022;</span>
-    <span>Model Safety</span><span class="mdot">&#10022;</span>
-    <span>Transformer Architecture</span><span class="mdot">&#10022;</span>
-    <span>Large Language Models</span><span class="mdot">&#10022;</span>
-    <span>Natural Language Processing</span><span class="mdot">&#10022;</span>
-    <span>Agentic Systems</span><span class="mdot">&#10022;</span>
-    <span>Reinforcement Learning</span><span class="mdot">&#10022;</span>
-    <span>Alignment Research</span><span class="mdot">&#10022;</span>
-    <span>Reasoning Models</span><span class="mdot">&#10022;</span>
-    <span>Multimodal AI</span><span class="mdot">&#10022;</span>
-    <span>Foundation Models</span><span class="mdot">&#10022;</span>
-    <span>Model Safety</span><span class="mdot">&#10022;</span>
-    <span>Transformer Architecture</span><span class="mdot">&#10022;</span>
+    <span>大语言模型</span><span class="mdot">&#10022;</span>
+    <span>自然语言处理</span><span class="mdot">&#10022;</span>
+    <span>智能体系统</span><span class="mdot">&#10022;</span>
+    <span>强化学习</span><span class="mdot">&#10022;</span>
+    <span>对齐研究</span><span class="mdot">&#10022;</span>
+    <span>推理模型</span><span class="mdot">&#10022;</span>
+    <span>多模态AI</span><span class="mdot">&#10022;</span>
+    <span>基础模型</span><span class="mdot">&#10022;</span>
+    <span>模型安全</span><span class="mdot">&#10022;</span>
+    <span>Transformer架构</span><span class="mdot">&#10022;</span>
+    <span>大语言模型</span><span class="mdot">&#10022;</span>
+    <span>自然语言处理</span><span class="mdot">&#10022;</span>
+    <span>智能体系统</span><span class="mdot">&#10022;</span>
+    <span>强化学习</span><span class="mdot">&#10022;</span>
+    <span>对齐研究</span><span class="mdot">&#10022;</span>
+    <span>推理模型</span><span class="mdot">&#10022;</span>
+    <span>多模态AI</span><span class="mdot">&#10022;</span>
+    <span>基础模型</span><span class="mdot">&#10022;</span>
+    <span>模型安全</span><span class="mdot">&#10022;</span>
+    <span>Transformer架构</span><span class="mdot">&#10022;</span>
   </div>
 </div>
 
 <!-- ═══════ INTRO / ABOUT ═══════ -->
 <section class="section-intro" id="intro">
   <div class="intro-left">
-    <div class="eyebrow reveal">Introduction</div>
-    <h2 class="sec-title reveal d1">A Scholarly Community<br>at the Frontier</h2>
-    <p class="intro-body reveal d2">Nexus for IntelligeCE (NICE) regularly invites researchers and startup founders to share their work — in AI, NLP, and large language models.</p>
-    <p class="intro-body reveal d3">A non-profit of young researchers in academia, building a global community around open scientific discourse.</p>
+    <div class="eyebrow reveal">简介</div>
+    <h2 class="sec-title reveal d1">前沿学术社区</h2>
+    <p class="intro-body reveal d2">NICE (Nexus for IntelligeCE) 定期邀请研究人员和创业者分享他们在AI、NLP和大语言模型领域的研究成果。</p>
+    <p class="intro-body reveal d3">我们是一个由年轻学术研究者组成的非营利组织，致力于构建一个围绕开放科学讨论的全球社区。</p>
     <div class="chips reveal d4">
       <span class="chip">LLMs</span><span class="chip">NLP</span>
       <span class="chip">Agents</span><span class="chip">Reasoning</span>
@@ -1339,28 +1271,28 @@ footer::before{
   <div class="intro-right">
     <div class="big-stat reveal">
       <span class="bs-n">300+</span>
-      <div class="bs-l">Invited Speakers</div>
-      <div class="bs-note">Researchers, founders &amp; practitioners</div>
+      <div class="bs-l">特邀嘉宾</div>
+      <div class="bs-note">研究员、创业者与从业者</div>
     </div>
     <div class="big-stat reveal d1">
       <span class="bs-n">150k+</span>
-      <div class="bs-l">Followers</div>
-      <div class="bs-note">Across YouTube and all platforms</div>
+      <div class="bs-l">全网关注</div>
+      <div class="bs-note">覆盖YouTube等全平台</div>
     </div>
     <div class="big-stat reveal d2">
-      <span class="bs-n">160+</span>
-      <div class="bs-l">Talks Held</div>
-      <div class="bs-note">Live sessions and panels</div>
+      <span class="bs-n">150+</span>
+      <div class="bs-l">线上讲座</div>
+      <div class="bs-note">线上分享与讨论</div>
     </div>
     <div class="big-stat reveal d3">
       <span class="bs-n">1M+</span>
-      <div class="bs-l">Total Views</div>
-      <div class="bs-note">And growing every month</div>
+      <div class="bs-l">总播放量</div>
+      <div class="bs-note">持续增长中</div>
     </div>
     <div class="big-stat reveal d4">
       <span class="bs-n">4</span>
-      <div class="bs-l">Offline Events</div>
-      <div class="bs-note">Beijing, Suzhou &amp; Shanghai</div>
+      <div class="bs-l">线下活动</div>
+      <div class="bs-note">北京、苏州与上海</div>
     </div>
   </div>
 </section>
@@ -1368,20 +1300,20 @@ footer::before{
 <!-- ═══════ STARTUPS & PARTNERS ═══════ -->
 <section class="section-startups">
   <div class="startups-left">
-    <div class="eyebrow reveal">NICE Internal Startup Partners</div>
-    <h2 class="sec-title reveal d1">Startup Partners Within NICE</h2>
+    <div class="eyebrow reveal">NICE内部创业伙伴</div>
+    <h2 class="sec-title reveal d1">NICE内部的创业伙伴</h2>
     <ul class="startup-list">
       <li class="startup-item reveal d2">
-        <div class="startup-name">Guanyi Intelligence</div>
-        <div class="startup-detail"><span class="su-tag">AI4Sci</span> &middot; 100M+ RMB raised</div>
+        <div class="startup-name">观壹智能</div>
+        <div class="startup-detail"><span class="su-tag">AI4Sci</span> &middot; 融资上亿人民币</div>
       </li>
       <li class="startup-item reveal d3">
         <div class="startup-name">ALITA</div>
-        <div class="startup-detail"><span class="su-tag">Agent Systems</span> &middot; Tens of millions USD raised</div>
+        <div class="startup-detail"><span class="su-tag">智能体系统</span> &middot; 融资数千万美元</div>
       </li>
       <li class="startup-item reveal d4">
-        <div class="startup-name">Inverse Matrix</div>
-        <div class="startup-detail"><span class="su-tag">World Models</span> &middot; $10M+ USD raised</div>
+        <div class="startup-name">逆矩阵科技</div>
+        <div class="startup-detail"><span class="su-tag">世界模型</span> &middot; 融资千万美元以上</div>
       </li>
     </ul>
   </div>
@@ -1391,14 +1323,14 @@ footer::before{
 <section class="section-talks" id="talks">
   <div class="talks-top">
     <div>
-      <div class="eyebrow reveal">Lecture Hall</div>
-      <h2 class="sec-title reveal d1" style="margin-bottom:.3rem">Recent Talks</h2>
-      <p class="talks-sub reveal d2">Conversations at the edge of what machines can know</p>
+      <div class="eyebrow reveal">讲座大厅</div>
+      <h2 class="sec-title reveal d1" style="margin-bottom:.3rem">近期讲座</h2>
+      <p class="talks-sub reveal d2">探索机器认知边界的对话</p>
     </div>
     <div class="search-col reveal d1">
       <div class="search-row">
-        <div class="sf"><span class="si">&#9013;</span><input type="text" placeholder="Speaker, topic..."></div>
-        <button class="sb">Search</button>
+        <div class="sf"><span class="si">&#9013;</span><input type="text" placeholder="搜索嘉宾、主题..."></div>
+        <button class="sb">搜索</button>
       </div>
       <div class="frow">
         <button class="fc">Agent</button>
@@ -1416,7 +1348,7 @@ footer::before{
       <span class="t-num">113</span>
       <div>
         <div class="t-title">Is Chain-of-Thought Reasoning a Mirage? Unveiling the Truth of LLM Reasoning from a Data Distribution Perspective</div>
-        <div class="t-meta"><span class="t-speaker">Chengshuai Zhao</span><span class="t-host">Host: Haolun Wu</span></div>
+        <div class="t-meta"><span class="t-speaker">Chengshuai Zhao</span><span class="t-host">主持人: Haolun Wu</span></div>
         <div class="t-tags"><span class="ttag">Reasoning</span><span class="ttag">CoT</span><span class="ttag">Data</span></div>
       </div>
       <span class="t-date">Dec 14, 2025</span>
@@ -1425,7 +1357,7 @@ footer::before{
       <span class="t-num">112</span>
       <div>
         <div class="t-title">Exploring Open Agent Networks and Agent Coordination at Scale</div>
-        <div class="t-meta"><span class="t-speaker">Gaowei Chang</span><span class="t-host">Host: Wenyue Hua</span></div>
+        <div class="t-meta"><span class="t-speaker">Gaowei Chang</span><span class="t-host">主持人: Wenyue Hua</span></div>
         <div class="t-tags"><span class="ttag">Agent</span><span class="ttag">Multi-Agent</span><span class="ttag">Coordination</span></div>
       </div>
       <span class="t-date">Nov 30, 2025</span>
@@ -1434,7 +1366,7 @@ footer::before{
       <span class="t-num">111</span>
       <div>
         <div class="t-title">Constitutional AI and the Alignment Problem: From Theory to Practice</div>
-        <div class="t-meta"><span class="t-speaker">Invited Scholar</span><span class="t-host">Host: NICE Panel</span></div>
+        <div class="t-meta"><span class="t-speaker">Invited Scholar</span><span class="t-host">主持人: NICE Panel</span></div>
         <div class="t-tags"><span class="ttag">Alignment</span><span class="ttag">Safety</span><span class="ttag">RLHF</span></div>
       </div>
       <span class="t-date">Nov 12, 2025</span>
@@ -1443,7 +1375,7 @@ footer::before{
       <span class="t-num">110</span>
       <div>
         <div class="t-title">Long-Context Language Models: Memory, Retrieval, and the Limits of Attention</div>
-        <div class="t-meta"><span class="t-speaker">Invited Scholar</span><span class="t-host">Host: NICE Faculty</span></div>
+        <div class="t-meta"><span class="t-speaker">Invited Scholar</span><span class="t-host">主持人: NICE Faculty</span></div>
         <div class="t-tags"><span class="ttag">Long-Context</span><span class="ttag">RAG</span><span class="ttag">Memory</span></div>
       </div>
       <span class="t-date">Oct 28, 2025</span>
@@ -1452,7 +1384,7 @@ footer::before{
       <span class="t-num">109</span>
       <div>
         <div class="t-title">From Tokens to Thoughts: Intrinsic Motivation and the Emergence of Planning in LLMs</div>
-        <div class="t-meta"><span class="t-speaker">Invited Scholar</span><span class="t-host">Host: NICE Panel</span></div>
+        <div class="t-meta"><span class="t-speaker">Invited Scholar</span><span class="t-host">主持人: NICE Panel</span></div>
         <div class="t-tags"><span class="ttag">Reasoning</span><span class="ttag">Planning</span><span class="ttag">RL</span></div>
       </div>
       <span class="t-date">Oct 10, 2025</span>
@@ -1461,7 +1393,7 @@ footer::before{
       <span class="t-num">108</span>
       <div>
         <div class="t-title">Multimodal Foundation Models: Vision, Language, and the Road to Unified Perception</div>
-        <div class="t-meta"><span class="t-speaker">Invited Scholar</span><span class="t-host">Host: NICE Panel</span></div>
+        <div class="t-meta"><span class="t-speaker">Invited Scholar</span><span class="t-host">主持人: NICE Panel</span></div>
         <div class="t-tags"><span class="ttag">Multimodal</span><span class="ttag">Vision-Language</span></div>
       </div>
       <span class="t-date">Sep 20, 2025</span>
@@ -1469,93 +1401,179 @@ footer::before{
   </div>
 
   <div class="talks-foot">
-    <span class="tf-c reveal">Showing 6 of 113 talks</span>
-    <a href="#" class="btn-out reveal">View All 113 Talks &rarr;</a>
+    <span class="tf-c reveal">展示 113 场讲座中的 6 场</span>
+    <a href="#" class="btn-out reveal">查看全部 113 场讲座 &rarr;</a>
   </div>
 </section>
 
 <!-- ═══════ PREVIOUS OFFLINE EVENTS ═══════ -->
 <section class="section-events" id="events">
-  <div class="eyebrow reveal">Previous Offline Events</div>
-  <h2 class="sec-title reveal d1">Where Ideas Meet In Person</h2>
+  <div class="eyebrow reveal">线下活动</div>
+  <h2 class="sec-title reveal d1">思想碰撞的现场</h2>
 
   <div class="events-grid">
     <a class="event-card reveal" href="events/beijing-rl/index.html">
-      <div class="ev-location">Beijing</div>
+      <div class="ev-location">北京</div>
       <div class="ev-date">Oct 18, 2025</div>
-      <div class="ev-title">RL Theory &amp; Practice</div>
-      <div class="ev-stats">110 spots &middot; 300+ registrations</div>
+      <div class="ev-title">RL理论与实践经验分享</div>
+      <div class="ev-stats">110 名额 &middot; 300+ 报名</div>
       <div class="ev-partners">
-        <span class="ev-partner-chip">Beijing Academy of General AI</span>
-        <span class="ev-partner-chip">Zero Boundary Evolution</span>
+        <span class="ev-partner-chip">北京通用人工智能研究院</span>
+        <span class="ev-partner-chip">零界演化</span>
       </div>
-      <div class="ev-arrow">View Event &rarr;</div>
+      <div class="ev-arrow">查看详情 &rarr;</div>
     </a>
     <a class="event-card reveal d1" href="events/suzhou-emnlp/index.html">
-      <div class="ev-location">Suzhou</div>
+      <div class="ev-location">苏州</div>
       <div class="ev-date">Nov 5, 2025</div>
-      <div class="ev-title">EMNLP Startup Night Cocktail</div>
-      <div class="ev-stats">180 spots &middot; 500+ registrations</div>
+      <div class="ev-title">EMNLP创业之夜鸡尾酒晚宴</div>
+      <div class="ev-stats">180 名额 &middot; 500+ 报名</div>
       <div class="ev-partners">
-        <span class="ev-partner-chip">ZhenFund</span>
-        <span class="ev-partner-chip">AWS</span>
-        <span class="ev-partner-chip">National AI Investment Fund</span>
+        <span class="ev-partner-chip">真格基金</span>
+        <span class="ev-partner-chip">亚马逊云科技</span>
       </div>
-      <div class="ev-arrow">View Event &rarr;</div>
+      <div class="ev-arrow">查看详情 &rarr;</div>
     </a>
     <a class="event-card reveal d2" href="events/shanghai-agent2025/index.html">
-      <div class="ev-location">Shanghai</div>
+      <div class="ev-location">上海</div>
       <div class="ev-date">Nov 30, 2025</div>
-      <div class="ev-title">AGENT2025: Academia &times; Industry &times; Future</div>
-      <div class="ev-stats">200 spots &middot; 400+ registrations</div>
+      <div class="ev-title">AGENT2025：学术×产业×未来</div>
+      <div class="ev-stats">200 名额 &middot; 400+ 报名</div>
       <div class="ev-partners">
-        <span class="ev-partner-chip">Shanghai AI Lab</span>
-        <span class="ev-partner-chip">MosuSpace</span>
-        <span class="ev-partner-chip">Xuhui Venture Capital</span>
-        <span class="ev-partner-chip">Zero Boundary Evolution</span>
+        <span class="ev-partner-chip">上海人工智能实验室</span>
+        <span class="ev-partner-chip">模速空间</span>
+        <span class="ev-partner-chip">徐汇科创投</span>
+        <span class="ev-partner-chip">零界演化</span>
         <span class="ev-partner-chip">S2E LABS</span>
       </div>
-      <div class="ev-arrow">View Event &rarr;</div>
+      <div class="ev-arrow">查看详情 &rarr;</div>
     </a>
     <a class="event-card reveal d3" href="events/shanghai-openclaw/index.html">
-      <div class="ev-location">Shanghai</div>
+      <div class="ev-location">上海</div>
       <div class="ev-date">Apr 11, 2026</div>
-      <div class="ev-title">Post-OpenClaw: What's Next?</div>
-      <div class="ev-stats">110 spots</div>
+      <div class="ev-title">OpenClaw热潮之后</div>
+      <div class="ev-stats">110 名额</div>
       <div class="ev-partners">
-        <span class="ev-partner-chip">Shool of Artificial Intelligence, Shanghai Jiao Tong University</span>
+        <span class="ev-partner-chip">上海交大人工智能创新协会</span>
+        <span class="ev-partner-chip">零界演化</span>
         <span class="ev-partner-chip">S2E LABS</span>
       </div>
-      <div class="ev-arrow">View Event &rarr;</div>
+      <div class="ev-arrow">查看详情 &rarr;</div>
     </a>
     <a class="event-card reveal d4" href="events/beijing-worldmodel/index.html">
-      <div class="ev-location">Beijing</div>
+      <div class="ev-location">北京</div>
       <div class="ev-date">Apr 26, 2026</div>
-      <div class="ev-title">HELLO, WORLD MODEL<br>Frontiers, Practices, and Breakthroughs</div>
-      <div class="ev-stats">100 spots &middot; 200+ registrations</div>
+      <div class="ev-title">HELLO, WORLD MODEL：前沿、实战与破局</div>
+      <div class="ev-stats">100个名额 &middot; 200+ 报名</div>
       <div class="ev-partners">
-        <span class="ev-partner-chip">ZhenFund</span>
+        <span class="ev-partner-chip">真格基金</span>
         <span class="ev-partner-chip">Physis Lab</span>
-        <span class="ev-partner-chip">Dinghao DH3</span>
-        <span class="ev-partner-chip">PKU AI Innovation Association</span>
-        <span class="ev-partner-chip">THU AGI Association</span>
-        <span class="ev-partner-chip">PKU Innovation Club</span>
+        <span class="ev-partner-chip">鼎好DH3</span>
+        <span class="ev-partner-chip">北大学生人工智能创新会</span>
+        <span class="ev-partner-chip">清华大学学生通用人工智能研究会</span>
+        <span class="ev-partner-chip">北京大学学生创新学社</span>
         <span class="ev-partner-chip">TTC (True Talents Connect)</span>
         <span class="ev-partner-chip">Edge Partners</span>
       </div>
-      <div class="ev-arrow">View Event &rarr;</div>
+      <div class="ev-arrow">查看活动 &rarr;</div>
     </a>
   </div>
 </section>
 
-<!-- ═══════ PLATFORMS ═══════ -->
+<!-- ═══════ JOIN US ═══════ -->
+<section class="section-join" id="join">
+  <div class="join-hero">
+    <div class="eyebrow reveal">加入我们</div>
+    <h2 class="join-title reveal d1">一起创造非凡</h2>
+    <p class="join-subtitle reveal d2">在NICE，做NICE，变NICE。</p>
+  </div>
+
+  <div class="join-content">
+    <p class="join-intro reveal d1">
+      NICE 已经走到第 3 年啦！这一路，我们连接了 400+ 位顶尖 AI 科学家、创业者与投资人，汇聚了 15万+ 的全网关注者。<br><br>
+      内容节奏飞快，新想法和好项目多到我们真的快忙不过来啦 O.o —— 现在的我们，迫切需要靠谱、有执行力又可爱的你加入，一起把 NICE 做得更好。
+    </p>
+
+    <div class="join-paths">
+      <div class="join-path reveal d1">
+        <div class="join-path-icon">👉</div>
+        <h3 class="join-path-title">路径 1：加入 Committee（核心智囊团）</h3>
+        <p class="join-path-desc">寻找活跃在 AI 一线的发光体。无论你是：</p>
+        <ul class="join-path-list">
+          <li><strong>科研达人：</strong> 具有扎实学术基础，深耕在实验室一线的 Researcher / PhD。</li>
+          <li><strong>产业先锋：</strong> 在顶尖大厂一线推动 AI 创新的技术大佬。</li>
+          <li><strong>创业黑马：</strong> 正在 AI 领域乘风破浪的创业者。</li>
+        </ul>
+        <p class="join-path-desc">来这里，和来自全球 Top 高校、大厂、VC 的 60+ 位核心成员碰撞灵感，共同操盘具有全球影响力的学术与产业连接。</p>
+      </div>
+
+      <div class="join-path reveal d2">
+        <div class="join-path-icon">👉</div>
+        <h3 class="join-path-title">路径 2：成为 Volunteer（共创行动派）</h3>
+        <p class="join-path-desc">寻找对 AI 充满好奇心、做事靠谱（说到做到，无需催更）的实干家。（在校学生优先，时间相对灵活会更合适哦！）</p>
+        <p class="join-path-desc">选择你感兴趣的阵地：</p>
+        <ul class="join-path-list">
+          <li><strong>国内方向：</strong> 公众号 / 小红书的内容编辑与宣发；视频号 / B站 的直播支持与策划。</li>
+          <li><strong>海外方向：</strong> LinkedIn / Luma 的预告文案与宣发；YouTube 直播后台支持。</li>
+        </ul>
+        <p class="join-path-desc">别担心，即使没有丰富经验，我们也会手把手带你玩转全流程，上手没有想象中难！</p>
+      </div>
+    </div>
+
+    <div class="join-benefits reveal d1">
+      <h3 class="benefits-title">💡 先说清楚：在 NICE，我们不招“打杂”的</h3>
+      <p class="join-intro" style="margin-bottom: 2rem;">
+        加入 NICE，不是来机械搬砖的。我们希望你是真正参与内容生产、活动策划和社区建设的“合伙人”。<br>
+        你的每一次策划、每一场支持，都会实实在在成为你履历里闪光的一部分。在这里，你不是“某个无名实习生”，而是一个留下名字、创造出真实影响力的人。
+      </p>
+
+      <h3 class="benefits-title">你能获得什么？</h3>
+      <div class="benefits-grid">
+        <div class="benefit-item">
+          <div class="benefit-icon">🔥</div>
+          <h4 class="benefit-title">跨界破圈</h4>
+          <p class="benefit-desc">直接链接全球顶尖学术大牛、AI 创业者与一线投资人。</p>
+        </div>
+        <div class="benefit-item">
+          <div class="benefit-icon">📈</div>
+          <h4 class="benefit-title">真实影响力</h4>
+          <p class="benefit-desc">你做的内容，真的会有 15万+ 甚至百万级的人看见。</p>
+        </div>
+        <div class="benefit-item">
+          <div class="benefit-icon">🎫</div>
+          <h4 class="benefit-title">专属福利</h4>
+          <p class="benefit-desc">优先锁定一票难求的线下活动内部席位（通常报名人数是席位的 3 倍以上！）。</p>
+        </div>
+        <div class="benefit-item">
+          <div class="benefit-icon">🏅</div>
+          <h4 class="benefit-title">署名背书</h4>
+          <p class="benefit-desc">一份有名字、有痕迹的实战经历，告别简历上模糊的“打杂经验”。</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="join-cta reveal d2">
+      <h3 class="cta-title">📮 准备好上车了吗？</h3>
+      <p class="cta-text">
+        如果你对 AI 充满热情，并且渴望与我们一起共建社区，欢迎把简历砸向我们：<br><br>
+        <strong>邮箱：</strong> zenrran@gmail.com 或 norahua1996@gmail.com<br>
+        <strong>邮件标题：</strong> 申请加入 - [Committee / 具体志愿者角色] - 你的名字<br><br>
+        （如果能附上一些过往经历或作品，会更方便我们了解你～）<br><br>
+        打破象牙塔边界，让科研走出实验室。期待在 NICE 遇见你！
+      </p>
+      <a href="mailto:zenrran@gmail.com?subject=%E7%94%B3%E8%AF%B7%E5%8A%A0%E5%85%A5%20-%20%5BCommittee%20%2F%20%E5%85%B7%E4%BD%93%E5%BF%97%E6%84%BF%E8%80%85%E8%A7%92%E8%89%B2%5D%20-%20%E4%BD%A0%E7%9A%84%E5%90%8D%E5%AD%97" class="cta-button">立即申请</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════ FOOTER ═══════ -->
+<!-- ═══════ PLATFORMS (Chinese) ═══════ -->
 <section class="section-platforms" id="platforms">
-  <div class="eyebrow reveal">Speaker Affiliations</div>
-  <h2 class="sec-title reveal d1">Speaker-Affiliated Platforms & Universities</h2>
+  <div class="eyebrow reveal">讲者所属</div>
+  <h2 class="sec-title reveal d1">讲者所在的平台与高校</h2>
 
   <div class="platforms-marquee">
     <div class="marquee-track">
-      <!-- first set -->
       <div class="platform-logo"><img src="assets/img/platforms/harvard.png" alt="Harvard"></div>
       <div class="platform-logo"><img src="assets/img/platforms/stanford.png" alt="Stanford"></div>
       <div class="platform-logo"><img src="assets/img/platforms/mit.png" alt="MIT"></div>
@@ -1576,9 +1594,9 @@ footer::before{
       <div class="platform-logo"><img src="assets/img/platforms/uhk.png" alt="UHK"></div>
       <div class="platform-logo"><img src="assets/img/platforms/uiuc.png" alt="UIUC"></div>
       <div class="platform-logo"><img src="assets/img/platforms/bytedance.png" alt="Bytedance"></div>
-      <div class="platform-logo"><img src="assets/img/platforms/qwen.png" alt="Bytedance"></div>
-      <div class="platform-logo"><img src="assets/img/platforms/sjtu.png" alt="Bytedance"></div>
-      <div class="platform-logo"><img src="assets/img/platforms/fdu.png" alt="Bytedance"></div>
+      <div class="platform-logo"><img src="assets/img/platforms/qwen.png" alt="Qwen"></div>
+      <div class="platform-logo"><img src="assets/img/platforms/sjtu.png" alt="SJTU"></div>
+      <div class="platform-logo"><img src="assets/img/platforms/fdu.png" alt="FDU"></div>
 
       <!-- duplicated set for seamless scroll -->
       <div class="platform-logo"><img src="assets/img/platforms/harvard.png" alt="Harvard"></div>
@@ -1601,17 +1619,17 @@ footer::before{
       <div class="platform-logo"><img src="assets/img/platforms/uhk.png" alt="UHK"></div>
       <div class="platform-logo"><img src="assets/img/platforms/uiuc.png" alt="UIUC"></div>
       <div class="platform-logo"><img src="assets/img/platforms/bytedance.png" alt="Bytedance"></div>
-      <div class="platform-logo"><img src="assets/img/platforms/qwen.png" alt="Bytedance"></div>
-      <div class="platform-logo"><img src="assets/img/platforms/sjtu.png" alt="Bytedance"></div>
-      <div class="platform-logo"><img src="assets/img/platforms/fdu.png" alt="Bytedance"></div>
+      <div class="platform-logo"><img src="assets/img/platforms/qwen.png" alt="Qwen"></div>
+      <div class="platform-logo"><img src="assets/img/platforms/sjtu.png" alt="SJTU"></div>
+      <div class="platform-logo"><img src="assets/img/platforms/fdu.png" alt="FDU"></div>
     </div>
   </div>
 </section>
 
-<!-- ═══════ SPONSORS ═══════ -->
+<!-- ═══════ SPONSORS (Chinese) ═══════ -->
 <section class="section-partners" id="sponsors">
-  <div class="eyebrow reveal">Past Partners & Sponsors</div>
-  <h2 class="sec-title reveal d1">Thank You for Your Support</h2>
+  <div class="eyebrow reveal">过去的合作伙伴与赞助者</div>
+  <h2 class="sec-title reveal d1">感谢各方支持</h2>
 
   <div class="partners-grid">
     <div class="partner-logo reveal">
@@ -1632,115 +1650,9 @@ footer::before{
     <div class="partner-logo reveal d5">
       <img src="assets/img/partners/sjtu.ai.png" alt="上交人工智能创新协会">
     </div>
-    <div class="partner-logo reveal d6">
-      <img src="assets/img/partners/Physis Lab.png" alt="逆矩阵科技">
-    </div>
-    <div class="partner-logo reveal d7">
-      <img src="assets/img/partners/DH3.png" alt="DingHao">
-    </div>
-    <div class="partner-logo reveal d8">
-      <img src="assets/img/partners/SAIIC图标黑色png.png" alt="SAIIC">
-    </div>
-    <div class="partner-logo reveal d9">
-      <img src="assets/img/partners/PKU Innovation Club.jpg" alt="北大学生人工智能创新会">
-    </div>
-    <div class="partner-logo reveal d10">
-      <img src="assets/img/partners/THUAGI.png" alt="清华大学学生通用人工智能研究会">
-    </div>
-    <div class="partner-logo reveal d11">
-      <img src="assets/img/partners/TTC.png" alt="TTC">
-    </div>
     <!-- Add more partners as needed -->
   </div>
 </section>
-
-<!-- ═══════ JOIN US ═══════ -->
-<section class="section-join" id="join">
-  <div class="join-hero">
-    <div class="eyebrow reveal">Join NICE</div>
-    <h2 class="join-title reveal d1">Let's Build Something Amazing Together</h2>
-    <p class="join-subtitle reveal d2">In NICE, Do NICE, Get NICE.</p>
-  </div>
-
-  <div class="join-content">
-    <p class="join-intro reveal d1">
-      NICE is officially 2 years old! Along the way, we've connected 400+ top-tier AI scientists, founders, and investors, building a global community of over 150,000 AI enthusiasts.<br><br>
-      Things are moving incredibly fast—our project pipeline is growing way faster than our team size O.o. Now, we are looking for driven, reliable, and awesome people to join us and help make NICE even better.
-    </p>
-
-    <div class="join-paths">
-      <div class="join-path reveal d1">
-        <div class="join-path-icon">👉</div>
-        <h3 class="join-path-title">Path 1: Join the Committee (Core Think Tank)</h3>
-        <p class="join-path-desc">We are looking for active forces on the AI frontline. You are welcome to apply if you are a:</p>
-        <ul class="join-path-list">
-          <li><strong>Research Pioneer:</strong> A PhD student or researcher with a solid academic foundation, working actively in the lab.</li>
-          <li><strong>Industry Expert:</strong> A tech leader or engineer driving AI innovation at a top-tier tech company.</li>
-          <li><strong>Startup Innovator:</strong> A founder riding the wave of AI entrepreneurship.</li>
-        </ul>
-        <p class="join-path-desc">Come collaborate with our 60+ core members from top global universities, tech giants, and VCs to shape a platform with true global influence.</p>
-      </div>
-
-      <div class="join-path reveal d2">
-        <div class="join-path-icon">👉</div>
-        <h3 class="join-path-title">Path 2: Become a Volunteer (Co-Creator)</h3>
-        <p class="join-path-desc">Are you genuinely curious about AI? Are you proactive and reliable? (University students are highly preferred as flexible schedules work best!)</p>
-        <p class="join-path-desc">Choose the track that fits you:</p>
-        <ul class="join-path-list">
-          <li><strong>China Market Focus:</strong> WeChat Official Account / Xiaohongshu content editing and promotion; Bilibili / WeChat Video live-stream support.</li>
-          <li><strong>Global Market Focus:</strong> LinkedIn / Luma copywriting and promotion; YouTube live-stream operations.</li>
-        </ul>
-        <p class="join-path-desc">Don't worry if you don't know it all yet—we will guide you step-by-step. It's not as hard as you think!</p>
-      </div>
-    </div>
-
-    <div class="join-benefits reveal d1">
-      <h3 class="benefits-title">💡 To Be Clear: We Don't Do "Grunt Work"</h3>
-      <p class="join-intro" style="margin-bottom: 2rem;">
-        Joining NICE doesn't mean doing mechanical, repetitive tasks. We want "partners" who are truly involved in content creation, event planning, and community building.<br>
-        Every piece of content you create and every event you support will be seen, and it will become a concrete part of your resume. You won't just be a "nameless intern"—you will be a creator with real, credited impact.
-      </p>
-
-      <h3 class="benefits-title">What's in it for you?</h3>
-      <div class="benefits-grid">
-        <div class="benefit-item">
-          <div class="benefit-icon">🔥</div>
-          <h4 class="benefit-title">Direct Network</h4>
-          <p class="benefit-desc">Connect directly with top-tier AI academics, startup founders, and leading investors.</p>
-        </div>
-        <div class="benefit-item">
-          <div class="benefit-icon">📈</div>
-          <h4 class="benefit-title">Real Impact</h4>
-          <p class="benefit-desc">Your work will actually be seen by our strong community (and sometimes reach 10k+ views!).</p>
-        </div>
-        <div class="benefit-item">
-          <div class="benefit-icon">🎫</div>
-          <h4 class="benefit-title">VIP Access</h4>
-          <p class="benefit-desc">Guaranteed internal spots for our highly sought-after offline events (which are usually overbooked by 3x!).</p>
-        </div>
-        <div class="benefit-item">
-          <div class="benefit-icon">🏅</div>
-          <h4 class="benefit-title">A Real Portfolio</h4>
-          <p class="benefit-desc">Gain verifiable experience with your name on it, not just a vague bullet point on your CV.</p>
-        </div>
-      </div>
-    </div>
-
-    <div class="join-cta reveal d2">
-      <h3 class="cta-title">📮 Ready to Apply?</h3>
-      <p class="cta-text">
-        If you are driven by a passion for AI and community building, send your resume to us:<br><br>
-        <strong>Email:</strong> zenrran@gmail.com or norahua1996@gmail.com<br>
-        <strong>Subject Line:</strong> Application - [Committee / Specific Volunteer Role] - Your Name<br><br>
-        (Feel free to attach your portfolio or any past projects so we can get to know you better!)<br><br>
-        Let's break the boundaries of the ivory tower and bring research out of the lab. See you at NICE!
-      </p>
-      <a href="mailto:zenrran@gmail.com?subject=Application%20-%20[Committee%20/%20Specific%20Volunteer%20Role]%20-%20Your%20Name" class="cta-button">Apply Now</a>
-    </div>
-  </div>
-</section>
-
-<!-- ═══════ FOOTER ═══════ -->
 <footer id="foot">
   <div class="foot-grid">
     <div class="reveal">
@@ -1748,22 +1660,21 @@ footer::before{
         <img class="flm" src="assets/NICE_LOGO.png" alt="NICE" width="160" height="28" decoding="async">
         <span class="flw">NICE</span>
       </div>
-      <p class="foot-desc">A non-profit community hosting talks, panels, and interviews at the frontier of artificial intelligence.</p>
+      <p class="foot-desc">一个致力于举办人工智能前沿领域讲座、论坛和访谈的非营利研究者社区。</p>
       <p class="foot-cities">Beijing &middot; New York &middot; Hong Kong<br>Bay Area &middot; Singapore &middot; Munich</p>
     </div>
     <div class="reveal d1">
-      <div class="fcl">Navigate</div>
+      <div class="fcl">导航</div>
       <ul class="flinks">
-        <li><a href="#intro">About</a></li>
-        <li><a href="#talks">Talks</a></li>
-        <li><a href="#events">Events</a></li>
-        <li><a href="#sponsors">Sponsors</a></li>
-        <li><a href="team.html">Team</a></li>
-        <li><a href="#join">Join</a></li>
+        <li><a href="#intro">关于</a></li>
+        <li><a href="#talks">讲座</a></li>
+        <li><a href="#events">活动</a></li>
+        <li><a href="team-zh.html">团队</a></li>
+        <li><a href="#join">加入我们</a></li>
       </ul>
     </div>
     <div class="reveal d2">
-      <div class="fcl">Channels</div>
+      <div class="fcl">频道</div>
       <ul class="flinks">
         <li><a href="https://www.youtube.com/@niceaitalk" target="_blank">YouTube</a></li>
         <li><a href="https://x.com/academic_nice" target="_blank">X / Twitter</a></li>
@@ -1774,7 +1685,7 @@ footer::before{
     </div>
   </div>
   <div class="foot-bottom">
-    <span class="foot-copy">&copy; 2025 Nexus for IntelligeCE &middot; Non-profit &middot; Est. 2023</span>
+    <span class="foot-copy">&copy; 2025 智识纽带 (NICE) &middot; 非营利组织 &middot; 成立于 2023</span>
     <div class="foot-soc">
       <a href="https://www.youtube.com/@niceaitalk" target="_blank">YouTube</a>
       <a href="https://x.com/academic_nice" target="_blank">Twitter</a>
@@ -1784,10 +1695,6 @@ footer::before{
     </div>
   </div>
 </footer>
-  
-  <!-- Load dependencies -->
-  <script src="assets/js/jquery-3.5.1.min.js"></script>
-  <script src="assets/js/custom.js"></script>
 
 <script>
 /* ── CUSTOM CURSOR ── */
@@ -1911,5 +1818,7 @@ window.addEventListener('scroll',()=>{
   if(inner) inner.style.opacity=1-y/650;
 });
 </script>
+<script src="assets/js/jquery-3.5.1.min.js"></script>
+<script src="assets/js/custom.js"></script>
 </body>
 </html>

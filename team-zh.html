@@ -1,0 +1,1196 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NICE — 团队</title>
+<link rel="icon" href="assets/NICE_LOGO.png" type="image/png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Inter:wght@300;400;500&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+
+:root{
+  --black: #080808;
+  --white: #f0f0f0;
+  --orange: #e8621a;
+  --orange-glow: rgba(232,98,26,0.18);
+  --purple: #7b35d4;
+  --purple-glow: rgba(123,53,212,0.18);
+  --dim: rgba(240,240,240,0.45);
+  --faint: rgba(240,240,240,0.2);
+  --border: rgba(255,255,255,0.08);
+}
+
+body{
+  font-family:'Inter',sans-serif;
+  background:var(--black);
+  color:var(--white);
+  overflow-x:hidden;
+  cursor:none;
+}
+
+/* Light theme overrides (toggle by adding `light-theme` to <body>) */
+body.light-theme{
+  background: #ffffff !important;
+  color: #0b0b0b !important;
+  --white: #0b0b0b;
+  --orange-glow: rgba(232,98,26,0.12);
+  --purple-glow: rgba(123,53,212,0.12);
+  --dim: rgba(0,0,0,0.65);
+  --faint: rgba(0,0,0,0.45);
+  --border: rgba(0,0,0,0.12);
+}
+
+body.light-theme .cur{background:var(--orange);mix-blend-mode:normal}
+body.light-theme .cur-ring{border-color:var(--orange);mix-blend-mode:normal}
+body.light-theme nav{background:rgba(245,245,245,0.9);border-bottom-color:rgba(0,0,0,0.12)}
+body.light-theme .nav-lw{color:#1a1a1a}
+body.light-theme .nav-links a{color:var(--dim)}
+body.light-theme .nav-links a:hover{color:#1a1a1a}
+body.light-theme .nav-links a.active{color:#1a1a1a}
+body.light-theme .nav-right a{color:var(--faint)}
+body.light-theme .nav-right a:hover{color:#1a1a1a}
+body.light-theme .nav-btn{border-color:rgba(232,98,26,0.8);color:var(--orange)}
+body.light-theme .nav-btn:hover{background:var(--orange);border-color:var(--orange);color:#f5f5f5}
+body.light-theme #themeToggle{background:#e8e8e8;border-color:rgba(232,98,26,0.8);color:var(--orange)}
+body.light-theme #themeToggle:hover{background:var(--orange);border-color:var(--orange);color:#f5f5f5}
+body.light-theme .h-title{color:#000000;font-weight:900}
+body.light-theme .h-title::before{
+  background:linear-gradient(135deg,
+    rgba(232,98,26,0.5) 0%,
+    rgba(123,53,212,0.4) 100%);
+  filter:blur(18px);
+}
+body.light-theme .h-title::before{filter:blur(12px);opacity:0.36}
+body.light-theme .hero-inner{z-index:20;color:#0b0b0b}
+body.light-theme #orbCanvas{opacity:0.28;pointer-events:none}
+body.light-theme .h-eyebrow{color:#1a1a1a;opacity:1}
+body.light-theme .h-sub{color:#1a1a1a}
+body.light-theme .h-sub strong{color:#000000}
+body.light-theme .h-cities{color:#1a1a1a}
+
+/* Team cards */
+body.light-theme .tc-name{color:#1a1a1a}
+body.light-theme .tc-role{color:var(--faint)}
+body.light-theme .tc-desc{color:var(--dim)}
+body.light-theme .team-card{border-color:rgba(0,0,0,0.12)}
+body.light-theme .team-card:hover{background:rgba(0,0,0,0.03);border-color:var(--orange)}
+body.light-theme .team-card:hover .tc-name{color:var(--orange)}
+
+/* make small tag chips readable in light theme */
+body.light-theme .chip{color:var(--dim) !important;border-color:rgba(0,0,0,0.12) !important}
+body.light-theme .chip:hover{border-color:var(--orange) !important;color:var(--orange) !important}
+
+/* Footer */
+body.light-theme footer{background:#e8e8e8;border-top-color:rgba(0,0,0,0.12)}
+body.light-theme .foot-brand-row{display:flex;align-items:center}
+body.light-theme .flw{color:#1a1a1a}
+body.light-theme .foot-desc{color:var(--dim)}
+body.light-theme .foot-cities{color:var(--faint)}
+body.light-theme .fcl{color:var(--orange);opacity:1}
+body.light-theme .flinks a{color:var(--dim)}
+body.light-theme .flinks a:hover{color:#1a1a1a}
+body.light-theme .foot-copy{color:var(--faint)}
+body.light-theme .foot-soc a{color:var(--faint)}
+body.light-theme .foot-soc a:hover{color:#1a1a1a}
+body.light-theme .foot-bottom{border-top-color:rgba(0,0,0,0.12)}
+
+/* Team page specific */
+body.light-theme .h-eyebrow{color:var(--orange);opacity:1}
+body.light-theme .h-title{color:#1a1a1a}
+body.light-theme .h-sub{color:var(--dim)}
+body.light-theme .team-hero{border-bottom-color:rgba(0,0,0,0.12)}
+body.light-theme .eyebrow{color:var(--orange);opacity:1}
+body.light-theme .sec-title{color:#1a1a1a}
+body.light-theme .sec-desc{color:var(--dim)}
+body.light-theme .fc-name{color:#1a1a1a}
+body.light-theme .fc-title{color:var(--faint)}
+body.light-theme .fc-bio{color:var(--dim)}
+body.light-theme .founder-card{border-color:rgba(0,0,0,0.12)}
+body.light-theme .fc-link{color:var(--orange)}
+body.light-theme .section-team{border-bottom-color:rgba(0,0,0,0.12)}
+
+/* ── custom cursor ── */
+.cur{
+  position:fixed;width:10px;height:10px;
+  border-radius:50%;background:var(--white);
+  pointer-events:none;z-index:9999;
+  transform:translate(-50%,-50%);
+  transition:width .2s,height .2s,background .2s;
+  mix-blend-mode:difference;
+}
+.cur-ring{
+  position:fixed;width:40px;height:40px;
+  border-radius:50%;border:1px solid rgba(255,255,255,0.35);
+  pointer-events:none;z-index:9998;
+  transform:translate(-50%,-50%);
+  transition:left .1s ease-out,top .1s ease-out,
+             width .3s,height .3s,border-color .3s;
+}
+body:has(a:hover) .cur,
+body:has(button:hover) .cur{width:18px;height:18px;}
+body:has(a:hover) .cur-ring,
+body:has(button:hover) .cur-ring{
+  width:60px;height:60px;
+  border-color:rgba(232,98,26,0.6);
+}
+
+/* ── NAV ── */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:800;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:1.4rem 3rem;
+  background:rgba(8,8,8,0.6);
+  backdrop-filter:blur(20px);
+  -webkit-backdrop-filter:blur(20px);
+  border-bottom:1px solid var(--border);
+}
+
+.nav-logo{display:flex;align-items:center;gap:.65rem;text-decoration:none;}
+.nav-lm{
+  height:28px;width:auto;max-width:160px;
+  object-fit:contain;object-position:left center;
+  display:block;flex-shrink:0;
+}
+.nav-lw{
+  font-family:'Syne',sans-serif;
+  font-size:.82rem;font-weight:700;
+  letter-spacing:.25em;color:var(--white);
+}
+
+.nav-links{
+  position:absolute;left:50%;transform:translateX(-50%);
+  display:flex;gap:2.8rem;list-style:none;
+}
+.nav-links a{
+  font-family:'DM Mono',monospace;
+  font-size:.76rem;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--dim);text-decoration:none;
+  transition:color .25s;
+}
+.nav-links a:hover{color:var(--white);}
+.nav-links a.active{color:var(--white);}
+
+.nav-right{display:flex;align-items:center;gap:.9rem;}
+.nav-right a{
+  font-family:'DM Mono',monospace;
+  font-size:.52rem;letter-spacing:.08em;text-transform:uppercase;
+  color:var(--faint);text-decoration:none;transition:color .25s;
+}
+.nav-right a:hover{color:var(--white);}
+
+.nav-btn{
+  padding:.4rem 1rem;
+  border:1px solid rgba(232,98,26,0.5);
+  color:var(--orange) !important;
+  font-family:'DM Mono',monospace;
+  font-size:.54rem;letter-spacing:.1em;text-transform:uppercase;
+  text-decoration:none;
+  transition:background .3s,border-color .3s,color .3s !important;
+}
+.nav-btn:hover{
+  background:var(--orange);
+  border-color:var(--orange);
+  color:var(--black) !important;
+}
+
+/* ── SCROLL REVEAL ── */
+.reveal{
+  opacity:0;transform:translateY(26px);
+  transition:opacity .8s cubic-bezier(.16,1,.3,1),
+             transform .8s cubic-bezier(.16,1,.3,1);
+}
+.reveal.on{opacity:1;transform:none;}
+.d1{transition-delay:.07s}
+.d2{transition-delay:.14s}
+.d3{transition-delay:.21s}
+.d4{transition-delay:.28s}
+.d5{transition-delay:.35s}
+.d6{transition-delay:.42s}
+.d7{transition-delay:.49s}
+
+/* ── SHARED TYPOGRAPHY ── */
+.eyebrow{
+  font-family:'DM Mono',monospace;
+  font-size:.72rem;letter-spacing:.45em;text-transform:uppercase;
+  color:var(--orange);opacity:.7;
+  display:flex;align-items:center;gap:.7rem;
+  margin-bottom:1.8rem;
+}
+.eyebrow::before{
+  content:'';display:block;
+  width:1.4rem;height:1px;
+  background:var(--orange);opacity:.7;
+}
+
+.sec-title{
+  font-family:'Syne',sans-serif;
+  font-size:clamp(1.8rem,3vw,2.6rem);
+  font-weight:700;line-height:1.1;
+  letter-spacing:-.02em;color:var(--white);
+  margin-bottom:1.6rem;
+}
+
+/* ── TEAM HERO ── */
+.team-hero{
+  padding:10rem 5rem 5rem;
+  text-align:center;
+  border-bottom:1px solid var(--border);
+  position:relative;
+}
+
+.team-hero .h-eyebrow{
+  font-family:'DM Mono',monospace;
+  font-size:.76rem;letter-spacing:.5em;text-transform:uppercase;
+  color:var(--dim);margin-bottom:1.5rem;
+}
+
+.team-hero .h-title{
+  font-family:'Syne',sans-serif;
+  font-size:clamp(3rem,8vw,6rem);
+  font-weight:800;
+  line-height:.9;
+  letter-spacing:-.03em;
+  color:var(--white);
+  margin-bottom:1.5rem;
+}
+
+.team-hero .h-sub{
+  font-family:'Inter',sans-serif;
+  font-size:clamp(.95rem,1.4vw,1.15rem);
+  font-weight:300;
+  color:var(--dim);
+  letter-spacing:.04em;
+  line-height:1.55;
+  max-width:600px;
+  margin:0 auto;
+}
+
+/* ── hero entrance animations ── */
+@keyframes fadeUp{
+  from{opacity:0;transform:translateY(20px)}
+  to{opacity:1;transform:translateY(0)}
+}
+.team-hero .h-eyebrow{animation:fadeUp .8s cubic-bezier(.16,1,.3,1) .2s both}
+.team-hero .h-title  {animation:fadeUp 1s  cubic-bezier(.16,1,.3,1) .35s both}
+.team-hero .h-sub    {animation:fadeUp .8s cubic-bezier(.16,1,.3,1) .55s both}
+
+/* ── TEAM SECTIONS ── */
+.section-team{
+  padding:7rem 5rem;
+  border-bottom:1px solid var(--border);
+}
+
+.team-group{
+  margin-bottom:4rem;
+}
+.team-group:last-child{margin-bottom:0;}
+
+.team-group-label{
+  font-family:'DM Mono',monospace;
+  font-size:.68rem;letter-spacing:.35em;text-transform:uppercase;
+  color:var(--orange);opacity:.5;
+  margin-bottom:1.4rem;
+  padding-bottom:.8rem;
+  border-bottom:1px solid var(--border);
+}
+
+.team-group-desc{
+  font-size:.9rem;line-height:1.85;
+  color:var(--dim);font-weight:300;
+  max-width:720px;
+  margin-bottom:2rem;
+}
+
+/* ── FOUNDING TEAM CARDS ── */
+.founder-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:0;
+  border:1px solid var(--border);
+}
+
+.founder-card{
+  padding:3rem 3rem 3.5rem;
+  border-right:1px solid var(--border);
+  border-bottom:1px solid var(--border);
+  position:relative;overflow:hidden;
+  transition:background .35s;
+}
+.founder-card:nth-child(2n){border-right:none;}
+.founder-card:nth-last-child(-n+2){border-bottom:none;}
+.founder-card:hover{background:rgba(255,255,255,.025);}
+
+.founder-card::before{
+  content:'';position:absolute;
+  top:0;left:0;right:100%;height:2px;
+  background:linear-gradient(to right,var(--orange),var(--purple));
+  transition:right .5s cubic-bezier(.7,0,.3,1);
+}
+.founder-card:hover::before{right:0;}
+
+.fc-name{
+  font-family:'Syne',sans-serif;
+  font-size:1.6rem;font-weight:700;
+  color:var(--white);margin-bottom:.5rem;
+  line-height:1.2;
+}
+
+.fc-title{
+  font-family:'DM Mono',monospace;
+  font-size:.74rem;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--orange);opacity:.8;
+  margin-bottom:1.4rem;
+}
+
+.fc-bio{
+  font-family:'Inter',sans-serif;
+  font-size:.88rem;line-height:1.85;
+  color:rgba(240,240,240,.4);font-weight:300;
+}
+
+.fc-bio li{
+  margin-bottom:.35rem;
+  list-style:none;
+  padding-left:1rem;
+  position:relative;
+}
+.fc-bio li::before{
+  content:'';
+  position:absolute;left:0;top:.65em;
+  width:4px;height:4px;
+  border-radius:50%;
+  background:var(--orange);opacity:.4;
+}
+
+.fc-link{
+  display:inline-block;
+  margin-top:1.2rem;
+  font-family:'DM Mono',monospace;
+  font-size:.72rem;letter-spacing:.08em;
+  color:var(--orange);text-decoration:none;
+  opacity:.7;transition:opacity .25s;
+}
+.fc-link:hover{opacity:1;}
+
+/* ── STANDARD TEAM CARDS ── */
+.team-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(220px,1fr));
+  gap:0;
+}
+
+.team-card{
+  padding:1.4rem 1.4rem;
+  border:1px solid transparent;
+  transition:background .3s,border-color .3s;
+  cursor:default;
+}
+.team-card a{
+  text-decoration: none;
+  color: inherit;
+}
+.team-card:hover{
+  background:rgba(255,255,255,.025);
+  border-color:var(--border);
+}
+
+.tc-name{
+  font-family:'Syne',sans-serif;
+  font-size:.92rem;font-weight:600;
+  color:var(--white);margin-bottom:.3rem;
+  transition:color .25s;
+}
+.team-card:hover .tc-name{color:var(--orange);}
+
+.tc-role{
+  font-family:'DM Mono',monospace;
+  font-size:.66rem;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--faint);
+}
+
+.tc-desc{
+  font-size:.78rem;line-height:1.7;
+  color:rgba(240,240,240,.3);font-weight:300;
+  margin-top:.4rem;
+}
+
+.tc-link{
+  display:inline-block;
+  margin-top:.5rem;
+  font-family:'DM Mono',monospace;
+  font-size:.64rem;letter-spacing:.06em;
+  color:var(--orange);text-decoration:none;
+  opacity:.6;transition:opacity .25s;
+}
+.tc-link:hover{opacity:1;}
+
+/* ── smaller grid for community ── */
+.team-grid-sm{
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(170px,1fr));
+  gap:0;
+}
+.team-grid-sm .team-card{
+  padding:1rem 1.2rem;
+}
+.team-grid-sm .tc-name{
+  font-size:.82rem;
+}
+
+/* ── Advisory sub-groups ── */
+.advisory-sub{
+  margin-top:1.5rem;
+}
+.advisory-sub-label{
+  font-family:'DM Mono',monospace;
+  font-size:.64rem;letter-spacing:.2em;text-transform:uppercase;
+  color:rgba(240,240,240,.25);
+  margin-bottom:.8rem;
+}
+
+/* ── FOOTER ── */
+footer{
+  background:rgba(255,255,255,.018);
+  border-top:1px solid var(--border);
+  padding:5.5rem 5rem 2.5rem;
+  position:relative;overflow:hidden;
+}
+footer::before{
+  content:'NICE';
+  position:absolute;right:-1rem;bottom:-2.5rem;
+  font-family:'Syne',sans-serif;
+  font-size:18rem;font-weight:800;
+  color:rgba(255,255,255,.018);
+  pointer-events:none;user-select:none;
+  line-height:1;letter-spacing:-.05em;
+}
+
+.foot-grid{
+  display:grid;grid-template-columns:2fr 1fr 1fr;
+  gap:5rem;margin-bottom:4.5rem;
+  position:relative;z-index:2;
+}
+.foot-brand-row{display:flex;align-items:center;gap:.6rem;margin-bottom:1rem;}
+.flm{
+  height:28px;width:auto;max-width:160px;
+  object-fit:contain;object-position:left center;
+  display:block;flex-shrink:0;
+}
+.flw{
+  font-family:'Syne',sans-serif;font-size:.78rem;
+  font-weight:700;letter-spacing:.25em;color:var(--white);
+}
+.foot-desc{
+  font-size:.88rem;line-height:1.85;
+  color:rgba(240,240,240,.35);max-width:290px;font-weight:300;
+}
+.foot-cities{
+  font-family:'DM Mono',monospace;font-size:.66rem;
+  letter-spacing:.2em;text-transform:uppercase;
+  color:rgba(240,240,240,.2);margin-top:1.2rem;line-height:1.9;
+}
+.fcl{
+  font-family:'DM Mono',monospace;font-size:.68rem;
+  letter-spacing:.35em;text-transform:uppercase;
+  color:var(--orange);opacity:.5;margin-bottom:1.4rem;
+}
+.flinks{list-style:none;display:flex;flex-direction:column;gap:.7rem;}
+.flinks a{
+  font-size:.9rem;color:rgba(240,240,240,.45);
+  text-decoration:none;font-weight:300;transition:color .25s;
+}
+.flinks a:hover{color:var(--white);}
+
+.foot-bottom{
+  display:flex;justify-content:space-between;align-items:center;
+  padding-top:2rem;border-top:1px solid var(--border);
+  position:relative;z-index:2;
+}
+.foot-copy{
+  font-family:'DM Mono',monospace;font-size:.68rem;
+  letter-spacing:.1em;color:rgba(240,240,240,.2);
+}
+.foot-soc{display:flex;gap:1.5rem;}
+.foot-soc a{
+  font-family:'DM Mono',monospace;font-size:.7rem;
+  letter-spacing:.14em;text-transform:uppercase;
+  color:rgba(240,240,240,.25);text-decoration:none;transition:color .25s;
+}
+.foot-soc a:hover{color:var(--orange);}
+
+/* ── RESPONSIVE ── */
+@media(max-width:1024px){
+  .founder-grid{grid-template-columns:1fr;}
+  .founder-card{border-right:none !important;border-bottom:1px solid var(--border);}
+  .founder-card:last-child{border-bottom:none;}
+  .foot-grid{grid-template-columns:1fr;gap:3rem;}
+}
+
+@media(max-width:768px){
+  nav{padding:1rem 1.5rem;}
+  .nav-links{display:none;}
+  .team-hero{padding:8rem 2rem 3rem;}
+  .section-team{padding:5rem 2rem;}
+  .founder-card{padding:2rem 1.8rem 2.5rem;}
+  .fc-name{font-size:1.3rem;}
+  .team-grid{grid-template-columns:repeat(auto-fill,minmax(160px,1fr));}
+  .team-grid-sm{grid-template-columns:repeat(auto-fill,minmax(140px,1fr));}
+  .foot-bottom{flex-direction:column;gap:1rem;align-items:flex-start;}
+  footer{padding:4rem 2rem 2rem;}
+}
+</style>
+</head>
+<body>
+
+<div class="cur" id="cur"></div>
+<div class="cur-ring" id="curRing"></div>
+
+<!-- NAV -->
+<nav>
+  <a class="nav-logo" href="zh.html">
+    <img class="nav-lm" src="assets/NICE_LOGO.png" alt="NICE" width="160" height="28" decoding="async">
+    <span class="nav-lw">NICE</span>
+  </a>
+
+  <ul class="nav-links">
+    <li><a href="zh.html#intro">关于</a></li>
+    <li><a href="zh.html#talks">讲座</a></li>
+    <li><a href="zh.html#events">活动</a></li>
+    <li><a href="team-zh.html" class="active">团队</a></li>
+    <li><a href="zh.html#join">加入我们</a></li>
+    <li><a href="https://docs.google.com/forms/d/e/1FAIpQLScN7I69_qyI6dulHnhKV8m8bZJHkYhfXn5_tjYeyeHR0QvNbw/viewform" target="_blank">Talk申请</a></li>
+  </ul>
+
+  <div class="nav-right">
+    <a href="https://www.youtube.com/@niceaitalk" target="_blank">YouTube</a>
+    <a href="https://x.com/academic_nice" target="_blank">Twitter</a>
+    <a href="https://www.linkedin.com/company/110921233/admin/dashboard/" target="_blank">LinkedIn</a>
+    <a href="https://space.bilibili.com/507524288" target="_blank">Bilibili</a>
+    <button id="themeToggle" class="nav-btn" type="button" aria-pressed="false">Dark</button>
+    <a href="team.html" class="nav-btn">EN</a>
+    <a href="https://luma.com/user/usr-YJvNOI7CseZ7zMm" target="_blank" class="nav-btn">活动</a>
+  </div>
+</nav>
+
+<!-- TEAM HERO -->
+<section class="team-hero">
+  <p class="h-eyebrow">我们的团队</p>
+  <h1 class="h-title">NICE 团队</h1>
+  <p class="h-sub">60+ members across four continents — researchers, founders, and builders</p>
+</section>
+
+<!-- FOUNDING TEAM -->
+<section class="section-team">
+  <div class="eyebrow reveal">Core</div>
+  <h2 class="sec-title reveal d1">创始团队</h2>
+
+  <div class="founder-grid">
+    <div class="founder-card reveal d2">
+      <div class="fc-name">甄冉冉</div>
+      <div class="fc-title">创始人</div>
+      <ul class="fc-bio">
+        <li>苏州大学博士生</li>
+        <li>创立NICE，旨在建立一个链接全球 AI 顶尖人才的平台</li>
+        <li>具有AI前沿、内容筛选与社区运营符合背景</li>
+        <li>所有重要决策、执行和未来规划的具体负责人</li>
+      </ul>
+      <a class="fc-link" href="" target="_blank">Homepage &rarr;</a>
+    </div>
+
+    <div class="founder-card reveal d3">
+      <div class="fc-name">华文越</div>
+      <div class="fc-title">创始人</div>
+      <ul class="fc-bio">
+        <li>微软研究院 (Microsoft Research) AI Frontiers 高级研究员</li>
+        <li>罗格斯大学博士，加州大学圣巴巴拉分校 (UC Santa Barbara) 博士后</li>
+        <li>2025年 KAUST (阿卜杜拉国王科技大学) AI 学术新星</li>
+        <li>处于全球人工智能技术演进的最前沿</li>
+        <li>论文引用量达 3,700+ 次，在 NeurIPS、ICLR、ACL 和 EMNLP 等顶级会议上发表论文 60 余篇；担任 ACL 和 COLM 的领域主席</li>
+        <li>负责：构建全球顶尖 AI 人才网络（海外核心节点），引入前沿技术议题与高质量演讲嘉宾，打通国际学术界、工业界与创业圈的连接</li>
+        <li>NICE 全球化发展与高端能力建设的核心支柱</li>
+</ul>
+      <a class="fc-link" href="https://wenyueh.github.io/en/" target="_blank">Homepage &rarr;</a>
+    </div>
+
+    <div class="founder-card reveal d2">
+      <div class="fc-name">王鸿儒</div>
+      <div class="fc-title">联合创始人</div>
+      <ul class="fc-bio">
+        <li>我是地球体验者 · 白丁一号，一个在代码与文字之间游走的探索者，主攻人和Agent之间的合作和竞争，在ACL EMNLP NAACL上留下过脚印，在这个星球上，我们都是短暂的访客。不如用代码和文字留下一些有趣的痕迹。</li>
+      </ul>
+      <a class="fc-link" href="https://hrwise-nlp.github.io/" target="_blank">Homepage &rarr;</a>
+    </div>
+
+    <div class="founder-card reveal d3">
+      <div class="fc-name">薛博阳</div>
+      <div class="fc-title">联合创始人</div>
+      <ul class="fc-bio">
+        <li>我是香港中文大学系统工程与工程管理学系的四年级博士生，有幸师从黄锦辉教授。我的研究方向主要集中在自然语言处理、可信人工智能、贝叶斯学习以及语音识别等领域。</li>
+      </ul>
+      <a class="fc-link" href="https://amourwaltz.github.io/" target="_blank">Homepage &rarr;</a>
+    </div>
+  </div>
+</section>
+
+<!-- LEADERSHIP -->
+<!-- <section class="section-team">
+  <div class="eyebrow reveal">Management</div>
+  <h2 class="sec-title reveal d1">Leadership</h2>
+
+  <div class="team-group reveal d2">
+    <div class="team-grid">
+      <div class="team-card">
+        <div class="tc-name">甄冉冉</div>
+        <div class="tc-desc">负责整体运营、战略规划、合作生态伙伴与社区发展</div>
+      </div>
+      <div class="team-card">
+        <div class="tc-name">华文越</div>
+        <div class="tc-desc">负责技术战略、全球人才网络构建、讲者遴选及国际学术与产业的连接</div>
+      </div>
+    </div>
+  </div>
+</section> -->
+
+<!-- PROGRAM COMMITTEE -->
+<section class="section-team">
+  <div class="eyebrow reveal">学术</div>
+  <h2 class="sec-title reveal d1">项目委员会（半年轮值制）</h2>
+  <p class="team-group-desc reveal d2">项目委员会实行半年期任期制度，深度参与 NICE 内容生态的全流程管理：从讲者邀约与议题策划，到排期规划与形式决策。成员负责设定多语言讲座的月度配额，并统筹线上直播与录播，确保内容涵盖前沿论文研讨、深度访谈及开源项目展示等多元化维度。</p>
+
+  <div class="team-group reveal d3">
+    <div class="team-grid">
+      <div class="team-card">
+        <div class="tc-name">华文越</div>
+        <div class="tc-role">委员会成员</div>
+        <a class="tc-link" href="https://wenyueh.github.io/en/" target="_blank">Homepage &rarr;</a>
+      </div>
+      <div class="team-card">
+        <div class="tc-name">甄冉冉</div>
+        <div class="tc-role">委员会成员</div>
+      </div>
+      <div class="team-card">
+        <div class="tc-name">吴昊伦</div>
+        <div class="tc-role">委员会成员</div>
+        <a class="tc-link" href="https://haolun-wu.github.io/" target="_blank">Homepage &rarr;</a>
+      </div>
+      <div class="team-card">
+        <div class="tc-name">李大卫</div>
+        <div class="tc-role">委员会成员</div>
+        <a class="tc-link" href="https://daweili95.github.io/" target="_blank">Homepage &rarr;</a>
+      </div>
+      <div class="team-card">
+        <div class="tc-name">薛博阳</div>
+        <div class="tc-role">委员会成员</div>
+        <a class="tc-link" href="https://amourwaltz.github.io/" target="_blank">Homepage &rarr;</a>
+      </div>
+      <div class="team-card">
+        <div class="tc-name">王鸿儒</div>
+        <div class="tc-role">委员会成员</div>
+        <a class="tc-link" href="https://hrwise-nlp.github.io/" target="_blank">Homepage &rarr;</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INDUSTRY -->
+<section class="section-team">
+  <div class="eyebrow reveal">Industry</div>
+  <h2 class="sec-title reveal d1">Industry</h2>
+
+  <div class="team-group reveal d2">
+    <div class="team-grid">
+      <div class="team-card">
+        <div class="tc-name">刘鸿樟</div>
+        <div class="tc-role">行业联络</div>
+        <a class="tc-link" href="https://www.linkedin.com/in/alpha4ai/" target="_blank">Homepage &rarr;</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MEDIA -->
+<section class="section-team">
+  <div class="eyebrow reveal">内容</div>
+  <h2 class="sec-title reveal d1">媒体</h2>
+
+  <div class="team-group reveal d2">
+    <div class="team-grid">
+      <div class="team-card">
+        <div class="tc-name">宁钰成</div>
+        <div class="tc-role">主编</div>
+        <a class="tc-link" href="https://ascii-iie.github.io/Students/NYC.html" target="_blank">Homepage &rarr;</a>
+      </div>
+      <div class="team-card">
+        <div class="tc-name">张议文</div>
+        <div class="tc-role">主编</div>
+        <a class="tc-link" href="https://www.linkedin.com/in/ccandyyiwenzhang/" target="_blank">Homepage &rarr;</a>
+      </div>
+      <div class="team-card">
+        <div class="tc-name">冯可蘅</div>
+        <div class="tc-role">副主编</div>
+        <a class="tc-link" href="https://efeng2.github.io/" target="_blank">Homepage &rarr;</a>
+      </div>
+      <div class="team-card">
+        <div class="tc-name">潘骁</div>
+        <div class="tc-role">副主编</div>
+        <a class="tc-link" href="https://panxiao1994.github.io/" target="_blank">Homepage &rarr;</a>
+      </div>
+      <div class="team-card">
+        <div class="tc-name">何雨欣</div>
+        <div class="tc-role">策划</div>
+        <a class="tc-link" href="" target="_blank">Homepage &rarr;</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COMMUNITY -->
+<section class="section-team">
+  <div class="eyebrow reveal">Network</div>
+  <h2 class="sec-title reveal d1">核心成员</h2>
+
+  <div class="team-group reveal d2">
+    <div class="team-grid-sm">
+      <div class="team-card">
+        <a href="https://dongdongzhaoup.github.io/" target="_blank">
+          <div class="tc-name">赵皓东</div>
+          <div class="tc-role">博士生@SJTU</div>
+          <a class="tc-link" href="https://dongdongzhaoup.github.io/" target="_blank">Homepage &rarr;</a>
+        </a>
+      </div>
+      <div class="team-card">
+        <a href="https://jyrao.github.io/" target="_blank">
+          <div class="tc-name">饶珈源</div>
+          <div class="tc-role">博士生@SJTU</div>
+          <a class="tc-link" href="https://jyrao.github.io/" target="_blank">Homepage &rarr;</a>
+        </a>
+      </div>
+      <div class="team-card">
+        <a href="https://zhaochen0110.github.io/" target="_blank">
+          <div class="tc-name">苏肇辰</div>
+          <div class="tc-role">博士生@HKUST</div>
+          <a class="tc-link" href="https://zhaochen0110.github.io/" target="_blank">Homepage &rarr;</a>
+        </a>
+      </div>
+      <div class="team-card">
+        <a href="https://waltonfuture.github.io/" target="_blank">
+          <div class="tc-name">魏来</div>
+          <div class="tc-role">博士生@SJTU</div>
+          <a class="tc-link" href="https://waltonfuture.github.io/" target="_blank">Homepage &rarr;</a>
+        </a>
+      </div>
+      <div class="team-card">
+        <a href="https://scholar.google.com/citations?hl=zh-CN&user=P3bp0egAAAAJ&view_op=list_works&sortby=pubdate" target="_blank">
+          <div class="tc-name">王梦如</div>
+          <div class="tc-role">博士生@ZJU</div>
+          <a class="tc-link" href="https://scholar.google.com/citations?hl=zh-CN&user=P3bp0egAAAAJ&view_op=list_works&sortby=pubdate" target="_blank">Homepage &rarr;</a>
+        </a>
+      </div>
+      <div class="team-card">
+        <a href="https://scholar.google.com/citations?user=xTM9pKsAAAAJ&hl=en&oi=sra" target="_blank">
+          <div class="tc-name">李映辉</div>
+          <div class="tc-role">PhD@Tsinghua</div>
+          <a class="tc-link" href="https://scholar.google.com/citations?user=xTM9pKsAAAAJ&hl=en&oi=sra" target="_blank">Homepage &rarr;</a>
+        </a>
+      </div>
+      <div class="team-card">
+        <a href="https://lilei-nlp.github.io/" target="_blank">
+          <div class="tc-name">李磊</div>
+          <div class="tc-role">博士生@HKU</div>
+          <a class="tc-link" href="https://lilei-nlp.github.io/" target="_blank">Homepage &rarr;</a>
+        </a>
+      </div>
+      <div class="team-card">
+        <a href="https://izhx.github.io/" target="_blank">
+          <div class="tc-name">张鑫</div>
+          <div class="tc-role">博士生@PolyU</div>
+          <a class="tc-link" href="https://izhx.github.io/" target="_blank">Homepage &rarr;</a>
+        </a>
+      </div>
+      <div class="team-card">
+        <a href="https://x.com/jiahaoqiu99" target="_blank">
+          <div class="tc-name">裘嘉豪</div>
+          <div class="tc-role">博士生@Princeton</div>
+          <a class="tc-link" href="https://x.com/jiahaoqiu99" target="_blank">Homepage &rarr;</a>
+        </a>
+      </div>
+      <div class="team-card">
+        <a href="https://ercong21.github.io/" target="_blank">
+          <div class="tc-name">聂耳聪</div>
+          <div class="tc-role">博士生@LMU Munich</div>
+          <a class="tc-link" href="https://ercong21.github.io/" target="_blank">Homepage &rarr;</a>
+        </a>
+      </div>
+      <div class="team-card">
+        <a href="https://hemingkx.github.io/" target="_blank">
+          <div class="tc-name">夏鹤明</div>
+          <div class="tc-role">博士生@PolyU</div>
+          <a class="tc-link" href="https://hemingkx.github.io/" target="_blank">Homepage &rarr;</a>
+        </a>
+      </div>
+      <div class="team-card">
+        <a href="https://wangcunxiang.github.io/" target="_blank">  
+          <div class="tc-name">王存翔</div>
+          <div class="tc-role">博后@Tsinghua</div>
+          <a class="tc-link" href="https://wangcunxiang.github.io/" target="_blank">Homepage &rarr;</a>
+        </a>
+      </div>
+      <div class="team-card">
+        <a href="https://hillzhang1999.github.io/" target="_blank">
+          <div class="tc-name">章岳</div>
+          <div class="tc-role">研究员@Kimi</div>
+          <a class="tc-link" href="https://hillzhang1999.github.io/" target="_blank">Homepage &rarr;</a>
+        </a>
+      </div>
+      <div class="team-card">
+        <a href="https://eurekaleo.github.io/" target="_blank">
+          <div class="tc-name">罗盟</div>
+          <div class="tc-role">博士生@NUS</div>
+          <a class="tc-link" href="https://eurekaleo.github.io/" target="_blank">Homepage &rarr;</a>
+        </a>
+      </div>
+      <div class="team-card">
+        <a href="https://mingyang-wang26.github.io/" target="_blank"></a>
+        <div class="tc-name">王铭阳</div>
+        <div class="tc-role">博士生@LMU Munich</div>
+        <a class="tc-link" href="https://mingyang-wang26.github.io/" target="_blank">Homepage &rarr;</a>
+      </div>
+      <div class="team-card">
+        <a href="https://skzhang1.github.io/" target="_blank">
+          <div class="tc-name">张少坤</div>
+          <div class="tc-role">博士生@PSU</div>
+          <a class="tc-link" href="https://skzhang1.github.io/" target="_blank">Homepage &rarr;</a>
+        </a>
+      </div>
+      <div class="team-card">
+        <a href="https://canyuchen.com/" target="_blank">
+          <div class="tc-name">陈灿宇</div>
+          <div class="tc-role">博士生@Northwestern</div>
+          <a class="tc-link" href="https://canyuchen.com/" target="_blank">Homepage &rarr;</a>
+        </a>
+      </div>
+      <div class="team-card">
+        <a href="https://owennju.github.io/" target="_blank">
+          <div class="tc-name">朱文昊</div>
+          <div class="tc-role">研究员@ByteDance</div>
+          <a class="tc-link" href="https://owennju.github.io/" target="_blank">Homepage &rarr;</a>
+        </a>
+      </div>
+      <div class="team-card">
+        <a href="https://zhangqiyuan-rico.github.io/" target="_blank">
+          <div class="tc-name">张启源</div>
+          <div class="tc-role">博士生@CityU</div>
+          <a class="tc-link" href="https://zhangqiyuan-rico.github.io/" target="_blank">Homepage &rarr;</a>
+        </a>
+      </div>
+      <div class="team-card">
+        <a href="https://zzli2022.github.io/" target="_blank">
+          <div class="tc-name">李忠志</div>
+          <div class="tc-role">博士生@CASIA</div>
+          <a class="tc-link" href="https://zzli2022.github.io/" target="_blank">Homepage &rarr;</a>
+        </a>
+      </div>
+      <div class="team-card">
+        <a href="https://jijiaming.com/" target="_blank">
+          <div class="tc-name">吉嘉铭</div>
+          <div class="tc-role">博士生@PKU</div>
+          <a class="tc-link" href="https://jijiaming.com/" target="_blank">Homepage &rarr;</a>
+        </a>
+      </div>
+      <div class="team-card">
+        <a href="https://mastervito.github.io/" target="_blank">
+          <div class="tc-name">金明宇</div>
+          <div class="tc-role">博士生@Rutgers</div>
+          <a class="tc-link" href="https://mingyuj666.github.io/" target="_blank">Homepage &rarr;</a>
+        </a>
+      </div>
+      <div class="team-card">
+        <a href="https://mastervito.github.io/" target="_blank">
+          <div class="tc-name">梁潇</div>
+          <div class="tc-role">博士生@UCLA</div>
+          <a class="tc-link" href="https://mastervito.github.io/" target="_blank">Homepage &rarr;</a>
+        </a>
+      </div>
+      <div class="team-card">
+        <a href="https://github.com/mangopy" target="_blank">
+          <div class="tc-name">施政良</div>
+          <div class="tc-role">硕士生@Shandong</div>
+          <a class="tc-link" href="https://github.com/mangopy" target="_blank">Homepage &rarr;</a>
+        </a>
+      </div>
+      <div class="team-card">
+        <a href="https://gooodte.github.io/" target="_blank">
+          <div class="tc-name">乔硕斐</div>
+          <div class="tc-role">博士生@ZJU</div>
+          <a class="tc-link" href="https://gooodte.github.io/" target="_blank">Homepage &rarr;</a>
+        </a>
+      </div>
+      <div class="team-card">
+        <a href="https://yuanyige.github.io/" target="_blank">
+          <div class="tc-name">袁一歌</div>
+          <div class="tc-role">博后@UW</div>
+          <a class="tc-link" href="https://yuanyige.github.io/" target="_blank">Homepage &rarr;</a>
+        </a>
+      </div>
+      <div class="team-card">
+        <a href="https://github.com/Henrychur" target="_blank">
+          <div class="tc-name">邱芃城</div>
+          <div class="tc-role">博士生@SJTU</div>
+          <a class="tc-link" href="https://github.com/Henrychur" target="_blank">Homepage &rarr;</a>
+        </a>
+      </div>
+      <div class="team-card">
+        <a href="https://zhou-zoey.github.io/" target="_blank">
+          <div class="tc-name">周恩宇</div>
+          <div class="tc-role">博士生@FDU</div>
+          <a class="tc-link" href="https://zhou-zoey.github.io/" target="_blank">Homepage &rarr;</a>
+        </a>
+      </div>
+      <div class="team-card">
+        <a href="https://yafuly.github.io/yafuly/" target="_blank">
+          <div class="tc-name">李雅夫</div>
+          <div class="tc-role">研究员@Shanghai AI Lab</div>
+          <a class="tc-link" href="https://yafuly.github.io/yafuly/" target="_blank">Homepage &rarr;</a>
+        </a>
+      </div>
+      <div class="team-card">
+        <a href="" target="_blank">
+          <div class="tc-name">何雨欣</div>
+          <div class="tc-role">Shanghai AI Lab</div>
+          <a class="tc-link" href="" target="_blank">Homepage &rarr;</a>
+        </a>
+      </div>
+      <div class="team-card">
+        <a href="https://qiancheng0.github.io/" target="_blank">
+          <div class="tc-name">钱成</div>
+          <div class="tc-role">博士生@UIUC</div>
+          <a class="tc-link" href="https://qiancheng0.github.io/" target="_blank">Homepage &rarr;</a>
+        </a>
+      </div>
+      <div class="team-card">
+        <a href="https://skyriver-2000.github.io/" target="_blank">
+          <div class="tc-name">Ruiwen Zhou周睿文</div>
+          <div class="tc-role">博士生@NUS</div>
+          <a class="tc-link" href="https://skyriver-2000.github.io/" target="_blank">Homepage &rarr;</a>
+        </a>
+      </div>
+      <div class="team-card">
+        <a href="https://aiden0526.github.io/" target="_blank">
+          <div class="tc-name">徐俊东</div>
+          <div class="tc-role">博士生@NUS</div>
+          <a class="tc-link" href="https://aiden0526.github.io/" target="_blank">Homepage &rarr;</a>
+        </a>
+      </div>
+      <div class="team-card">
+        <a href="https://yfqiu.netlify.app/" target="_blank">
+          <div class="tc-name">仇毅夫</div>
+          <div class="tc-role">博士生</div>
+          <div class="tc-role">@Edinburgh&Cambridge</div>
+          <a class="tc-link" href="https://yfqiu.netlify.app/" target="_blank">Homepage &rarr;</a>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COMMUNITY VOLUNTEERS -->
+<section class="section-team">
+  <div class="eyebrow reveal">Support</div>
+  <h2 class="sec-title reveal d1">社区志愿者</h2>
+
+  <div class="team-group reveal d2">
+    <div class="team-grid">
+      <div class="team-card">
+        <div class="tc-name">李灏</div>
+        <div class="tc-role">志愿者</div>
+        <a class="tc-link" href="" target="_blank">Homepage &rarr;</a>
+      </div>
+      <div class="team-card">
+        <div class="tc-name">孙俏</div>
+        <div class="tc-role">志愿者</div>
+        <a class="tc-link" href="" target="_blank">Homepage &rarr;</a>
+       </div>
+      <div class="team-card">
+        <div class="tc-name">耿辉</div>
+        <div class="tc-role">志愿者</div>
+        <a class="tc-link" href="" target="_blank">Homepage &rarr;</a>
+      </div>
+      <div class="team-card">
+        <div class="tc-name">胡思宇</div>
+        <div class="tc-role">志愿者</div>
+        <a class="tc-link" href="" target="_blank">Homepage &rarr;</a>
+      </div>
+       <div class="team-card">
+        <div class="tc-name">李明</div>
+        <div class="tc-role">志愿者</div>
+        <a class="tc-link" href="" target="_blank">Homepage &rarr;</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ADVISORY BOARD -->
+<section class="section-team">
+  <div class="eyebrow reveal">Guidance</div>
+  <h2 class="sec-title reveal d1">顾问委员会</h2>
+
+  <div class="team-group reveal d2">
+
+    <div class="advisory-sub">
+      <div class="advisory-sub-label">学术顾问</div>
+      <div class="team-grid">
+        <div class="team-card">
+          <div class="tc-name">费豪</div>
+          <div class="tc-role">学术顾问</div>
+          <a class="tc-link" href="https://haofei.vip/" target="_blank">Homepage &rarr;</a>
+        </div>
+        <div class="team-card">
+          <div class="tc-name">张倬胜</div>
+          <div class="tc-role">学术顾问</div>
+          <a class="tc-link" href="https://bcmi.sjtu.edu.cn/home/zhangzs/" target="_blank">Homepage &rarr;</a>
+        </div>
+        <div class="team-card">
+          <div class="tc-name">谢伟迪</div>
+          <div class="tc-role">学术顾问</div>
+          <a class="tc-link" href="https://weidixie.github.io/" target="_blank">Homepage &rarr;</a>
+        </div>
+        <div class="team-card">
+          <div class="tc-name">张林峰</div>
+          <div class="tc-role">学术顾问</div>
+          <a class="tc-link" href="https://www.zhanglinfeng.tech/" target="_blank">Homepage &rarr;</a>
+        </div>
+        <div class="team-card">
+          <div class="tc-name">傅金兰</div>
+          <div class="tc-role">学术顾问</div>
+          <a class="tc-link" href="https://jinlanfu.github.io/" target="_blank">Homepage &rarr;</a>
+        </div>
+        <div class="team-card">
+          <div class="tc-name">吴郦军</div>
+          <div class="tc-role">学术顾问</div>
+          <a class="tc-link" href="https://apeterswu.github.io/" target="_blank">Homepage &rarr;</a>
+        </div>
+        <div class="team-card">
+          <div class="tc-name">张宁豫</div>
+          <div class="tc-role">学术顾问</div>
+          <a class="tc-link" href="https://person.zju.edu.cn/en/ningyu" target="_blank">Homepage &rarr;</a>
+        </div>
+        <div class="team-card">
+          <div class="tc-name">王晋东</div>
+          <div class="tc-role">学术顾问</div>
+          <a class="tc-link" href="https://jd92.wang/" target="_blank">Homepage &rarr;</a>
+        </div>
+        <div class="team-card">
+          <div class="tc-name">范犁洲</div>
+          <div class="tc-role">学术顾问</div>
+          <a class="tc-link" href="https://lizhouf.github.io/" target="_blank">Homepage &rarr;</a>
+        </div>
+        <div class="team-card">
+          <div class="tc-name">王文轩</div>
+          <div class="tc-role">学术顾问</div>
+          <a class="tc-link" href="https://jarviswang94.github.io/" target="_blank">Homepage &rarr;</a>
+        </div>
+        <div class="team-card">
+          <div class="tc-name">付杰</div>
+          <div class="tc-role">学术顾问</div>
+          <a class="tc-link" href="https://bigaidream.github.io/" target="_blank">Homepage &rarr;</a>
+        </div>
+        <div class="team-card">
+          <div class="tc-name">陈勇超</div>
+          <div class="tc-role">学术顾问</div>
+          <a class="tc-link" href="https://yongchao98.github.io/YongchaoChen/" target="_blank">Homepage &rarr;</a>
+        </div>
+        <div class="team-card">
+          <div class="tc-name">张舸</div>
+          <div class="tc-role">学术顾问</div>
+          <a class="tc-link" href="https://scholar.google.com/citations?user=9nqjX8EAAAAJ&hl=en&oi=sra" target="_blank">Homepage &rarr;</a>
+      </div>
+        <div class="team-card">
+          <div class="tc-name">刘卫文</div>
+          <div class="tc-role">学术顾问</div>
+          <a class="tc-link" href="https://wwliu555.github.io" target="_blank">Homepage &rarr;</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer id="foot">
+  <div class="foot-grid">
+    <div class="reveal">
+      <div class="foot-brand-row">
+        <img class="flm" src="assets/NICE_LOGO.png" alt="NICE" width="160" height="28" decoding="async">
+        <span class="flw">NICE</span>
+      </div>
+      <p class="foot-desc">这是一个非营利性社区，致力于举办人工智能前沿领域的讲座、圆桌论坛及深度访谈。</p>
+      <p class="foot-cities">北京 &middot; 纽约 &middot; 香港 &middot; 湾区 &middot; 新加坡 &middot; 慕尼黑</p>
+    </div>
+    <div class="reveal d1">
+      <div class="fcl">导航</div>
+      <ul class="flinks">
+        <li><a href="zh.html#intro">关于</a></li>
+        <li><a href="zh.html#talks">讲座</a></li>
+        <li><a href="zh.html#events">活动</a></li>
+        <li><a href="team-zh.html">团队</a></li>
+      </ul>
+    </div>
+    <div class="reveal d2">
+      <div class="fcl">频道</div>
+      <ul class="flinks">
+        <li><a href="https://www.youtube.com/@niceaitalk" target="_blank">YouTube</a></li>
+        <li><a href="https://x.com/academic_nice" target="_blank">X / Twitter</a></li>
+        <li><a href="https://www.linkedin.com/company/110921233/admin/dashboard/" target="_blank">LinkedIn</a></li>
+        <li><a href="https://space.bilibili.com/507524288" target="_blank">Bilibili</a></li>
+        <li><a href="https://luma.com/user/usr-YJvNOI7CseZ7zMm" target="_blank">Events / Luma</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="foot-bottom">
+    <span class="foot-copy">&copy; 2025 智识纽带 (NICE) &middot; 非营利组织 &middot; 成立于 2023 年底</span>
+    <div class="foot-soc">
+      <a href="https://www.youtube.com/@niceaitalk" target="_blank">YouTube</a>
+      <a href="https://x.com/academic_nice" target="_blank">Twitter</a>
+      <a href="https://www.linkedin.com/company/110921233/admin/dashboard/" target="_blank">LinkedIn</a>
+      <a href="https://space.bilibili.com/507524288" target="_blank">Bilibili</a>
+      <a href="https://luma.com/user/usr-YJvNOI7CseZ7zMm" target="_blank">Events</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* ── CUSTOM CURSOR ── */
+const cur = document.getElementById('cur');
+const ring = document.getElementById('curRing');
+let cx=0,cy=0,rx=0,ry=0;
+document.addEventListener('mousemove',e=>{
+  cx=e.clientX; cy=e.clientY;
+  cur.style.left=cx+'px'; cur.style.top=cy+'px';
+});
+(function animRing(){
+  rx+=(cx-rx)*.11; ry+=(cy-ry)*.11;
+  ring.style.left=rx+'px'; ring.style.top=ry+'px';
+  requestAnimationFrame(animRing);
+})();
+
+/* ── SCROLL REVEAL ── */
+const io=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('on');io.unobserve(e.target);}});
+},{threshold:.1});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+</script>
+<script>
+// Translate certain link texts on the static Chinese page (keep names/institutions unchanged)
+document.querySelectorAll('a.tc-link,a.fc-link').forEach(a=>{
+  const t = a.textContent.trim();
+  if(t.startsWith('Homepage') || t.startsWith('Homepage') || t.includes('Homepage')){
+    a.textContent = '个人主页 →';
+  }
+});
+</script>
+<script src="assets/js/jquery-3.5.1.min.js"></script>
+<script src="assets/js/custom.js"></script>
+</body>
+</html>

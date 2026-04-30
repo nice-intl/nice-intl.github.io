@@ -10,7 +10,8 @@
    * Pre load bootstrapģ��⣺http://www.bootstrapmb.com
   /* ---------------------------------------------- */
   WEA.PreLoad = function() {
-    document.getElementById("loading").style.display = "none"; 
+    var ld = document.getElementById("loading");
+    if(ld) ld.style.display = "none";
   }
 
     /*--------------------
@@ -332,16 +333,20 @@
   });
   // Document on Ready
   $(document).ready(function() {
-    WEA.particles(),
-    WEA.HeaderFixd(),
-    WEA.MenuClose(),
-    WEA.MenuTogglerClose(),
-    WEA.Gallery(),
-    WEA.ProgressBar(),
-    WEA.mTypeIt(),
-    WEA.one_page(),
-    WEA.Owl(),
-    $('[data-toggle="tooltip"]').tooltip({ trigger: "hover" });
+    WEA.particles();
+    WEA.HeaderFixd();
+    WEA.MenuClose();
+    WEA.MenuTogglerClose();
+    WEA.Gallery();
+    WEA.ProgressBar();
+    WEA.mTypeIt();
+    WEA.one_page();
+    WEA.Owl();
+    try{
+      if (typeof $ === 'function' && $.fn && $.fn.tooltip) {
+        $('[data-toggle="tooltip"]').tooltip({ trigger: "hover" });
+      }
+    }catch(err){console.warn('tooltip init failed', err);}
   });
 
   // Document on Scrool
@@ -355,13 +360,17 @@
   });
 })(jQuery);
 
-document.getElementById("toggleGalleryBtn").addEventListener("click", function () {
-  const wrapper = document.getElementById("galleryWrapper");
-  const isCollapsed = wrapper.classList.contains("collapsed");
+var _tg = document.getElementById("toggleGalleryBtn");
+if(_tg){
+  _tg.addEventListener("click", function () {
+    const wrapper = document.getElementById("galleryWrapper");
+    if(!wrapper) return;
+    const isCollapsed = wrapper.classList.contains("collapsed");
 
-  wrapper.classList.toggle("collapsed");
-  this.textContent = isCollapsed ? "Hide Gallery" : "Show Gallery";
-});
+    wrapper.classList.toggle("collapsed");
+    this.textContent = isCollapsed ? "Hide Gallery" : "Show Gallery";
+  });
+}
 
 
 // committees
@@ -487,9 +496,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Function to reset to "All" view
     function resetToAll() {
-        filterButtons.forEach(btn => btn.classList.remove('active'));
-        allButton.classList.add('active');
-        dropdown.value = 'all';
+      filterButtons.forEach(btn => btn.classList.remove('active'));
+      if(allButton) allButton.classList.add('active');
+      if(dropdown) dropdown.value = 'all';
         currentCommittee = 'all';
         filterMembers('all');
     }
@@ -518,15 +527,16 @@ document.addEventListener('DOMContentLoaded', function() {
                 filterMembers(committee);
                 
                 // Update dropdown to match
-                dropdown.value = committee;
+                if(dropdown) dropdown.value = committee;
             } else {
                 resetToAll();
             }
         });
     });
 
-    // Add event listener to dropdown
-    dropdown.addEventListener('change', function() {
+    // Add event listener to dropdown (if present)
+    if(dropdown){
+      dropdown.addEventListener('change', function() {
         const committee = this.value;
         
         // If selecting the currently active committee
@@ -543,8 +553,59 @@ document.addEventListener('DOMContentLoaded', function() {
         // Filter members
         currentCommittee = committee;
         filterMembers(committee);
-    });
+      });
+    }
 
     // Initialize to show all members
     resetToAll();
 });
+
+// Theme toggle functionality: initialize and persist user choice across all pages
+(function(){
+  function applyTheme(theme){
+    var btns = document.querySelectorAll('#themeToggle');
+    if(theme === 'light'){
+      document.body.classList.add('light-theme');
+      btns.forEach(function(btn){
+        btn.textContent = 'Light';
+        btn.setAttribute('aria-pressed','true');
+      });
+    } else {
+      document.body.classList.remove('light-theme');
+      btns.forEach(function(btn){
+        btn.textContent = 'Dark';
+        btn.setAttribute('aria-pressed','false');
+      });
+    }
+  }
+
+  // Apply saved theme immediately on page load
+  try{
+    var saved = localStorage.getItem('nice_theme') || 'dark';
+    applyTheme(saved);
+  }catch(e){ applyTheme('dark'); }
+
+  // Listen for theme toggle on any button
+  document.addEventListener('click', function(e){
+    var t = e.target;
+    if(!t) return;
+    var toggle = (t.id === 'themeToggle') ? t : (t.closest ? t.closest('#themeToggle') : null);
+    if(toggle){
+      var isLight = document.body.classList.contains('light-theme');
+      var next = isLight ? 'dark' : 'light';
+      applyTheme(next);
+      try{ localStorage.setItem('nice_theme', next); }catch(err){}
+    }
+  }, false);
+
+  // Direct listener for each button (robustness)
+  document.querySelectorAll('#themeToggle').forEach(function(btn){
+    btn.addEventListener('click', function(e){
+      e.stopPropagation();
+      var isLight = document.body.classList.contains('light-theme');
+      var next = isLight ? 'dark' : 'light';
+      applyTheme(next);
+      try{ localStorage.setItem('nice_theme', next); }catch(err){}
+    }, false);
+  });
+})();

@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-1.2 -0.8 30.4 29.6" width="32" height="32" preserveAspectRatio="xMidYMid meet" fill="none">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="28" y2="28" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#e8621a"/>
+      <stop offset="100%" stop-color="#7b35d4"/>
+    </linearGradient>
+  </defs>
+  <!-- 横向比例略大于纵向，避免标签栏里像被上下拉长 -->
+  <g transform="translate(14 14) scale(1.28 1) translate(-14 -14)">
+    <path d="M4 23V5L24 23V5" stroke="url(#g)" stroke-width="2.05" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+</svg>

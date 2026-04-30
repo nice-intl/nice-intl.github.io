@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AGENT2025: Academia x Industry x Future — NICE Offline Event</title>
+<link rel="icon" href="../../assets/NICE_LOGO.png" type="image/png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg:        #1c1a18;
+  --bg2:       #22201e;
+  --bg3:       #2a2724;
+  --line:      rgba(255,255,255,0.08);
+  --line2:     rgba(255,255,255,0.13);
+  --txt:       #dde2ea;
+  --txt-mid:   rgba(221,226,234,0.5);
+  --txt-dim:   rgba(221,226,234,0.22);
+  --gold:      #b89a52;
+  --gold-glow: rgba(184,154,82,0.18);
+}
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior:smooth; }
+body {
+  font-family: 'DM Sans', system-ui, sans-serif;
+  background: var(--bg);
+  color: var(--txt);
+  overflow-x: hidden;
+}
+body::after {
+  content:''; position:fixed; inset:0; pointer-events:none; z-index:9000; opacity:.45;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.05'/%3E%3C/svg%3E");
+}
+
+nav {
+  position:fixed; top:0; left:0; right:0; z-index:800;
+  display:flex; align-items:center; justify-content:space-between;
+  padding:1.5rem 3.5rem;
+  background:rgba(28,26,24,0.7);
+  backdrop-filter:blur(18px); -webkit-backdrop-filter:blur(18px);
+  border-bottom:1px solid var(--line);
+}
+.nav-logo { display:flex; align-items:center; gap:.65rem; text-decoration:none; }
+.nav-logomark {
+  height:30px; width:auto; max-width:170px;
+  object-fit:contain; object-position:left center;
+  display:block; flex-shrink:0;
+}
+.nav-name {
+  font-family:'DM Mono', monospace; font-size:.75rem; font-weight:500;
+  letter-spacing:.32em; color:var(--txt);
+}
+.nav-back {
+  font-family:'DM Mono', monospace; font-size:.58rem; letter-spacing:.14em;
+  text-transform:uppercase; color:var(--txt-dim); text-decoration:none;
+  border:1px solid var(--line2); padding:.45rem 1.1rem;
+  transition:border-color .25s, color .25s;
+}
+.nav-back:hover { border-color:var(--gold); color:var(--gold); }
+
+.event-hero {
+  padding:10rem 5rem 5rem;
+  border-bottom:1px solid var(--line);
+  position:relative;
+}
+.event-hero::before {
+  content:'03'; position:absolute; right:5rem; top:8rem;
+  font-family:'Playfair Display', serif; font-size:12rem; font-weight:900;
+  color:rgba(255,255,255,.02); line-height:1; pointer-events:none;
+}
+.eh-eyebrow {
+  font-family:'DM Mono', monospace; font-size:.56rem; letter-spacing:.45em;
+  text-transform:uppercase; color:var(--gold); opacity:.65;
+  display:flex; align-items:center; gap:.7rem; margin-bottom:2rem;
+}
+.eh-eyebrow::before {
+  content:''; display:block; width:1.4rem; height:1px;
+  background:var(--gold); opacity:.65;
+}
+.eh-title {
+  font-family:'Playfair Display', serif;
+  font-size:clamp(2.2rem,5vw,4rem); font-weight:900;
+  line-height:1.05; letter-spacing:-.02em; color:var(--txt);
+  margin-bottom:1.5rem; max-width:800px;
+}
+.eh-meta {
+  display:flex; gap:2.5rem; flex-wrap:wrap; margin-bottom:1.5rem;
+}
+.eh-meta-item {
+  font-family:'DM Mono', monospace; font-size:.6rem; letter-spacing:.12em;
+  text-transform:uppercase; color:var(--txt-dim);
+}
+.eh-meta-item strong { color:var(--txt-mid); font-weight:500; }
+.eh-desc {
+  font-size:1rem; line-height:1.9; color:var(--txt-mid); max-width:700px;
+}
+
+.event-stats {
+  display:grid; grid-template-columns:repeat(3,1fr);
+  border-bottom:1px solid var(--line);
+}
+.es-item {
+  padding:2.5rem 3rem; border-right:1px solid var(--line);
+  text-align:center;
+}
+.es-item:last-child { border-right:none; }
+.es-num {
+  font-family:'Playfair Display', serif; font-size:clamp(2rem,4vw,3.5rem);
+  font-weight:900; color:var(--txt); line-height:1; margin-bottom:.3rem;
+}
+.es-label {
+  font-family:'DM Mono', monospace; font-size:.52rem; letter-spacing:.25em;
+  text-transform:uppercase; color:var(--txt-dim);
+}
+
+.event-details {
+  display:grid; grid-template-columns:1fr 1fr;
+  border-bottom:1px solid var(--line);
+}
+.ed-section {
+  padding:5rem; border-right:1px solid var(--line);
+}
+.ed-section:last-child { border-right:none; }
+.ed-label {
+  font-family:'DM Mono', monospace; font-size:.52rem; letter-spacing:.35em;
+  text-transform:uppercase; color:var(--gold); opacity:.5; margin-bottom:1.4rem;
+}
+.ed-sublabel {
+  font-size:.78rem; color:var(--txt-mid); font-style:italic; margin-bottom:.6rem;
+}
+.ed-list { list-style:none; display:flex; flex-direction:column; gap:.8rem; }
+.ed-list li { font-size:.9rem; color:var(--txt-mid); line-height:1.6; }
+.ed-list li strong { color:var(--txt); font-weight:500; }
+.ed-list .ed-role {
+  font-family:'DM Mono', monospace; font-size:.5rem; letter-spacing:.08em;
+  color:var(--txt-dim); margin-left:.4rem;
+}
+.ed-list + .ed-sublabel { margin-top:1.5rem; }
+.partner-chips { display:flex; flex-wrap:wrap; gap:.45rem; margin-bottom:1rem; }
+.partner-chips span {
+  font-family:'DM Mono', monospace; font-size:.52rem; letter-spacing:.08em;
+  padding:.28rem .7rem; border:1px solid var(--line2); color:var(--txt-dim);
+}
+.partner-label {
+  font-family:'DM Mono', monospace; font-size:.48rem; letter-spacing:.2em;
+  text-transform:uppercase; color:var(--txt-dim); margin-bottom:.5rem; margin-top:1.2rem;
+}
+
+.event-poster {
+  padding:5rem;
+  border-bottom:1px solid var(--line);
+  display:flex; flex-direction:column; align-items:center;
+}
+.ep-label {
+  font-family:'DM Mono', monospace; font-size:.52rem; letter-spacing:.35em;
+  text-transform:uppercase; color:var(--gold); opacity:.5; margin-bottom:2rem;
+}
+.ep-img {
+  max-width:500px; width:100%; border:1px solid var(--line2);
+}
+
+.event-gallery {
+  padding:5rem;
+  border-bottom:1px solid var(--line);
+}
+.eg-label {
+  font-family:'DM Mono', monospace; font-size:.52rem; letter-spacing:.35em;
+  text-transform:uppercase; color:var(--gold); opacity:.5; margin-bottom:2rem;
+  display:flex; align-items:center; gap:.7rem;
+}
+.eg-label::before {
+  content:''; display:block; width:1.4rem; height:1px;
+  background:var(--gold); opacity:.65;
+}
+.eg-grid {
+  display:grid; grid-template-columns:repeat(auto-fill, minmax(320px, 1fr));
+  gap:1px;
+}
+.eg-grid img {
+  width:100%; height:280px; object-fit:cover;
+  border:1px solid var(--line); transition:opacity .3s;
+}
+.eg-grid img:hover { opacity:.85; }
+
+.event-footer {
+  padding:3rem 5rem;
+  display:flex; justify-content:space-between; align-items:center;
+}
+.ef-copy {
+  font-family:'DM Mono', monospace; font-size:.52rem;
+  letter-spacing:.1em; color:var(--txt-dim);
+}
+.ef-back {
+  font-family:'DM Mono', monospace; font-size:.58rem; letter-spacing:.14em;
+  text-transform:uppercase; color:var(--txt-dim); text-decoration:none;
+  transition:color .25s;
+}
+.ef-back:hover { color:var(--gold); }
+
+@media (max-width:768px) {
+  .event-hero { padding:8rem 2rem 3rem; }
+  .event-stats { grid-template-columns:1fr; }
+  .es-item { border-right:none; border-bottom:1px solid var(--line); }
+  .event-details { grid-template-columns:1fr; }
+  .ed-section { border-right:none; border-bottom:1px solid var(--line); padding:3rem 2rem; }
+  .event-poster, .event-gallery { padding:3rem 2rem; }
+  .event-footer { padding:2rem; flex-direction:column; gap:1rem; }
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="../../index.html">
+    <img class="nav-logomark" src="../../assets/NICE_LOGO.png" alt="NICE" width="170" height="30" decoding="async">
+    <span class="nav-name">NICE</span>
+  </a>
+  <a class="nav-back" href="../../index.html#events">&larr; All Events</a>
+</nav>
+
+<section class="event-hero">
+  <div class="eh-eyebrow">Offline Event #3</div>
+  <h1 class="eh-title">AGENT 2025: Academia &times; Industry &times; Future</h1>
+  <div class="eh-meta">
+    <div class="eh-meta-item"><strong>Shanghai</strong></div>
+    <div class="eh-meta-item"><strong>Nov 30, 2025</strong></div>
+    <div class="eh-meta-item">Host: <strong>Yafu Li</strong></div>
+  </div>
+  <p class="eh-desc">A deep-dive sharing session focused on Agents, covering research, applications, and entrepreneurship. The event brought together speakers from Shanghai AI Lab, top universities (SJTU, Fudan, Zhejiang University), leading AI companies, and the startup frontline. Comprehensive coverage spanning Agent foundational theory, cutting-edge applications, and emerging entrepreneurial opportunities — delivering face-to-face insights and exchange with senior experts and scholars.</p>
+</section>
+
+<div class="event-stats">
+  <div class="es-item">
+    <div class="es-num">200</div>
+    <div class="es-label">Spots</div>
+  </div>
+  <div class="es-item">
+    <div class="es-num">400+</div>
+    <div class="es-label">Registrations</div>
+  </div>
+  <div class="es-item">
+    <div class="es-num">3x</div>
+    <div class="es-label">Livestream Viewers vs. Typical AI Lab Events</div>
+  </div>
+</div>
+
+<div class="event-details">
+  <div class="ed-section">
+    <div class="ed-label">Speakers</div>
+
+    <div class="ed-sublabel">Foundation</div>
+    <ul class="ed-list">
+      <li><strong>Jie Fu</strong> <span class="ed-role">Young Scientist, Shanghai AI Lab</span></li>
+      <li><strong>Ningyu Zhang</strong> <span class="ed-role">Associate Professor, Zhejiang University</span></li>
+      <li><strong>Zhiheng Xi</strong> <span class="ed-role">PhD Student, Fudan University</span></li>
+    </ul>
+
+    <div class="ed-sublabel">Application</div>
+    <ul class="ed-list">
+      <li><strong>Weidi Xie</strong> <span class="ed-role">SJTU, Haiyou Scholar</span></li>
+      <li><strong>Dongzhan Zhou</strong> <span class="ed-role">Young Scientist</span></li>
+      <li><strong>Xintao Wang</strong> <span class="ed-role">PhD Student, Fudan University</span></li>
+    </ul>
+
+    <div class="ed-sublabel">Industry</div>
+    <ul class="ed-list">
+      <li><strong>Bin Zhang</strong> <span class="ed-role">Company Founder</span></li>
+      <li><strong>Gaowei Chang</strong> <span class="ed-role">Company Founder</span></li>
+      <li><strong>Xiangdao Wang</strong> <span class="ed-role">Company Founder</span></li>
+      <li><strong>Rui Ye</strong> <span class="ed-role">Alibaba Tongyi</span></li>
+    </ul>
+  </div>
+  <div class="ed-section">
+    <div class="ed-label">Partners</div>
+
+    <div class="partner-label">Organizers</div>
+    <div class="partner-chips">
+      <span>NICE</span>
+      <span>Shanghai AI Lab</span>
+      <span>MosuSpace</span>
+    </div>
+
+    <div class="partner-label">Co-organizer</div>
+    <div class="partner-chips">
+      <span>Xuhui Venture Capital</span>
+    </div>
+
+    <div class="partner-label">Sponsors</div>
+    <div class="partner-chips">
+      <span>Zero Boundary Evolution</span>
+      <span>S2E LABS</span>
+      <span>Tanwei Dujian</span>
+    </div>
+  </div>
+</div>
+
+<div class="event-poster">
+  <div class="ep-label">Event Poster</div>
+  <img class="ep-img" src="poster.png" alt="AGENT2025 event poster">
+</div>
+
+<div class="event-gallery">
+  <div class="eg-label">Event Gallery</div>
+  <div class="eg-grid">
+    <img src="957a21a20c256e729212007b2fc453d5.png" alt="AGENT2025 venue and stage">
+    <img src="89ccce74bc589e3c3906fd9e0f580e2f.png" alt="Speaker presenting on stage">
+    <img src="e46b71cfd445bde354bf1b04713c87fc.png" alt="Speaker Jie Fu presenting">
+    <img src="6bd228ebbbc7ae68846ca5c9ca6d12fe.png" alt="Audience member asking question">
+    <img src="339b776bd4e298822219a0acb596bbb1.png" alt="Networking during the event">
+    <img src="1ee3b8d75d75d4d81ab49b7fde0513c8.png" alt="Group discussion after talks">
+    <img src="143b6e432b3f141f7f49b827ed9439a6.png" alt="Audience member taking photos">
+    <img src="a2efcbe4c67e60ec89b2b3ac53b42f64.png" alt="Audience member speaking with microphone">
+    <img src="7fa21e87f16eaeaf47de80df4b3dc9aa.png" alt="Attendees exploring venue exhibits">
+  </div>
+</div>
+
+<div class="event-footer">
+  <span class="ef-copy">&copy; 2025 Nexus for IntelligeCE (NICE)</span>
+  <a class="ef-back" href="../../index.html#events">&larr; Back to All Events</a>
+</div>
+
+</body>
+</html>
