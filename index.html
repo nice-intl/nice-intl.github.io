@@ -6,6 +6,7 @@
 <title>NICE</title>
 <link rel="icon" href="assets/NICE_LOGO.png" type="image/png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Inter:wght@300;400;500&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
@@ -47,6 +48,8 @@ body.light-theme .cur{background:var(--orange);mix-blend-mode:normal}
 body.light-theme .cur-ring{border-color:var(--orange);mix-blend-mode:normal}
 
 /* adjust specific elements for light theme */
+body.light-theme .nav-icon-btn { color: var(--faint) !important; }
+body.light-theme .nav-icon-btn:hover { color: #1a1a1a !important; }
 body.light-theme .eyebrow{color:var(--orange);opacity:1}
 body.light-theme .eyebrow::before{background:var(--orange);opacity:1}
 body.light-theme .sec-title{color:#1a1a1a}
@@ -230,6 +233,15 @@ nav{
 }
 .nav-right a:hover{color:var(--white);}
 
+.nav-right a i {
+  font-size: 1.2rem;
+}
+
+.flinks a i,
+.foot-soc a i {
+  font-size: 1.2rem; 
+}
+
 .nav-btn{
   padding:.4rem 1rem;
   border:1px solid rgba(232,98,26,0.5);
@@ -243,6 +255,40 @@ nav{
   background:var(--orange);
   border-color:var(--orange);
   color:var(--black) !important;
+}
+
+.nav-icon-btn {
+    background: transparent !important;
+    border: none !important;
+    color: var(--faint) !important;
+    cursor: pointer;
+    padding: 0;
+    display: inline-flex;
+    align-items: center;
+    transition: color 0.25s;
+    text-decoration: none;
+}
+.nav-icon-btn i {
+    font-size: 1.2rem;
+}
+.nav-icon-btn:hover {
+    color: var(--white) !important;
+}
+
+#themeToggle {
+    margin-left: 2rem !important;
+}
+
+#themeToggle {
+    font-size: 0 !important; 
+}
+
+#themeToggle::before {
+    content: "\f042"; 
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    font-size: 1.2rem !important; 
+    display: inline-block;
 }
 
 /* ── HERO ── */
@@ -1249,17 +1295,31 @@ footer::before{
     <li><a href="#sponsors">Sponsors</a></li>
     <li><a href="team.html">Team</a></li>
     <li><a href="#join">Join</a></li>
-    <li><a href="https://docs.google.com/forms/d/e/1FAIpQLScN7I69_qyI6dulHnhKV8m8bZJHkYhfXn5_tjYeyeHR0QvNbw/viewform" target="_blank">Talk Application</a></li>
+    <li><a href="https://docs.google.com/forms/d/e/1FAIpQLScN7I69_qyI6dulHnhKV8m8bZJHkYhfXn5_tjYeyeHR0QvNbw/viewform" target="_blank">Talk to Apply</a></li>
   </ul>
 
   <div class="nav-right">
-    <a href="https://www.youtube.com/@niceaitalk" target="_blank">YouTube</a>
-    <a href="https://x.com/academic_nice" target="_blank">Twitter</a>
-    <a href="https://www.linkedin.com/company/110921233/admin/dashboard/" target="_blank">LinkedIn</a>
-    <a href="https://space.bilibili.com/507524288" target="_blank">Bilibili</a>
-    <button id="themeToggle" class="nav-btn" type="button" aria-pressed="false">Dark</button>
-    <a href="zh.html" class="nav-btn">中文</a>
-    <a href="https://luma.com/user/usr-YJvNOI7CseZ7zMm" target="_blank" class="nav-btn">Events</a>
+    <a href="https://www.youtube.com/@niceaitalk" target="_blank" title="YouTube">
+        <i class="fa-brands fa-youtube"></i>
+    </a>
+    <a href="https://x.com/academic_nice" target="_blank" title="X / Twitter">
+        <i class="fa-brands fa-x-twitter"></i>
+    </a>
+    <a href="https://www.linkedin.com/company/110921233/admin/dashboard/" target="_blank" title="LinkedIn">
+        <i class="fa-brands fa-linkedin"></i>
+    </a>
+    <a href="https://space.bilibili.com/507524288" target="_blank" title="Bilibili">
+        <i class="fa-brands fa-bilibili"></i>
+    </a>
+    <!-- <button id="themeToggle" class="nav-btn" type="button" aria-pressed="false">Dark</button>
+    <a href="zh.html" class="nav-btn">中文</a> -->
+    <button id="themeToggle" class="nav-icon-btn" type="button" aria-pressed="false" title="切换主题 / Toggle Theme">
+        <i class="fa-solid fa-circle-half-stroke"></i>
+    </button>
+    <a href="zh.html" class="nav-icon-btn" title="中文 / Chinese">
+        <i class="fa-solid fa-globe"></i>
+    </a>
+    <!-- <a href="https://luma.com/user/usr-YJvNOI7CseZ7zMm" target="_blank" class="nav-btn">Events</a> -->
   </div>
 </nav>
 
@@ -1765,11 +1825,36 @@ footer::before{
     <div class="reveal d2">
       <div class="fcl">Channels</div>
       <ul class="flinks">
-        <li><a href="https://www.youtube.com/@niceaitalk" target="_blank">YouTube</a></li>
+        <li>
+            <a href="https://www.youtube.com/@niceaitalk" target="_blank" title="YouTube">
+                <i class="fa-brands fa-youtube"></i>
+            </a>
+        </li>
+        <li>
+            <a href="https://x.com/academic_nice" target="_blank" title="X / Twitter">
+                <i class="fa-brands fa-x-twitter"></i>
+            </a>
+        </li>
+        <li>
+            <a href="https://www.linkedin.com/company/110921233/admin/dashboard/" target="_blank" title="LinkedIn">
+                <i class="fa-brands fa-linkedin"></i>
+            </a>
+        </li>
+        <li>
+            <a href="https://space.bilibili.com/507524288" target="_blank" title="Bilibili">
+                <i class="fa-brands fa-bilibili"></i>
+            </a>
+        </li>
+        <li>
+            <a href="https://luma.com/user/usr-YJvNOI7CseZ7zMm" target="_blank" title="Events / Luma">
+                <i class="fa-regular fa-calendar-check"></i> 
+            </a>
+        </li>
+        <!-- <li><a href="https://www.youtube.com/@niceaitalk" target="_blank">YouTube</a></li>
         <li><a href="https://x.com/academic_nice" target="_blank">X / Twitter</a></li>
         <li><a href="https://www.linkedin.com/company/110921233/admin/dashboard/" target="_blank">LinkedIn</a></li>
         <li><a href="https://space.bilibili.com/507524288" target="_blank">Bilibili</a></li>
-        <li><a href="https://luma.com/user/usr-YJvNOI7CseZ7zMm" target="_blank">Events / Luma</a></li>
+        <li><a href="https://luma.com/user/usr-YJvNOI7CseZ7zMm" target="_blank">Events / Luma</a></li> -->
       </ul>
     </div>
   </div>
