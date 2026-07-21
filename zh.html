@@ -1381,7 +1381,11 @@ footer::before{
 </section>
 
 <!-- ═══════ TALKS ═══════ -->
-<section class="section-talks" id="talks">
+<section class="section-talks" id="talks"
+  data-host-label="主持人: "
+  data-showing-tpl="展示 {total} 场讲座中的 {n} 场"
+  data-view-all-tpl="查看全部 {total} 场讲座 →"
+  data-show-less-tpl="收起 ↑">
   <div class="talks-top">
     <div>
       <div class="eyebrow reveal">讲座大厅</div>
@@ -1394,76 +1398,18 @@ footer::before{
         <button class="sb">搜索</button>
       </div>
       <div class="frow">
-        <button class="fc">Agent</button>
-        <button class="fc on">Reasoning</button>
-        <button class="fc">Alignment</button>
-        <button class="fc">LLM</button>
-        <button class="fc">RL</button>
-        <button class="fc">Multimodal</button>
+        <!-- populated dynamically by talks.js -->
       </div>
     </div>
   </div>
 
   <div class="talks-list">
-    <a class="talk reveal" href="#">
-      <span class="t-num">113</span>
-      <div>
-        <div class="t-title">Is Chain-of-Thought Reasoning a Mirage? Unveiling the Truth of LLM Reasoning from a Data Distribution Perspective</div>
-        <div class="t-meta"><span class="t-speaker">Chengshuai Zhao</span><span class="t-host">主持人: Haolun Wu</span></div>
-        <div class="t-tags"><span class="ttag">Reasoning</span><span class="ttag">CoT</span><span class="ttag">Data</span></div>
-      </div>
-      <span class="t-date">Dec 14, 2025</span>
-    </a>
-    <a class="talk reveal d1" href="#">
-      <span class="t-num">112</span>
-      <div>
-        <div class="t-title">Exploring Open Agent Networks and Agent Coordination at Scale</div>
-        <div class="t-meta"><span class="t-speaker">Gaowei Chang</span><span class="t-host">主持人: Wenyue Hua</span></div>
-        <div class="t-tags"><span class="ttag">Agent</span><span class="ttag">Multi-Agent</span><span class="ttag">Coordination</span></div>
-      </div>
-      <span class="t-date">Nov 30, 2025</span>
-    </a>
-    <a class="talk reveal d2" href="#">
-      <span class="t-num">111</span>
-      <div>
-        <div class="t-title">Constitutional AI and the Alignment Problem: From Theory to Practice</div>
-        <div class="t-meta"><span class="t-speaker">Invited Scholar</span><span class="t-host">主持人: NICE Panel</span></div>
-        <div class="t-tags"><span class="ttag">Alignment</span><span class="ttag">Safety</span><span class="ttag">RLHF</span></div>
-      </div>
-      <span class="t-date">Nov 12, 2025</span>
-    </a>
-    <a class="talk reveal d3" href="#">
-      <span class="t-num">110</span>
-      <div>
-        <div class="t-title">Long-Context Language Models: Memory, Retrieval, and the Limits of Attention</div>
-        <div class="t-meta"><span class="t-speaker">Invited Scholar</span><span class="t-host">主持人: NICE Faculty</span></div>
-        <div class="t-tags"><span class="ttag">Long-Context</span><span class="ttag">RAG</span><span class="ttag">Memory</span></div>
-      </div>
-      <span class="t-date">Oct 28, 2025</span>
-    </a>
-    <a class="talk reveal d4" href="#">
-      <span class="t-num">109</span>
-      <div>
-        <div class="t-title">From Tokens to Thoughts: Intrinsic Motivation and the Emergence of Planning in LLMs</div>
-        <div class="t-meta"><span class="t-speaker">Invited Scholar</span><span class="t-host">主持人: NICE Panel</span></div>
-        <div class="t-tags"><span class="ttag">Reasoning</span><span class="ttag">Planning</span><span class="ttag">RL</span></div>
-      </div>
-      <span class="t-date">Oct 10, 2025</span>
-    </a>
-    <a class="talk reveal d5" href="#">
-      <span class="t-num">108</span>
-      <div>
-        <div class="t-title">Multimodal Foundation Models: Vision, Language, and the Road to Unified Perception</div>
-        <div class="t-meta"><span class="t-speaker">Invited Scholar</span><span class="t-host">主持人: NICE Panel</span></div>
-        <div class="t-tags"><span class="ttag">Multimodal</span><span class="ttag">Vision-Language</span></div>
-      </div>
-      <span class="t-date">Sep 20, 2025</span>
-    </a>
+    <!-- populated dynamically by talks.js -->
   </div>
 
   <div class="talks-foot">
-    <span class="tf-c reveal">展示 113 场讲座中的 6 场</span>
-    <a href="#" class="btn-out reveal">查看全部 113 场讲座 &rarr;</a>
+    <span class="tf-c reveal">加载中…</span>
+    <a href="#" class="btn-out reveal">查看全部讲座 →</a>
   </div>
 </section>
 
@@ -1906,7 +1852,7 @@ const io=new IntersectionObserver(entries=>{
 document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
 
 /* ── FILTERS ── */
-document.querySelectorAll('.fc').forEach(b=>b.addEventListener('click',()=>b.classList.toggle('on')));
+/* chips are wired dynamically by talks.js */
 
 /* ── HERO PARALLAX ── */
 window.addEventListener('scroll',()=>{
@@ -1917,6 +1863,7 @@ window.addEventListener('scroll',()=>{
   if(inner) inner.style.opacity=1-y/650;
 });
 </script>
+<script src="assets/js/talks.js"></script>
 <script src="assets/js/jquery-3.5.1.min.js"></script>
 <script src="assets/js/custom.js"></script>
 </body>
