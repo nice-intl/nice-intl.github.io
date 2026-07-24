@@ -5,6 +5,7 @@
   var FALLBACK_URL = 'assets/data/videos.json';
   var SHOW_OPTIONS = [5, 10, 20, 50, 100];
   var DEFAULT_SHOW = 5;
+  var filterTalks = window.NiceTalksCore.filterTalks;
 
   /* ── CSV parser ─────────────────────────────────────────────── */
   function parseCSVLine(line) {
@@ -117,23 +118,15 @@
   }
 
   /* ── Filter ─────────────────────────────────────────────────── */
-  function applyFilter(section) {
-    /* .fc.on text is already lowercase from our rendered chips */
-    var activeChips = Array.prototype.slice.call(section.querySelectorAll('.fc.on'))
+  function getActiveTags(section) {
+    return Array.prototype.slice.call(section.querySelectorAll('.fc.on'))
       .map(function (c) { return c.dataset.tag || c.textContent.trim().toLowerCase(); });
-    var list = section.querySelector('.talks-list');
-    if (!list) return;
-    list.querySelectorAll('.talk').forEach(function (card) {
-      if (!activeChips.length) { card.style.display = ''; return; }
-      var cardTags = (card.dataset.tags || '').split(',').map(function (t) { return t.trim(); }).filter(Boolean);
-      card.style.display = activeChips.some(function (ac) { return cardTags.indexOf(ac) !== -1; }) ? '' : 'none';
-    });
   }
 
   /* ── Dynamic filter chips ────────────────────────────────────── */
   var MAX_VISIBLE_CHIPS = 6;
 
-  function renderFilterChips(section, allVideos) {
+  function renderFilterChips(section, allVideos, onChange) {
     var frow = section.querySelector('.frow');
     if (!frow) return;
 
@@ -165,7 +158,7 @@
       btn.dataset.tag = tag.toLowerCase();
       btn.addEventListener('click', function () {
         btn.classList.toggle('on');
-        applyFilter(section);
+        onChange();
       });
       return btn;
     }
@@ -227,6 +220,7 @@
 
     var currentShowCount = DEFAULT_SHOW;
     var expanded = false;
+    var searchQuery = '';
     var delays   = ['', ' d1', ' d2', ' d3', ' d4', ' d5'];
 
     /* Build the "Showing [select] of N talks" count element once */
@@ -256,7 +250,8 @@
     }
 
     function showCards(showAll) {
-      var subset = showAll ? allVideos : allVideos.slice(0, currentShowCount);
+      var matchingVideos = filterTalks(allVideos, searchQuery, getActiveTags(section));
+      var subset = showAll ? matchingVideos : matchingVideos.slice(0, currentShowCount);
       list.innerHTML = subset.map(function (v, i) {
         return buildCardHTML(v, delays[Math.min(i, 5)], hostLabel);
       }).join('\n');
@@ -275,12 +270,13 @@
         e.preventDefault();
         expanded = !expanded;
         showCards(expanded);
-        applyFilter(section);
       });
     }
 
     /* Dynamic filter chips derived from actual tag data */
-    renderFilterChips(section, allVideos);
+    renderFilterChips(section, allVideos, function () {
+      showCards(expanded);
+    });
 
     /* Search */
     var searchInput = section.querySelector('.sf input');
@@ -291,15 +287,8 @@
       var fb = searchBtn.cloneNode(true);
       searchBtn.parentNode.replaceChild(fb, searchBtn);
       function doSearch() {
-        var q = fi.value.trim().toLowerCase();
-        list.querySelectorAll('.talk').forEach(function (card) {
-          if (!q) { card.style.display = ''; return; }
-          var titleEl   = card.querySelector('.t-title');
-          var speakerEl = card.querySelector('.t-speaker');
-          var title   = titleEl   ? titleEl.textContent.toLowerCase()   : '';
-          var speaker = speakerEl ? speakerEl.textContent.toLowerCase() : '';
-          card.style.display = (title.indexOf(q) !== -1 || speaker.indexOf(q) !== -1) ? '' : 'none';
-        });
+        searchQuery = fi.value;
+        showCards(expanded);
       }
       fb.addEventListener('click', doSearch);
       fi.addEventListener('keypress', function (e) { if ((e.which || e.keyCode) === 13) doSearch(); });
