@@ -462,6 +462,8 @@ document.addEventListener('DOMContentLoaded', function() {
     const volunteersSection = document.getElementById('volunteers-section');
     let currentCommittee = 'all';
 
+    if (!allMembersHeader || !committeeHeader || !committeeName || !committeeDescription) return;
+
     // Function to filter members
     function filterMembers(committee) {
         const allMembers = document.querySelectorAll('.member-card');
@@ -564,19 +566,22 @@ document.addEventListener('DOMContentLoaded', function() {
 (function(){
   function applyTheme(theme){
     var btns = document.querySelectorAll('#themeToggle');
+    var isLight = theme === 'light';
+    var nextThemeLabel = isLight ? 'Switch to dark theme' : 'Switch to light theme';
+
     if(theme === 'light'){
       document.body.classList.add('light-theme');
-      btns.forEach(function(btn){
-        btn.textContent = 'Light';
-        btn.setAttribute('aria-pressed','true');
-      });
     } else {
       document.body.classList.remove('light-theme');
-      btns.forEach(function(btn){
-        btn.textContent = 'Dark';
-        btn.setAttribute('aria-pressed','false');
-      });
     }
+
+    btns.forEach(function(btn){
+      var label = btn.querySelector('.theme-label');
+      if(label) label.textContent = isLight ? 'Light' : 'Dark';
+      btn.setAttribute('aria-label', nextThemeLabel);
+      btn.setAttribute('title', nextThemeLabel);
+      btn.setAttribute('aria-pressed', isLight ? 'true' : 'false');
+    });
   }
 
   // Apply saved theme immediately on page load

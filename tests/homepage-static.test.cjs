@@ -8,6 +8,11 @@ const pages = ['index.html', 'zh.html'].map((file) => ({
   file,
   source: fs.readFileSync(path.join(root, file), 'utf8')
 }));
+const teamPages = ['team.html', 'team-zh.html'].map((file) => ({
+  file,
+  source: fs.readFileSync(path.join(root, file), 'utf8')
+}));
+const customScript = fs.readFileSync(path.join(root, 'assets/js/custom.js'), 'utf8');
 
 function compact(source) {
   return source.replace(/\s+/g, '');
@@ -56,5 +61,26 @@ test('both homepages wrap mobile footer channels', () => {
       compact(page.source).includes('.foot-soc{width:100%;flex-wrap:wrap;gap:1rem;}'),
       `${page.file} must wrap footer channels`
     );
+  }
+});
+
+test('legacy committee filtering exits when its DOM is absent', () => {
+  assert.ok(
+    customScript.includes('if (!allMembersHeader || !committeeHeader || !committeeName || !committeeDescription) return;'),
+    'the shared script must not initialize legacy committee filtering on unrelated pages'
+  );
+});
+
+test('theme updates preserve the existing button icon and label elements', () => {
+  assert.equal(customScript.includes('btn.textContent ='), false, 'theme updates must not replace button children');
+  assert.ok(customScript.includes("btn.querySelector('.theme-label')"), 'text theme buttons need a dedicated label');
+
+  for (const page of pages) {
+    assert.equal(page.source.includes('#themeToggle::before'), false, `${page.file} must not draw a duplicate theme icon`);
+    assert.ok(page.source.includes('fa-circle-half-stroke'), `${page.file} must retain its theme icon element`);
+  }
+
+  for (const page of teamPages) {
+    assert.ok(page.source.includes('class="theme-label"'), `${page.file} must expose a theme label element`);
   }
 });
