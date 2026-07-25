@@ -432,3 +432,127 @@ git log --oneline origin/main..HEAD
 ```
 
 Expected: clean working tree and local commits listed above `origin/main`; do not run `git push`.
+
+### Task 4: Poster-derived speaker rosters
+
+**Files:**
+- Modify: `tests/offline-events.test.cjs`
+- Modify: `events/shanghai-world-model-night/index.html`
+- Modify: `events/shenzhen-embodied-ai/index.html`
+
+- [ ] **Step 1: Add failing roster tests**
+
+Append:
+
+```js
+const speakerRosters = [
+  {
+    slug: 'shanghai-world-model-night',
+    count: '6',
+    names: ['Siheng Chen (陈思衡)', 'Yang Li (李阳)', 'Zhecheng Yuan (袁哲诚)', 'Yingtian Zou (邹应天)', 'Hongyuan Lu (陆弘远)', 'Zhaoxi Chen (陈昭熹)']
+  },
+  {
+    slug: 'shenzhen-embodied-ai',
+    count: '8',
+    names: ['Kun Xie (谢琨)', 'Qiang Nie (聂强)', 'Ruimao Zhang (张瑞茂)', 'Zhengxiang Chen (陈正翔)', 'Sheng Xu (徐圣)', 'Jiaze Wang (王佳泽)', 'Linzhu Le (乐林株)', 'Yizhou Fan (范翌洲)']
+  }
+];
+
+test('new event pages present poster-derived speaker rosters and partners', () => {
+  for (const event of speakerRosters) {
+    const source = fs.readFileSync(path.join(root, 'events', event.slug, 'index.html'), 'utf8');
+
+    assert.ok(source.includes('Speakers &amp; Panelists'), `${event.slug} must label its speaker roster`);
+    assert.ok(source.includes('Partners &amp; Co-hosts'), `${event.slug} must label its organizers`);
+    assert.ok(source.includes(`<div class="es-num">${event.count}</div>`), `${event.slug} must show its speaker count`);
+
+    for (const name of event.names) {
+      assert.equal(source.split(name).length - 1, 1, `${event.slug} must list ${name} exactly once`);
+    }
+  }
+});
+```
+
+- [ ] **Step 2: Run the focused test and verify RED**
+
+Run:
+
+```bash
+node --test tests/offline-events.test.cjs
+```
+
+Expected: the two existing tests pass and the roster test fails because `Speakers &amp; Panelists` is absent.
+
+- [ ] **Step 3: Replace the Shanghai highlights with its roster**
+
+Change the middle summary statistic to six `Speakers & Panelists`. Replace the `Program Highlights` list with:
+
+```html
+<div class="ed-label">Speakers &amp; Panelists</div>
+<ul class="ed-list">
+  <li><strong>Siheng Chen (陈思衡)</strong> <span class="ed-role">Associate Professor, School of Artificial Intelligence, Shanghai Jiao Tong University</span></li>
+  <li><strong>Yang Li (李阳)</strong> <span class="ed-role">John Hopcroft Assistant Professor, School of Computer Science, Shanghai Jiao Tong University</span></li>
+  <li><strong>Zhecheng Yuan (袁哲诚)</strong> <span class="ed-role">Co-founder &amp; Chief Scientist, Pok Robotics (破壳机器人)</span></li>
+  <li><strong>Yingtian Zou (邹应天)</strong> <span class="ed-role">Founder, Sreal AI</span></li>
+  <li><strong>Hongyuan Lu (陆弘远)</strong> <span class="ed-role">Founder, 脸谱心智</span></li>
+  <li><strong>Zhaoxi Chen (陈昭熹)</strong> <span class="ed-role">Co-founder &amp; CEO, Ropedia</span></li>
+</ul>
+```
+
+Rename the organizer label to `Partners & Co-hosts`; keep `NICE Academic` and `Yunqi Partners`.
+
+- [ ] **Step 4: Replace the Shenzhen highlights with its unique roster**
+
+Change the middle summary statistic to eight `Speakers & Panelists`. Replace the `Discussion Themes` list with:
+
+```html
+<div class="ed-label">Speakers &amp; Panelists</div>
+<ul class="ed-list">
+  <li><strong>Kun Xie (谢琨)</strong> <span class="ed-role">Head of Strategic Partnerships, UBTECH Robotics</span></li>
+  <li><strong>Qiang Nie (聂强)</strong> <span class="ed-role">Assistant Professor, HKUST (Guangzhou)</span></li>
+  <li><strong>Ruimao Zhang (张瑞茂)</strong> <span class="ed-role">Associate Professor, Sun Yat-sen University</span></li>
+  <li><strong>Zhengxiang Chen (陈正翔)</strong> <span class="ed-role">Founder, TAKS Humanoid Robotics</span></li>
+  <li><strong>Sheng Xu (徐圣)</strong> <span class="ed-role">PhD Student, CUHK-Shenzhen</span></li>
+  <li><strong>Jiaze Wang (王佳泽)</strong> <span class="ed-role">Founder, FITX</span></li>
+  <li><strong>Linzhu Le (乐林株)</strong> <span class="ed-role">Founder &amp; CEO, 光之跃迁</span></li>
+  <li><strong>Yizhou Fan (范翌洲)</strong> <span class="ed-role">Assistant Professor, The Chinese University of Hong Kong (Host)</span></li>
+</ul>
+```
+
+Rename the organizer label to `Partners & Co-hosts`; keep `NICE`, `FITX`, and `Shenzhen InnoX`. List Zhengxiang Chen once even though the poster includes him in both Talk and Startup.
+
+- [ ] **Step 5: Run the focused test and verify GREEN**
+
+Run:
+
+```bash
+node --test tests/offline-events.test.cjs
+```
+
+Expected: 3 tests pass, 0 fail.
+
+- [ ] **Step 6: Run full verification**
+
+Run:
+
+```bash
+node --test tests/*.test.cjs
+git diff --check
+```
+
+Expected: all tests pass with no whitespace errors.
+
+- [ ] **Step 7: Visually inspect both detail pages**
+
+Use the existing local server at desktop and 390px mobile widths. Confirm the roster remains readable, the details section stacks to one column on mobile, and neither page gains horizontal overflow.
+
+- [ ] **Step 8: Compress all unpushed activity work into two commits**
+
+Reset the local commit boundary to `origin/main` while preserving the working tree, then create:
+
+```text
+feat: add Shanghai and Shenzhen offline events
+feat: list offline events newest first
+```
+
+The first commit contains documentation, event pages, poster assets, `.gitignore`, and the event tests before the homepage-order assertion. The second contains the two homepage card sequences and the homepage-order assertion. Verify the final tree and complete test suite after rewriting history. Do not push.

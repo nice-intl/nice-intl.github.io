@@ -53,3 +53,46 @@ test('both homepages list every offline event newest first', () => {
     assert.deepEqual([...positions].sort((a, b) => a - b), positions, `${file} must order events newest first`);
   }
 });
+
+const speakerRosters = [
+  {
+    slug: 'shanghai-world-model-night',
+    count: '6',
+    names: [
+      'Siheng Chen (陈思衡)',
+      'Yang Li (李阳)',
+      'Zhecheng Yuan (袁哲诚)',
+      'Yingtian Zou (邹应天)',
+      'Hongyuan Lu (陆弘远)',
+      'Zhaoxi Chen (陈昭熹)'
+    ]
+  },
+  {
+    slug: 'shenzhen-embodied-ai',
+    count: '8',
+    names: [
+      'Kun Xie (谢琨)',
+      'Qiang Nie (聂强)',
+      'Ruimao Zhang (张瑞茂)',
+      'Zhengxiang Chen (陈正翔)',
+      'Sheng Xu (徐圣)',
+      'Jiaze Wang (王佳泽)',
+      'Linzhu Le (乐林株)',
+      'Yizhou Fan (范翌洲)'
+    ]
+  }
+];
+
+test('new event pages present poster-derived speaker rosters and partners', () => {
+  for (const event of speakerRosters) {
+    const source = fs.readFileSync(path.join(root, 'events', event.slug, 'index.html'), 'utf8');
+
+    assert.ok(source.includes('Speakers &amp; Panelists'), `${event.slug} must label its speaker roster`);
+    assert.ok(source.includes('Partners &amp; Co-hosts'), `${event.slug} must label its organizers`);
+    assert.ok(source.includes(`<div class="es-num">${event.count}</div>`), `${event.slug} must show its speaker count`);
+
+    for (const name of event.names) {
+      assert.equal(source.split(name).length - 1, 1, `${event.slug} must list ${name} exactly once`);
+    }
+  }
+});
